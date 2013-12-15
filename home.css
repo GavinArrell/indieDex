@@ -1,0 +1,8 @@
+#bodyContent {
+	margin: auto;
+	background-color: #f9f9f9;
+	height: 5000px;
+	width: 960px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

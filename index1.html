@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>indieDex</title>
+		<meta name="description" content="">
+		<meta name="author" content="Gavin">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="reset.css"   type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="general.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="header.css"  type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="sidebar.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="home.css"    type="text/css" charset="utf-8"/>
+		
+		<!-- JS -->
+		<script src="jQuery.js"  type="text/javascript" charset="utf-8"></script>
+		<script src="sidebar.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<header>
+				<div id="wrapHeader">
+					
+					<img src="/">
+					
+					<nav id="navPrimary">
+						<ul>
+							<a href="/"> <li>Home</li> </a>
+							<a href="/"> <li>Games</li> </a>
+							<a href="/"> <li>Reviews</li> </a>
+							<a href="/"> <li>Tutorials</li> </a>
+							<a href="/"> <li>Community</li> </a>
+						</ul>
+					</nav>
+					
+					<div id="accountHeader">
+					</div>
+					
+				</div>
+			</header>
+			
+			<div> <!-- Everything to do with the sidebar -->
+				<div id="sidebar" class="sidebarBorderRadiusTop sidebarBorderRadiusBottom">
+					<img src="searchIcon.png" id="sidebarSearch" class="sidebarSearchBorderRadius">
+					<img src="filterIcon.png" id="sidebarFilter">
+					<img src="homeIcon.png" id="sidebarHome">
+					<img src="searchIcon.png" id="sidebarGames">
+					<img src="searchIcon.png" id="sidebarReviews">
+					<img src="searchIcon.png" id="sidebarTutorials">
+					<img src="searchIcon.png" id="sidebarCommunity">
+					<img src="searchIcon.png" id="sidebarSettings">
+				</div>
+				
+				<div id="sidebarSearchContent" class="sidebarContent" style="top: 150px;">
+						<h6>Search</h6>
+						<h5>Searchbar</h5>
+				</div>
+				<div id="sidebarFilterContent" class="sidebarContent" style="top: 210px;">
+						<h6>Filter</h6><br />
+						<h5>Console</h5><br /><br /><br />
+						<h5>Genre</h5><br /><br /><br /><br /><br />
+				</div>
+				<div id="sidebarHomeContent" class="sidebarContent" style="top: 270px;">
+						<h6>Home</h6>
+				</div>
+			</div>
+
+			<div id="bodyContent">
+				
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Gavin
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

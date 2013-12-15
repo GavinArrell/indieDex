@@ -1,0 +1,25 @@
+header {
+	background-color: #292929;
+	height: 50px;
+}
+
+#wrapHeader {
+	margin: auto;
+	width: 960px;
+}
+
+#navPrimary ul li {
+	display: inline-block;
+	position: relative;
+	float: left;
+	margin: 0 10px 0 10px;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	line-height: 50px;
+	color: white;
+}
+
+#navPrimary ul li:hover {
+	color: #cecece;
+}

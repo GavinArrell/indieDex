@@ -1,0 +1,55 @@
+#sidebar {
+	position: fixed;
+	top: 150px;
+	left: 0px;
+	
+	height: 468px;
+	width: 64px;
+	
+	border: solid thin #292929;	
+	background-color: #f9f9f9;	
+}
+.sidebarBorderRadiusTop {
+	border-top-right-radius: 15px;
+}
+.sidebarBorderRadiusBottom {
+	border-bottom-right-radius: 15px;
+}
+
+#sidebar img {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	
+	padding: 8px 12px 8px 12px;
+}
+
+.sidebarSearchColour {
+	background-color: #f0b937;
+}
+.sidebarSearchBorderRadius {
+	border-top-right-radius: 15px;
+}
+
+.sidebarFilterColour {
+	background-color: #d61d1d;
+}
+
+.sidebarHomeColour {
+	background-color: #0080c0;
+}
+
+/* ------- CONTENT -------- */
+
+.sidebarContent {
+	position: fixed;
+	left: 65px;
+	min-height: 53px;
+	width: 200px;
+
+	background-color: #F9F9F9;
+	border: solid thin #292929;
+	
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
