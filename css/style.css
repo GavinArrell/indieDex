@@ -147,7 +147,6 @@ html, body{
 	float:left;
 	min-width:180px;
 	width:20%;
-	height:405px;
 	opacity:1;
 			  }
 #slideshow{
@@ -159,7 +158,7 @@ html, body{
 	width:100%;
 }
 #logo{
-	width:90%;
+	width:95%;
 	margin:auto;
 }
 #logo img{
@@ -167,16 +166,53 @@ html, body{
 	 }
 	 
 #leftSidebar {
-	width: 90%;
+	width: 95%;
 	margin:auto;
 	margin-top: 5px;
-	height: 477px;
 	background-color:#FFFFFF;
 	opacity:0.9;
 }
 
+#accountImage {
+	width: 128px;
+	height: 128px;
+	margin-top: 16px;
+	margin-left: 16px;
+	margin-bottom: 16px;
+	float: left;
+}
+
+#accountImage img {
+	width: 100%;
+	height: 100%;
+	border: black thick;
+	border-radius: 10px;
+}
+
+#accountDetails {
+	float: left;
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+
+#accountInfo {
+	margin: 16px;
+}
+#accountInfo p {
+	padding-top: 6px;
+}
+
 .center {
 	margin: auto;
+}
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+.clear {
+	clear: both;
 }
 
 h1 {
@@ -189,6 +225,12 @@ h2 {
 	font-size: 32px;
 	color black;	
 	line-height: 48px;
+	padding-left: 16px;
+}
+h3 {
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 18px;
+	color black;	
 	padding-left: 16px;
 }
 .slideshowTabs{
@@ -204,6 +246,7 @@ h2 {
 	background-color:#FFFFFF;
 	opacity:0.9;
 	overflow-y:auto;
+	position: relative;
 				     }
 				     
 #contentContainer {
@@ -219,6 +262,7 @@ h2 {
 }
 				    
 #rightSidebar {
+	padding:10px;
 	margin-left: 5px;
 	background-color:#FFFFFF;
 	opacity:0.9;
@@ -251,7 +295,9 @@ h2 {
 	border: solid black 3px;
 }
 .readMore{
-	padding-top:5px;
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
 }
 .contentBoxText{
 	margin-left:27%;
