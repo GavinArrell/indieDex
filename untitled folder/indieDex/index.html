@@ -1,0 +1,91 @@
+<HTML>
+	<head>
+	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  	</head>
+  <script>
+  $(function() {
+    $( "#menu" ).menu();
+  });
+  function home(){
+  	window.location = 'index.html';
+  }
+  function review(){
+  	window.location = 'review.html';
+  }
+  function tutorial(){
+  	window.location = 'tutorial.html';
+  }
+  function forum(){
+  	window.location = 'forum.html';
+  }
+</script>
+<style>
+html, body{
+	background-image:url("img/fake background.png");
+		  }
+</style>
+	<body>
+		<div id="wrapper">
+				<header>
+					<div class="navOpacityCheatyFix"></div>
+						<div class="nav">
+							<div class="navContainer"><!--is transparent, so when extended whole box isn't blue-->
+									<div class="navButton" onclick="home()">Home</div>
+									<div class="navInnerContainer"><!--is blue, and smaller in width-->
+										<div class="navInnerButton">Top</div>
+										<div class="navInnerButton">Middle</div>
+										<div class="navLastInnerButton">Bottom</div>
+									</div>
+							</div>
+							<div class="navContainer">
+								<div class="navButton" onclick="review()">Reviews</div>
+								<div class="navInnerContainer">
+									<div class="navInnerButton">Top</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navLastInnerButton">Bottom</div>
+								</div>					
+							</div>
+							<div class="navContainer">
+								<div class="navButton" onclick="tutorial()">Tutorials</div>
+								<div class="navInnerContainer">
+									<div class="navInnerButton">Top</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navLastInnerButton">Bottom</div>
+								</div>
+							</div>
+							<div class="navContainer">
+								<div class="navButton" onclick="forum()">Forum</div>
+								<div class="navInnerContainer">
+									<div class="navInnerButton">Top</div>
+									<div class="navInnerButton">Middle</div>
+									<div class="navLastInnerButton">Bottom</div>
+								</div>
+							</div>
+						</div>
+				</header>
+				
+				<!--END OF TOP TAB?-->
+			
+
+ 			<div id="containerDeev">
+ 				
+ 				<div id="leftContainer">
+ 					
+ 				</div>
+ 				
+ 				<div id="rightContainer">
+ 					<div id="slideshow">
+ 						<img src="img/IndieGameTheMovieRelease.jpg"/>
+ 					</div>
+ 				</div>
+ 				
+ 	</div>		
+	</body>
+	</HTML>
