@@ -1,5 +1,6 @@
 <HTML>
 	<head>
+		<title>indieDex</title>
 		<meta charset="UTF-8">
 		
 		<!-- FONTS -->
@@ -14,7 +15,10 @@
 		<script src="js/libs/jquery-1.6.2.js"></script>
 	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	  	<script src="js/header.js"></script>
+	  	<script src="js/displayLogic.js"></script>
+	  	<script src="js/expandContent.js"></script>
   	</head>
+  	
   <script>
   $(function() {
     $( "#menu" ).menu();
@@ -194,24 +198,6 @@ html, body{
 							<div class="innerSlideshowTabs">Kerbal Space Program</div>
  						</div>-->
  					</div>		
- 					
- 					<!--<script src="js/content.js"></script>-->
- 					<script>
- 						$(document).ready(function() {
- 							$('.contentMore').hide();
- 							$('.readMore').click(function() {
- 								$('.contentMore').hide();
- 								
- 								if($(this).text() == "Read More") {
- 									$('.readMore').text("Read More");
- 									$(this).text("Read Less");
- 									$(this).parent().children('.contentMore').show();
- 								}
- 								else {$('.readMore').text("Read More");}
- 								
- 							});
- 						});
- 					</script>			
  					
  					<div id="contentContainer">
  						
@@ -407,48 +393,48 @@ html, body{
 	 						<br>
 	 						<h3>Console</h3>
 	 						<br/>
-		 					<input type="checkbox" name="Console" value="PC">PC<br>
-							<input type="checkbox" name="Console" value="Mac">Mac<br>
-							<input type="checkbox" name="Console" value="Linux">Linux<br>
-							<input type="checkbox" name="Console" value="PS4">PS4<br>
-							<input type="checkbox" name="Console" value="PS3">PS3<br>
-							<input type="checkbox" name="Console" value="Xbox One">Xbox One<br>
-							<input type="checkbox" name="Console" value="Xbox 360">Xbox 360<br>
-							<input type="checkbox" name="Console" value="Wii U">Wii U<br>
-							<input type="checkbox" name="Console" value="Wii">Wii<br>
-							<input type="checkbox" name="Console" value="IOS">IOS<br>
-							<input type="checkbox" name="Console" value="Android">Android<br><br>
+		 					<input class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Mac">Mac<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Linux">Linux<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="PS4">PS4<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="PS3">PS3<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Xbox One">Xbox One<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Xbox 360">Xbox 360<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Wii U">Wii U<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Wii">Wii<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="IOS">IOS<br>
+							<input class="checkboxFilter" type="checkbox" name="Console" value="Android">Android<br><br>
 							<h3>Genre</h3>
 							<br/>
-							<input type="checkbox" name="Genre" value="Action">Action<br>
-							<input type="checkbox" name="Genre" value="Adventure">Adventure<br>
-							<input type="checkbox" name="Genre" value="Music">Music<br>
-							<input type="checkbox" name="Genre" value="MMO">MMO<br>
-							<input type="checkbox" name="Genre" value="Puzzle">Puzzle<br>
-							<input type="checkbox" name="Genre" value="RPG">RPG<br>
-							<input type="checkbox" name="Genre" value="Shooter">Shooter<br>
-							<input type="checkbox" name="Genre" value="Sport">Sport<br>
-							<input type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Action">Action<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Adventure">Adventure<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Music">Music<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="MMO">MMO<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Puzzle">Puzzle<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="RPG">RPG<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Shooter">Shooter<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Sport">Sport<br>
+							<input class="checkboxFilter" type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
 							<h3>Release</h3>
 							<br/>
-							<input type="checkbox" name="Release" value="2013">2013<br>
-							<input type="checkbox" name="Release" value="2012">2012<br>
-							<input type="checkbox" name="Release" value="2011">2011<br>
-							<input type="checkbox" name="Release" value="2010">2010<br>
-							<input type="checkbox" name="Release" value="2009-">2009-<br><br>
+							<input class="checkboxFilter" type="checkbox" name="Release" value="2013">2013<br>
+							<input class="checkboxFilter" type="checkbox" name="Release" value="2012">2012<br>
+							<input class="checkboxFilter" type="checkbox" name="Release" value="2011">2011<br>
+							<input class="checkboxFilter" type="checkbox" name="Release" value="2010">2010<br>
+							<input class="checkboxFilter" type="checkbox" name="Release" value="2009-">2009-<br><br>
 							<h3>Star Rating</h3>
 							<br/>
-							<input type="checkbox" name="Rating" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;<br>
-							<input type="checkbox" name="Rating" value="4">&#9733;&#9733;&#9733;&#9733;<br>
-							<input type="checkbox" name="Rating" value="3">&#9733;&#9733;&#9733;<br>
-							<input type="checkbox" name="Rating" value="2">&#9733;&#9733;<br>
-							<input type="checkbox" name="Rating" value="1">&#9733;<br><br>
+							<input class="checkboxFilter" type="checkbox" name="Rating" value="5Stars">&#9733;&#9733;&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter" type="checkbox" name="Rating" value="4Stars">&#9733;&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter" type="checkbox" name="Rating" value="3Stars">&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter" type="checkbox" name="Rating" value="2Stars">&#9733;&#9733;<br>
+							<input class="checkboxFilter" type="checkbox" name="Rating" value="1Stars">&#9733;<br><br>
 							<h3>Price</h3>
 							<br/>
-							<input type="checkbox" name="Price" value="£25.00+">£25.00<br>
-							<input type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
-							<input type="checkbox" name="Price" value="£15.00-">£15.00-<br>
-							<input type="checkbox" name="Price" value="Free">Free<br>
+							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00+">£25.00<br>
+							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
+							<input class="checkboxFilter" type="checkbox" name="Price" value="£15.00-">£15.00-<br>
+							<input class="checkboxFilter" type="checkbox" name="Price" value="Free">Free<br>
 							
 							
 							
