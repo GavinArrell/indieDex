@@ -1,15 +1,19 @@
 <HTML>
 	<head>
 		<meta charset="UTF-8">
-	<!-- FONTS -->
-	<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  	<script src="js/header.js"></script>
+		
+		<!-- FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+		
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		
+		<!-- SCRIPTS -->
+		<script src="js/libs/jquery-1.6.2.js"></script>
+	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  	<script src="js/header.js"></script>
   	</head>
   <script>
   $(function() {
@@ -28,8 +32,33 @@
   	window.location = 'forum.html';
   }
   
-  //----------
-  
+  //---------- SLIDESHOW
+  $(function () {
+    
+    var change_img_time 	= 10000;	
+    var transition_speed	= 500;
+    
+    var simple_slideshow	= $("#exampleSlider"),
+        listItems 			= simple_slideshow.children('li'),
+        listLen				= listItems.length,
+        i 					= 0,
+		
+        changeList = function () {
+		
+			listItems.eq(i).fadeOut(transition_speed, function () {
+				i += 1;
+				if (i === listLen) {
+					i = 0;
+				}
+				listItems.eq(i).fadeIn(transition_speed);
+			});
+
+        };
+		
+    listItems.not(':first').hide();
+    setInterval(changeList, change_img_time);
+	
+});
 
 </script>
 <style>
@@ -40,11 +69,11 @@ html, body{
 	<body>
 		<div id="wrapper">
 			
-				<header>
+				<!--<header>
 						<div class="nav">
-							<div class="navContainer"><!--is transparent, so when extended whole box isn't blue-->
+							<div class="navContainer"><!--is transparent, so when extended whole box isn't blue
 									<div class="navButton" onclick="home()">Home</div>
-									<div class="navInnerContainer"><!--is blue, and smaller in width-->
+									<div class="navInnerContainer"><!--is blue, and smaller in width
 										<div class="navInnerButton">Top</div>
 										<div class="navInnerButton">Middle</div>
 										<div class="navLastInnerButton">Bottom</div>
@@ -78,128 +107,62 @@ html, body{
 								</div>
 							</div>
 						</div>
-				</header>
+				</header>-->
 				
 				<!--END OF TOP TAB?-->
-			
+				<div style="margin:auto; margin-top:100px; width:80%; height:50%; text-align:center; background-color: white;">UNDER CONSTRUCTION</div>			
 
- 			<div id="containerDeev">
- 				
- 				<div id="leftContainer">
- 					<div id="logo">
- 						<img src="img/indieDexpng.png"/>
- 						<h1 align="center" style="background-color:white; opacity:0.9;">HOME</h1>
+			<header>
+ 				<a href="index.html"><div class="headerChild">Home
+ 					<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul>
  					</div>
- 					
- 					<div id="leftSidebar">
- 						Hot Threads
- 						YOLO
- 						THIS THREAD'S ON FIRE
- 						GOTTA KEEP THE GRAMMER
- 						
- 					</div>
- 				</div>
+ 				</div></a>
  				
- 				<div id="rightContainer">
- 					<div id="slideshow">
- 						<img src="img/IndieGameTheMovieRelease.jpg"/>
- 						<div class="slideshowTabs">
- 							<div class="innerSlideshowTabs">Indie Game</div>
-							<div class="innerSlideshowTabs">Minecraft</div>
-							<div class="innerSlideshowTabs">Kerbal Space Program</div>
-							<div class="innerSlideshowTabs">Trine</div>
- 						</div>
+ 				<a href="review.html"><div class="headerChild">Reviews
+ 					<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul>
  					</div>
- 					
- 					<div id="contentContainer">
- 	 					<div class="contentBoxContainer">
- 	 						<div class="contentBoxPicture">
- 	 							<img src="img/fez.png"/>
- 	 							<div class="readMore">Read More</div>
- 	 						</div>
- 	 						<div class="contentBoxText">
- 	 							<h2>FEZ</h2><p>A 2D platform game with a twist! In a world where everything is flat, one fez wearing hero discovers the third demension and an adventure unfolds!</p>
- 	 						</div>
-	 					</div>
-					
-						<div class="contentBoxContainer">
- 	 						<div class="contentBoxPicture">
- 	 							<img src="img/minecraft.png"/>
- 	 						</div>
- 	 						<div class="contentBoxText">
- 	 							<h2>MINECRAFT</h2><p>A 3D voxel based sandox game! The most successful indie game in the world, with over 10 million copies sold on PC alone!</p>
- 	 						</div>
- 	 						<div class="readMore">Read More</div>
-	 					</div>
-						
-						<div class="contentBoxContainer">
- 	 						<div class="contentBoxPicture">
- 	 							<img src="img/starbound.png"/>
- 	 							<div class="readMore">Read More</div>
- 	 						</div>
- 	 						<div class="contentBoxText">
- 	 							<h2>STARBOUND</h2><p>A 2D voxel based platformer. This game is in beta, the user can play as many different alien species and explore the galaxy!</p>
- 	 						</div>
-	 					</div>
-					
-	 				</div>
-	 				
-	 				<div id="rightSidebarContainer">
-	 					<div id="rightSidebar">
-	 						<br>
-	 						<h3>Console</h3>
-	 						<br/>
-		 					<input type="checkbox" name="Console" value="PC">PC<br>
-							<input type="checkbox" name="Console" value="Mac">Mac<br>
-							<input type="checkbox" name="Console" value="Linux">Linux<br>
-							<input type="checkbox" name="Console" value="PS4">PS4<br>
-							<input type="checkbox" name="Console" value="PS3">PS3<br>
-							<input type="checkbox" name="Console" value="Xbox One">Xbox One<br>
-							<input type="checkbox" name="Console" value="Xbox 360">Xbox 360<br>
-							<input type="checkbox" name="Console" value="Wii U">Wii U<br>
-							<input type="checkbox" name="Console" value="Wii">Wii<br>
-							<input type="checkbox" name="Console" value="IOS">IOS<br>
-							<input type="checkbox" name="Console" value="Android">Android<br><br>
-							<h3>Genre</h3>
-							<br/>
-							<input type="checkbox" name="Genre" value="Action">Action<br>
-							<input type="checkbox" name="Genre" value="Adventure">Adventure<br>
-							<input type="checkbox" name="Genre" value="Music">Music<br>
-							<input type="checkbox" name="Genre" value="MMO">MMO<br>
-							<input type="checkbox" name="Genre" value="Puzzle">Puzzle<br>
-							<input type="checkbox" name="Genre" value="RPG">RPG<br>
-							<input type="checkbox" name="Genre" value="Shooter">Shooter<br>
-							<input type="checkbox" name="Genre" value="Sport">Sport<br>
-							<input type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
-							<h3>Release</h3>
-							<br/>
-							<input type="checkbox" name="Release" value="2013">2013<br>
-							<input type="checkbox" name="Release" value="2012">2012<br>
-							<input type="checkbox" name="Release" value="2011">2011<br>
-							<input type="checkbox" name="Release" value="2010">2010<br>
-							<input type="checkbox" name="Release" value="2009-">2009-<br><br>
-							<h3>Star Rating</h3>
-							<br/>
-							<input type="checkbox" name="Rating" value="5">5<br>
-							<input type="checkbox" name="Rating" value="4">4<br>
-							<input type="checkbox" name="Rating" value="3">3<br>
-							<input type="checkbox" name="Rating" value="2">2<br>
-							<input type="checkbox" name="Rating" value="1">1<br><br>
-							<h3>Price</h3>
-							<br/>
-							<input type="checkbox" name="Price" value="£25.00+">£25.00<br>
-							<input type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
-							<input type="checkbox" name="Price" value="£15.00-">£15.00-<br>
-							<input type="checkbox" name="Price" value="Free">Free<br>
-							
-		 				</div>
-		 			</div>
-					
-			
-			
- 				</div>
+ 				</div></a>
  				
- 			</div>
+ 				<a href="tutorial.html"><div class="headerChild">Tutorials
+ 					<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul>
+ 					</div>
+ 				</div></a>
+ 				
+ 				<a href="forum.html"><div class="headerChild">Forums
+ 					<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul>
+ 					</div>
+ 				</div></a>
+			</header>
+
  		</div>
+ 				
 	</body>
 </HTML>

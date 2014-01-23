@@ -1,3 +1,5 @@
+//HEADER FADE WITH SCROLL
+
 $(document).ready(function() {
   	$('header').hover(
   		function() {
@@ -22,3 +24,17 @@ function header_fadeIn() {
 function header_fadeOut() {
 	$('header').stop(true, false).fadeTo("slow", 0.2);
 }
+
+//HEADER CHILD MENUS
+
+$(document).ready(function() {
+	$('.headerGrandchild').hide();
+	$('.headerChild').hover(
+		function() {
+			$(this).children(".headerGrandchild").show();
+		},
+		function() {
+			$(this).children(".headerGrandchild").hide();
+		}
+	);
+});
