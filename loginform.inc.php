@@ -20,10 +20,12 @@
 					$username = mysql_result($query_run, 0, 'username');
 					$bio = mysql_result($query_run, 0, 'bio');
 					$karma = mysql_result($query_run, 0, 'karma');
+					$status = mysql_result($query_run, 0, 'status');
 					$_SESSION['user_id']=$user_id;
 					$_SESSION['username']=$username;
 					$_SESSION['bio']=$bio;
 					$_SESSION['karma']=$karma;
+					$_SESSION['status']=$status;
 					header('Location: index.php');
 				}
 			}

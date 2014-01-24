@@ -16,22 +16,7 @@
 	  	<script src="js/header.js"></script>
   	</head>
   <script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-  function home(){
-  	window.location = 'index.php';
-  }
-  function review(){
-  	window.location = 'review.php';
-  }
-  function account(){
-  	window.location = 'account.php';
-  }
-  function forum(){
-  	window.location = 'forum.php';
-  }
-  
+
   //---------- SLIDESHOW
   $(function () {
     
@@ -137,8 +122,15 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="account.php"><div class="headerChild">Account
+ 				<a href="games.php"><div class="headerChild">Games
  					<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul> 						
  					</div>
  				</div></a>
  				
