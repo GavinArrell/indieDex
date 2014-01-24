@@ -133,6 +133,9 @@ html, body{
 <?php
 }
 ?>	
+<!--query account type in php and display correct items for the account type-->
+
+
  	</div>				
  			<header>
  				<a href="index.php"><div class="headerChild">Home

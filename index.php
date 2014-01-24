@@ -364,6 +364,7 @@ html, body{
 	 				<div id="rightSidebarContainer">
 	 					<div id="rightSidebar">
 	 						<br>
+	 						
 	 						<h3>Console</h3>
 	 						<br/>
 		 					<input class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
@@ -377,6 +378,7 @@ html, body{
 							<input class="checkboxFilter" type="checkbox" name="Console" value="Wii">Wii<br>
 							<input class="checkboxFilter" type="checkbox" name="Console" value="IOS">IOS<br>
 							<input class="checkboxFilter" type="checkbox" name="Console" value="Android">Android<br><br>
+							
 							<h3>Genre</h3>
 							<br/>
 							<input class="checkboxFilter" type="checkbox" name="Genre" value="Action">Action<br>
@@ -388,6 +390,7 @@ html, body{
 							<input class="checkboxFilter" type="checkbox" name="Genre" value="Shooter">Shooter<br>
 							<input class="checkboxFilter" type="checkbox" name="Genre" value="Sport">Sport<br>
 							<input class="checkboxFilter" type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
+							
 							<h3>Release</h3>
 							<br/>
 							<input class="checkboxFilter" type="checkbox" name="Release" value="BETA">BETA<br>
@@ -396,6 +399,7 @@ html, body{
 							<input class="checkboxFilter" type="checkbox" name="Release" value="2011">2011<br>
 							<input class="checkboxFilter" type="checkbox" name="Release" value="2010">2010<br>
 							<input class="checkboxFilter" type="checkbox" name="Release" value="2009-">2009-<br><br>
+							
 							<h3>Star Rating</h3>
 							<br/>
 							<input class="checkboxFilter" type="checkbox" name="Rating" value="5Stars">&#9733;&#9733;&#9733;&#9733;&#9733;<br>
@@ -403,20 +407,17 @@ html, body{
 							<input class="checkboxFilter" type="checkbox" name="Rating" value="3Stars">&#9733;&#9733;&#9733;<br>
 							<input class="checkboxFilter" type="checkbox" name="Rating" value="2Stars">&#9733;&#9733;<br>
 							<input class="checkboxFilter" type="checkbox" name="Rating" value="1Stars">&#9733;<br><br>
+							
 							<h3>Price</h3>
 							<br/>
 							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00+">£25.00<br>
 							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
 							<input class="checkboxFilter" type="checkbox" name="Price" value="£15.00-">£15.00-<br>
-							<input class="checkboxFilter" type="checkbox" name="Price" value="Free">Free<br>
+							<input class="checkboxFilter" type="checkbox" name="Price" value="Free">Free<br><br>
 							
-							
-							
-							
-							
-							
-							
-							
+							<h3>Staff Pick</h3>
+							<br/>
+							<input class="checkboxFilter" type="checkbox" name="Staff" value="Staff">Staff Pick<br>
 							
 		 				</div>
 		 			</div>
@@ -425,26 +426,26 @@ html, body{
  			</div>
  					
  			<header>
- 				<a href="index.php"><div class="headerChild">Home
- 					<div class="headerGrandchild">
- 						<ul>
- 							<li>Top</li>
- 							<li>Hot</li>
- 							<li>Trending</li>
- 							<li>Staff Picks</li>
- 							<li>Saved Filters? dV/dA</li>
- 						</ul>
- 					</div>
- 				</div></a>
+ 				<div class="headerChild">
+ 					<a href="index.php"><div class="headerButton">Home</div></a>
+ 					
+	 				<div class="headerGrandchild">
+	 					<ul>
+	 						<a class="filterTop"   href=""> <li>Top</li> </a>
+	 						<a class="filterNew"   href=""> <li>New</li> </a>
+	 						<a class="filterHot"   href=""> <li>Hot</li> </a>
+	 						<a class="filterTrend" href=""> <li>Trending</li> </a>
+	 					</ul>
+	 				</div>
+ 				</div>
  				
  				<a href="review.php"><div class="headerChild">Reviews
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
+ 							<li>New</li>
  							<li>Hot</li>
  							<li>Trending</li>
- 							<li>Staff Picks</li>
- 							<li>Saved Filters? dV/dA</li>
  						</ul>
  					</div>
  				</div></a>
@@ -458,10 +459,9 @@ html, body{
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
+ 							<li>New</li>
  							<li>Hot</li>
  							<li>Trending</li>
- 							<li>Staff Picks</li>
- 							<li>Saved Filters? dV/dA</li>
  						</ul>
  					</div>
  				</div></a>

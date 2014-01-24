@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('.contentMore').hide();
 	
-	$('.readMore').click(function() {
+	$('.readMore').live("click", function() {
 		$('.contentMore').hide();
 
 		if($(this).text() == "Read More") {

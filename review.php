@@ -137,40 +137,40 @@ html, body{
    							<li><img src="img/journeyslideshow.jpg" alt="" />
    							<div class="slideshowTabs">	
 
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabsDark">Journey</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
+   								<a href="http://thatgamecompany.com/games/journey/"><div class="innerSlideshowTabsDark">Journey</div></a>
+   								<a href="http://dayzgame.com/age-gate#.UuH6vxDFJy8"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
+								<a href="http://www.tornbanner.com/chivalry/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
    							<li><img src="img/dayzslideshow.jpg" alt="" />
    							<div class="slideshowTabs">
    								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabsDark">DAYZ</div></a>
+   								<a href="http://thatgamecompany.com/games/journey/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="http://dayzgame.com/age-gate#.UuH6vxDFJy8"><div class="innerSlideshowTabsDark">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
+								<a href="http://www.tornbanner.com/chivalry/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
    							<li><img src="img/fez.png" alt="" />
    								<div class="slideshowTabs">
    									
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
+   								<a href="http://thatgamecompany.com/games/journey/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="http://dayzgame.com/age-gate#.UuH6vxDFJy8"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabsDark">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
+								<a href="http://www.tornbanner.com/chivalry/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
     						<li><img src="img/chivalryslideshow.jpg" alt="" />
     							<div class="slideshowTabs">
     								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
+   								<a href="http://thatgamecompany.com/games/journey/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="http://dayzgame.com/age-gate#.UuH6vxDFJy8"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabsDark">Chivalry</div></a>
+								<a href="http://www.tornbanner.com/chivalry/"><div class="innerSlideshowTabsDark">Chivalry</div></a>
 								
 							</div>
     						</li>
