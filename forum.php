@@ -20,16 +20,16 @@
     $( "#menu" ).menu();
   });
   function home(){
-  	window.location = 'index.html';
+  	window.location = 'index.php';
   }
   function review(){
-  	window.location = 'review.html';
+  	window.location = 'review.php';
   }
-  function tutorial(){
-  	window.location = 'tutorial.html';
+  function account(){
+  	window.location = 'account.php';
   }
   function forum(){
-  	window.location = 'forum.html';
+  	window.location = 'forum.php';
   }
   
   //---------- SLIDESHOW
@@ -88,7 +88,7 @@ html, body{
 								</div>					
 							</div>
 							<div class="navContainer">
-								<div class="navButton" onclick="tutorial()">Tutorials</div>
+								<div class="navButton" onclick="account()">Tutorials</div>
 								<div class="navInnerContainer">
 									<div class="navInnerButton">Top</div>
 									<div class="navInnerButton">Middle</div>
@@ -113,7 +113,7 @@ html, body{
 				<div style="margin:auto; margin-top:100px; width:80%; height:50%; text-align:center; background-color: white;">UNDER CONSTRUCTION</div>			
 
 			<header>
- 				<a href="index.html"><div class="headerChild">Home
+ 				<a href="index.php"><div class="headerChild">Home
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
@@ -125,7 +125,7 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="review.html"><div class="headerChild">Reviews
+ 				<a href="review.php"><div class="headerChild">Reviews
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
@@ -137,19 +137,12 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="tutorial.html"><div class="headerChild">Tutorials
+ 				<a href="account.php"><div class="headerChild">Account
  					<div class="headerGrandchild">
- 						<ul>
- 							<li>Top</li>
- 							<li>Hot</li>
- 							<li>Trending</li>
- 							<li>Staff Picks</li>
- 							<li>Saved Filters? dV/dA</li>
- 						</ul>
  					</div>
  				</div></a>
  				
- 				<a href="forum.html"><div class="headerChild">Forums
+ 				<a href="forum.php"><div class="headerChild">Forums
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>

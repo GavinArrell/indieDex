@@ -26,16 +26,16 @@
     $( "#menu" ).menu();
   });
   function home(){
-  	window.location = 'index.html';
+  	window.location = 'index.php';
   }
   function review(){
-  	window.location = 'review.html';
+  	window.location = 'review.php';
   }
-  function tutorial(){
-  	window.location = 'tutorial.html';
+  function account(){
+  	window.location = 'account.php';
   }
   function forum(){
-  	window.location = 'forum.html';
+  	window.location = 'forum.php';
   }
   
   //---------- SLIDESHOW
@@ -90,34 +90,43 @@ html, body{
  				<div id="leftContainer">
  					<div id="logo">
  						<img src="img/indieDexpng.png"/>
- 						<h1 align="center" style="background-color:white; opacity:0.9;">HOME</h1>
+ 						<h1 align="center" style="background-color:white; opacity:0.9;">REVIEW</h1>
  					</div>
  					
  					<div id="leftSidebar">
- 						<div id="accountImage">
- 							<img src="img/Digital-Abstract-HD-Background.jpg">
- 						</div>
- 						<div id="accountDetails">
- 							<h3>GenericAdmin2</h3>
- 						</div>
+
+								<?php
+									require 'core.inc.php';
+									require 'connect.inc.php';
+
+										if(loggedin()){
+											
+											//COMMENTED OUT GAMES BADGE AND WISHLIST UNTIL FEATURE IS IMPLEMENTED. BECAUSE IT'S IN THE ECHO
+											//IT DOESNT LOOK COMMENTED, BUT IT IS (LINE 117-118).
+																				 	
+											 	echo	'<div id="accountImage">
+ 														<img src="img/Digital-Abstract-HD-Background.jpg">
+ 														</div>
+ 														<div id="accountDetails">
+ 														<h3>';echo $_SESSION['username']; echo'</h3>
+ 														</div>
  						
- 						<div class="clear" id="accountInfo">
- 							<h3>My Bio</h3>
-	 						<p>Hi my name is GenericAdmin2! I like football and playing darts with my grandpa!</p><br/>
-	 						<div><h3>Games Badge</h3></div><br/>
-	 						<div><h3>Wishlist Badge</h3></div><br/>
-	 						<div>
-							
-							<form action="login.php" method="post">
-								Name: <input type="text" name="name"><br>
-								Password: <input type="password" name="password"><br><br>
-								<input type="submit">
-							</form>
-	 						<br>
-	 						</div>
+ 														<div class="clear" id="accountInfo">
+ 														<h3>My Bio</h3>
+	 													<p>';echo $_SESSION['bio']; echo'</p><br/>
+	 													<!--<div><h3>Games:</h3></div><br/>
+	 													<div><h3>Wishlist:</h3></div><br/>-->
+	 													<div><h3>Karma: ';echo $_SESSION['karma']; echo'</h3></div><br>
+	 													<a href="logout.php">Logout</a><br>
+	 													</div>';
+												}
+												else {
+													include 'loginform.inc.php';
+													
+												}
+								?> 
 	 					</div>
  					</div>
- 				</div>
  				
  				<div class="rightContainer">
  					
@@ -125,43 +134,43 @@ html, body{
  					<div id="slideshow">
  						<style> p{text-decoration: none}</style>
  						<ul id="exampleSlider">
-   							<li><img src="img/IndieGameTheMovieRelease.jpg" alt="" />
+   							<li><img src="img/journeyslideshow.jpg" alt="" />
    							<div class="slideshowTabs">	
 
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabsDark">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
+   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabsDark">Journey</div></a>
+   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
+								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
-   							<li><img src="img/minecraftSlideShow.png" alt="" />
+   							<li><img src="img/dayzslideshow.jpg" alt="" />
    							<div class="slideshowTabs">
    								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabsDark">Minecraft</div></a>
+   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="https://minecraft.net/"><div class="innerSlideshowTabsDark">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
+								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
    							<li><img src="img/fez.png" alt="" />
    								<div class="slideshowTabs">
    									
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
+   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabsDark">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
+								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Chivalry</div></a>
 								
 							</div>
    							</li>
-    						<li><img src="img/kerbal.png" alt="" />
+    						<li><img src="img/chivalryslideshow.jpg" alt="" />
     							<div class="slideshowTabs">
     								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
+   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Journey</div></a>
+   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">DAYZ</div></a>
 								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabsDark">Kerbal Space Program</div></a>
+								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabsDark">Chivalry</div></a>
 								
 							</div>
     						</li>
@@ -184,9 +193,9 @@ html, body{
 	 	 					
  	 						<div class="contentMore">
  	 							<p>
-							       	Fez (stylized as FEZ) is a 2012 puzzle platform game developed by indie developer Polytron Corporation and produced by Polytron, Trapdoor, and Microsoft Studios. It is a 2D game set in a 3D world, as the two-dimensional player-character receives a fez that reveals a third dimension and consequently tears the fabric of his universe. Fez's puzzles are built around the core mechanic of rotating between four 2D views of a 3D space, as four sides around a cube, where the environment realigns between views to create new paths.
-									The game was an "underdog darling of the indie game scene" during its high-profile and protracted five-year development cycle. Fez designer and Polytron founder Phil Fish received celebrity for his outspoken public persona and prominence in the 2012 documentary Indie Game: The Movie, which followed the game's final stages of development and Polytron's related legal issues. The game was released as a yearlong Xbox Live Arcade exclusive on April 13, 2012 to critical acclaim, and was later ported to other platforms.
-									Fez won several awards, including the 2012 Independent Games Festival's Grand Prize, 2011 Indiecade's Best in Show and Best Story/World Design, and 2008 Independent Games Festival's Excellence in Visual Art. It was Eurogamer's 2012 Game of the Year. Fez had sold one million copies by the end of 2013. A sequel was planned, but was later canceled as Fish abruptly left the industry.
+							       	Fez (stylized as FEZ) is a 2012 puzzle platform game developed by indie developer Polytron Corporation and produced by Polytron, Trapdoor, and Microsoft Studios. It is a 2D game set in a 3D world, as the two-dimensional player-character receives a fez that reveals a third dimension and consequently tears the fabric of his universe. Fez\'s puzzles are built around the core mechanic of rotating between four 2D views of a 3D space, as four sides around a cube, where the environment realigns between views to create new paths.
+									The game was an "underdog darling of the indie game scene" during its high-profile and protracted five-year development cycle. Fez designer and Polytron founder Phil Fish received celebrity for his outspoken public persona and prominence in the 2012 documentary Indie Game: The Movie, which followed the game\'s final stages of development and Polytron\'s related legal issues. The game was released as a yearlong Xbox Live Arcade exclusive on April 13, 2012 to critical acclaim, and was later ported to other platforms.
+									Fez won several awards, including the 2012 Independent Games Festival\'s Grand Prize, 2011 Indiecade's Best in Show and Best Story/World Design, and 2008 Independent Games Festival\'s Excellence in Visual Art. It was Eurogamer\'s 2012 Game of the Year. Fez had sold one million copies by the end of 2013. A sequel was planned, but was later canceled as Fish abruptly left the industry.
 								</p>
  	 						</div>
  	 						<p class="readMore">Read More</p>
@@ -235,14 +244,14 @@ html, body{
 							
 							<div class="contentBoxText">
 	 	 						<h2>DAYZ</h2>
-	 	 						<p>Everyone's favourite ARMA 2 mod is going standalone! The mod which turned ARMA 2 into a zombie survival game with a cult following is now being developed as a full game.	 	 						
+	 	 						<p>Everyone\'s favourite ARMA 2 mod is going standalone! The mod which turned ARMA 2 into a zombie survival game with a cult following is now being developed as a full game.	 	 						
 	 	 						</p>
 	 	 	 					</div>
 	 	 					
  	 						<div class="contentMore">
  	 							<p>DayZ is a multiplayer open world survival horror video game in development by Bohemia Interactive and the stand-alone version of the award-winning mod of the same name. The game was test-released on December 16, 2013 for Microsoft Windows via digital distribution platform Steam, and is currently in early alpha testing.
 								The game places the player in the fictional post-Soviet state of Chernarus, where an unknown virus has turned most of the population into violent zombies. As a survivor, the player must scavenge the world for food, water, weapons, and medicine, while killing or avoiding zombies, and killing, avoiding or co-opting other players in an effort to survive the zombie apocalypse.
-								DayZ began development in 2012 when the mod's creator, Dean Hall, joined Bohemia Interactive to work on it. The development has been focused on altering the engine to suit the game's needs, developing a working client-server architecture, and introducing new features like diseases and a better inventory system. The game has sold over 1 million copies since its alpha release.
+								DayZ began development in 2012 when the mod\'s creator, Dean Hall, joined Bohemia Interactive to work on it. The development has been focused on altering the engine to suit the game\'s needs, developing a working client-server architecture, and introducing new features like diseases and a better inventory system. The game has sold over 1 million copies since its alpha release.
 
  	 						    </p>
  	 						</div>
@@ -274,13 +283,13 @@ html, body{
 							
 							<div class="contentBoxText">
 	 	 						<h2>JOURNEY</h2>
-	 	 						<p>A short game filled with quirks. Journey has a completely different multiplayer system than ever seen beofre, and with such a well written soundtrack, journey will have you wanting more.
+	 	 						<p>A short game filled with quirks. Journey has a completely different multiplayer system than ever seen before, and with such a well written soundtrack, journey will have you wanting more.
  	 	 	 					</p>
 	 	 	 					</div>
 	 	 					
  	 						<div class="contentMore">
- 	 							<p>Journey is an indie video game developed by Thatgamecompany for the PlayStation 3. It was released on March 13, 2012, via the PlayStation Network. In Journey, the player controls a robed figure in a vast desert, traveling towards a mountain in the distance. Other players on the same journey can be discovered, and two players can meet and assist each other, but they cannot communicate via speech or text and cannot see each other's names. The only form of communication between the two is a musical chime. This chime also transforms dull, stiff pieces of cloth found throughout the levels into vibrant red, affecting the game world and allowing the player to progress through the levels. The robed figure wears a trailing scarf, which when charged by approaching floating pieces of cloth, briefly allows the player to float through the air.
-								The developers sought to evoke in the player a sense of smallness and wonder, and to forge an emotional connection between them and the anonymous players they meet along the way. The music, composed by Austin Wintory, dynamically responds to the player's actions, building a single theme to represent the game's emotional arc throughout the story. Reviewers of the game praised the visual and auditory art as well as the sense of companionship created by playing with a stranger, calling it a moving and emotional experience. Journey won several "game of the year" awards and received several other awards and nominations, including a Best Score Soundtrack for Visual Media nomination for the 2013 Grammy Awards. A retail "Collector's Edition", including Journey, Thatgamecompany's two previous titles, and additional media, was released on August 28, 2012.	 	 						   
+ 	 							<p>Journey is an indie video game developed by Thatgamecompany for the PlayStation 3. It was released on March 13, 2012, via the PlayStation Network. In Journey, the player controls a robed figure in a vast desert, traveling towards a mountain in the distance. Other players on the same journey can be discovered, and two players can meet and assist each other, but they cannot communicate via speech or text and cannot see each other\'s names. The only form of communication between the two is a musical chime. This chime also transforms dull, stiff pieces of cloth found throughout the levels into vibrant red, affecting the game world and allowing the player to progress through the levels. The robed figure wears a trailing scarf, which when charged by approaching floating pieces of cloth, briefly allows the player to float through the air.
+								The developers sought to evoke in the player a sense of smallness and wonder, and to forge an emotional connection between them and the anonymous players they meet along the way. The music, composed by Austin Wintory, dynamically responds to the player\'s actions, building a single theme to represent the game\'s emotional arc throughout the story. Reviewers of the game praised the visual and auditory art as well as the sense of companionship created by playing with a stranger, calling it a moving and emotional experience. Journey won several "game of the year" awards and received several other awards and nominations, including a Best Score Soundtrack for Visual Media nomination for the 2013 Grammy Awards. A retail "Collector\'s Edition", including Journey, Thatgamecompany\'s two previous titles, and additional media, was released on August 28, 2012.	 	 						   
 								</p>
  	 						</div>
  	 						<p class="readMore">Read More</p>
@@ -332,12 +341,12 @@ html, body{
 							<div class="contentBoxText">
 	 	 						<h2>CHIVALRY</h2>
 	 	 						<p>
-	 	 							Imagine Call of Duty in the 1700s! This game is full of action, blood and a variety of gamemodes so you'll never get bored!
+	 	 							Imagine Call of Duty in the 1700s! This game is full of action, blood and a variety of gamemodes so you\'ll never get bored!
 	 	 						</p>
 	 	 	 					</div>
 	 	 					
  	 						<div class="contentMore">
- 	 							<p>Chivalry: Medieval Warfare is a multiplayer action video game developed by Torn Banner Studios as their first commercial title. The game is set in a fictional world resembling the Middle Ages and offers similar gameplay combat to the developer's previously released Half-Life 2 mod, Age of Chivalry. On September 20, 2012 a trailer was released which set the release date to October 16, 2012. The developers had confirmed that the game would be PC exclusive, though they stated the possibility of console versions if the interest were great enough. An expansion pack called Chivalry: Deadliest Warrior was announced on August 23, 2013. It's a tie-in for the television series Deadliest Warrior.
+ 	 							<p>Chivalry: Medieval Warfare is a multiplayer action video game developed by Torn Banner Studios as their first commercial title. The game is set in a fictional world resembling the Middle Ages and offers similar gameplay combat to the developer\'s previously released Half-Life 2 mod, Age of Chivalry. On September 20, 2012 a trailer was released which set the release date to October 16, 2012. The developers had confirmed that the game would be PC exclusive, though they stated the possibility of console versions if the interest were great enough. An expansion pack called Chivalry: Deadliest Warrior was announced on August 23, 2013. It\'s a tie-in for the television series Deadliest Warrior.
   								</p>
  	 							</div>
  	 						<p class="readMore">Read More</p>
@@ -417,7 +426,7 @@ html, body{
  			</div>
  					
  			<header>
- 				<a href="index.html"><div class="headerChild">Home
+ 				<a href="index.php"><div class="headerChild">Home
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
@@ -429,7 +438,7 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="review.html"><div class="headerChild">Reviews
+ 				<a href="review.php"><div class="headerChild">Reviews
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
@@ -441,19 +450,12 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="tutorial.html"><div class="headerChild">Tutorials
+ 				<a href="account.php"><div class="headerChild">Account
  					<div class="headerGrandchild">
- 						<ul>
- 							<li>Top</li>
- 							<li>Hot</li>
- 							<li>Trending</li>
- 							<li>Staff Picks</li>
- 							<li>Saved Filters? dV/dA</li>
- 						</ul>
  					</div>
  				</div></a>
  				
- 				<a href="forum.html"><div class="headerChild">Forums
+ 				<a href="forum.php"><div class="headerChild">Forums
  					<div class="headerGrandchild">
  						<ul>
  							<li>Top</li>
