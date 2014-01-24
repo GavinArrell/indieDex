@@ -70,7 +70,7 @@ $(document).ready(function() {
 	$('.filterHot').click(function()   {organisationMode = 2; $('.checkBoxFilter').prop('checked', false); filterContent(); return false;});
 	$('.filterTrend').click(function() {organisationMode = 3; $('.checkBoxFilter').prop('checked', false); filterContent(); return false;});
 	
-	requestContent();
+	//filterContent();
 });
 
 function requestContent() {
@@ -95,7 +95,7 @@ function requestContent() {
 	xmlhttp.send();
 }
 
-/*var noContentFound = '0 Results Found';
+var noContentFound = '0 Results Found';
 var article = [];
 	article[0] = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/fez.png"/></div><div class="contentBoxText"><h2>FEZ</h2><p>A 2D platform game with a twist! In a world where everything is flat, one fez wearing hero discovers the third demension and an adventure unfolds!</p></div><div class="contentMore"><p>Fez (stylized as FEZ) is a 2012 puzzle platform game developed by indie developer Polytron Corporation and produced by Polytron, Trapdoor, and Microsoft Studios. It is a 2D game set in a 3D world, as the two-dimensional player-character receives a fez that reveals a third dimension and consequently tears the fabric of his universe. Fez\'s puzzles are built around the core mechanic of rotating between four 2D views of a 3D space, as four sides around a cube, where the environment realigns between views to create new paths.The game was an "underdog darling of the indie game scene" during its high-profile and protracted five-year development cycle. Fez designer and Polytron founder Phil Fish received celebrity for his outspoken public persona and prominence in the 2012 documentary Indie Game: The Movie, which followed the game\'s final stages of development and Polytron\'s related legal issues. The game was released as a yearlong Xbox Live Arcade exclusive on April 13, 2012 to critical acclaim, and was later ported to other platforms.Fez won several awards, including the 2012 Independent Games Festival\'s Grand Prize, 2011 Indiecade\'s Best in Show and Best Story/World Design, and 2008 Independent Games Festival\'s Excellence in Visual Art. It was Eurogamer\'s 2012 Game of the Year. Fez had sold one million copies by the end of 2013. A sequel was planned, but was later canceled as Fish abruptly left the industry.</p></div><p class="readMore">Read More</p></div>';
 	article[1] = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/minecraft.png"/><nav><a class="readMore" href="#more2">Read More</a></nav></div><div class="contentBoxText"><h2>MINECRAFT</h2><p>A 3D voxel based sandox game! The most successful indie game in the world, with over 10 million copies sold on PC alone!</p></div><div id="main2" class="hide"><div id="more2"><p>Minecraft is a sandbox indie game originally created by Swedish programmer Markus "Notch" Persson and later developed and published by Mojang. It was publicly released for the PC on May 17, 2009, as a developmental alpha version and, after gradual updates, was published as a full release version on November 18, 2011. A version for Android was released a month earlier on October 7, and an iOS version was released on November 17, 2011. On May 9, 2012, the game was released on Xbox 360 as an Xbox Live Arcade game, co-developed by 4J Studios. All versions of Minecraft receive periodic updates.The creative and building aspects of Minecraft allow players to build constructions out of textured cubes in a 3D procedurally generated world. Other activities in the game include exploration, gathering resources, crafting, and combat. Gameplay in its commercial release has two principal modes: survival, which requires players to acquire resources and maintain their health and hunger; and creative, where players have an unlimited supply of resources, the ability to fly, and no health or hunger. A third gameplay mode named hardcore is the same as survival, differing only in difficulty; it is set to the most difficult setting and respawning is disabled, forcing players to delete their worlds upon death.Minecraft received five awards from the 2011 Game Developers Conference: it was awarded the Innovation Award, Best Downloadable Game Award, and the Best Debut Game Award from the Game Developers Choice Awards; and the Audience Award, as well as the Seumas McNally Grand Prize, from the Independent Games Festival in 2011. In 2012, Minecraft was awarded a Golden Joystick Award in the category Best Downloadable Game. As of October 23, 2013, the game has sold over 12.5 million copies on PC, and over 33 million copies across all platforms.</div> <!-- #about --></div> <!-- main --></div>';
@@ -118,7 +118,7 @@ var item = [];
  * Continue the search (filterContent func resume)
  * 
  * Using article1 var because the data isn't being pulled from a db - no need for IDs atm
- *
+ */
 
 var organisedContent = [];
 //Will store all the relevant items - only 9 will be displayed per page
@@ -222,4 +222,4 @@ function checkTagValues() {
 	}
 	
 	return true;
-}*/
+}
