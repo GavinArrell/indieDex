@@ -47,6 +47,7 @@ html, body{
 								<?php
 									require 'core.inc.php';
 									require 'connect.inc.php';
+									include 'dVdA.php';
 
 										if(loggedin()){
 											
@@ -132,7 +133,10 @@ html, body{
 </div>
 <?php
 }
-?>	
+premium();
+?>
+
+
 <!--query account type in php and display correct items for the account type-->
 
 
@@ -162,8 +166,15 @@ html, body{
  					</div>
  				</div></a>
  				
- 				<a href="account.php"><div class="headerChild">Account
+ 				<a href="games.php"><div class="headerChild">Games
 				<div class="headerGrandchild">
+ 						<ul>
+ 							<li>Top</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 							<li>Staff Picks</li>
+ 							<li>Saved Filters? dV/dA</li>
+ 						</ul>				
 				</div>
  				</div></a>
  				

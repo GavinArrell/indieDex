@@ -18,9 +18,15 @@
 		<script src="js/libs/jquery-1.6.2.js"></script>
 	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	  	
+	  	<script type='text/javascript' src='js/jquery.min.js'></script>
+    	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
+    	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+    	<script type='text/javascript' src='js/camera.min.js'></script>
+	  	
 	  	<script src="js/header.js"></script>
 	  	<script src="js/displayLogic.js"></script>
 	  	<script src="js/expandContent.js"></script>
+<<<<<<< HEAD
 	  	
 	  	<script>
 			function slide() {
@@ -62,6 +68,52 @@
 		</style>
   	</head>
  
+=======
+		
+		<link rel='stylesheet' id='camera-css'  href='../css/camera.css' type='text/css' media='all'> 
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			min-width:720px;
+			width: 100%;
+		}
+	</style>  	
+  	</head>
+  	
+  <script>
+  
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_1').camera({
+				loader: 'bar',
+				pagination: false,
+				thumbnail: false
+			});});
+
+</script>
+<style>
+html, body{
+	background-image:url("img/mLOQIBN - Imgur.jpg");
+		  }
+</style>
+>>>>>>> b8b093ce66514b84085437a8e7587ad7ce8fee7b
 	<body>
 		<div id="wrapper">
 			
@@ -93,14 +145,23 @@
  														</div>
  														<div id="accountDetails">
  														<h3>';echo $_SESSION['username']; echo'</h3>
+ 														<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
+ 														';$status = $_SESSION['status'];
+	 													if($status==0){echo'Non-Premium account';}
+														else if($status==1){echo'Premium Account';}
+														else if($status==2){echo'Moderator';}
+														else if($status==3){echo 'Developer';}
+														else{null;}
+														echo '</p>
  														</div>
  						
  														<div class="clear" id="accountInfo">
  														<h3>My Bio</h3>
-	 													<p>';echo $_SESSION['bio']; echo'</p><br/>
+	 													<p>';echo $_SESSION['bio']; echo'</p><br/>	 													
+	 													
 	 													<!--<div><h3>Games:</h3></div><br/>
 	 													<div><h3>Wishlist:</h3></div><br/>-->
-	 													<div><h3>Karma: ';echo $_SESSION['karma']; echo'</h3></div><br>
+	 													
 	 													<a href="logout.php">Logout</a><br>
 	 													</div>';
 												}
@@ -108,6 +169,7 @@
 													include 'loginform.inc.php';
 												}
 								?> 
+						<a href="account.php" style="padding: 5px;">Account Settings</a><br>
 	 					</div>
  					</div>
  				
@@ -115,50 +177,30 @@
  					
  					
  					<div id="slideshow">
- 						<style> p{text-decoration: none}</style>
- 						<ul id="exampleSlider">
-   							<li><img src="img/IndieGameTheMovieRelease.jpg" alt="" />
-   							<div class="slideshowTabs">	
-
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabsDark">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
-								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
-								
-							</div>
-   							</li>
-   							<li><img src="img/minecraftSlideShow.png" alt="" />
-   							<div class="slideshowTabs">
-   								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabsDark">Minecraft</div></a>
-								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
-								
-							</div>
-   							</li>
-   							<li><img src="img/fez.png" alt="" />
-   								<div class="slideshowTabs">
-   									
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
-								<a href="http://fezgame.com/"><div class="innerSlideshowTabsDark">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabs">Kerbal Space Program</div></a>
-								
-							</div>
-   							</li>
-    						<li><img src="img/kerbal.png" alt="" />
-    							<div class="slideshowTabs">
-    								
-   								<a href="http://buy.indiegamethemovie.com/"><div class="innerSlideshowTabs">Indie Game</div></a>
-   								<a href="https://minecraft.net/"><div class="innerSlideshowTabs">Minecraft</div></a>
-								<a href="http://fezgame.com/"><div class="innerSlideshowTabs">Fez</div></a>
-								<a href="https://kerbalspaceprogram.com/"><div class="innerSlideshowTabsDark">Kerbal Space Program</div></a>
-								
-							</div>
-    						</li>
-						</ul>
-
+<div class="fluid_container">
+        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+            <div data-thumb="img/IndieGameTheMovieRelease.jpg" data-src="img/IndieGameTheMovieRelease.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    <em>Indie Game The Movie - Available on Netflix.</em>
+                </div>
+            </div>
+            <div data-thumb="img/minecraftSlideShow.png" data-src="img/minecraftSlideShow.png">
+                <div class="camera_caption fadeFromBottom">
+                    <em>Minecraft - updated to 1.7.4!.</em>
+                </div>
+            </div>
+            <div data-thumb="img/fez.png" data-src="img/fez.png">
+                <div class="camera_caption fadeFromBottom">
+                    <em>Fez - winner of multiple indie gaming awards.</em>
+                </div>
+            </div>
+            <div data-thumb="img/kerbal.png" data-src="img/kerbal.png">
+                <div class="camera_caption fadeFromBottom">
+                    <em>Kerbal Space Program - available on Steam.</em>
+                </div>
+            </div>
+</div>
+</div>
  					</div>
  					</div>
  					<div id="rightContainerTwo">						
@@ -442,8 +484,14 @@
  					</div>
  				</div></a>
  				
- 				<a href="account.php"><div class="headerChild">Account
+ 				<a href="games.php"><div class="headerChild">Games
  					<div class="headerGrandchild">
+ 						 <ul>
+ 							<li>Top</li>
+ 							<li>New</li>
+ 							<li>Hot</li>
+ 							<li>Trending</li>
+ 						</ul>
  					</div>
  				</div></a>
  				

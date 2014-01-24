@@ -80,7 +80,7 @@ html, body{
  				<div id="leftContainer">
  					<div id="logo">
  						<img src="img/indieDexpng.png"/>
- 						<h1 align="center" style="background-color:white; opacity:0.9;">REVIEW</h1>
+ 						<h1 align="center" style="background-color:white; opacity:0.9;">GAMES</h1>
  					</div>
  					
  					<div id="leftSidebar">
