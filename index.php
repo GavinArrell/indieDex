@@ -23,9 +23,15 @@
     	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
     	<script type='text/javascript' src='js/camera.min.js'></script>
 	  	
+	  	<script type='text/javascript' src='js/jquery.min.js'></script>
+    	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
+    	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+    	<script type='text/javascript' src='js/camera.min.js'></script>
+	  	
 	  	<script src="js/header.js"></script>
 	  	<script src="js/displayLogic.js"></script>
 	  	<script src="js/expandContent.js"></script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	  	
 	  	<script>
@@ -69,6 +75,8 @@
   	</head>
  
 =======
+=======
+>>>>>>> b8b093ce66514b84085437a8e7587ad7ce8fee7b
 		
 		<link rel='stylesheet' id='camera-css'  href='../css/camera.css' type='text/css' media='all'> 
     <style>
