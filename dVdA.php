@@ -8,7 +8,7 @@ if(isFreemium()){?>
 			UPGRADE TO PREMIUM...
 		</div>
 		<div style="width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Profile Picture</label>
 				<input type="file" name="file" id="file"><br>
@@ -23,7 +23,7 @@ else if(isPremium()){?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Profile Picture</label>
 				<input type="file" name="file" id="file"><br>
@@ -39,7 +39,7 @@ else if(isMod()){?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Profile Picture</label>
 				<input type="file" name="file" id="file"><br>
@@ -55,7 +55,7 @@ else if(isDev()){?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Profile Picture</label>
 				<input type="file" name="file" id="file"><br>
@@ -99,4 +99,4 @@ function isFreemium(){
 	if($status==0 &&  !$username == 0){return true;}
 	else{return false;}
 }
-?>	
+?>
