@@ -17,7 +17,7 @@ if(isFreemium()){?>
 		</div>
 	</div>
 <div>
-<?;}
+<?php;}
 
 else if(isPremium()){?>
 </div>
@@ -33,7 +33,7 @@ else if(isPremium()){?>
 		</div>
 	</div>
 <div>
-<?;}
+<?php;}
 
 else if(isMod()){?>
 </div>
@@ -49,7 +49,7 @@ else if(isMod()){?>
 		</div>
 	</div>
 <div>
-<?;}
+<?php;}
 
 else if(isDev()){?>
 </div>
@@ -68,7 +68,7 @@ else if(isDev()){?>
 		</div>
 	</div>
 <div>
-<?;}
+<?php;}
 
 }
 
@@ -99,4 +99,4 @@ function isFreemium(){
 	if($status==0 &&  !$username == 0){return true;}
 	else{return false;}
 }
-?>	
+?>

@@ -2,8 +2,6 @@
 require 'core.inc.php';
 require 'connect.inc.php';
 
-include 'general.php';
-
 $resultsStartNo = 0;
 $resultsToShow  = 10;
 
