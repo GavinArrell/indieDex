@@ -27,15 +27,16 @@ if(checkisset()) {
 } else echo mysql_error;
 
 function checkisset() {
-	if(!isset($_POST['value']))          {return false;}
-	if(!isset($_POST['action']))         {return false;}
-	if(!isset($_POST['order']))          {return false;}
-	if(!isset($_POST['consoleFilters'])) {return false;}
-	if(!isset($_POST['genreFilters']))   {return false;}
-	if(!isset($_POST['yearFilters']))    {return false;}
-	if(!isset($_POST['starFilters']))    {return false;}
-	if(!isset($_POST['priceFilters']))   {return false;}
-	if(!isset($_POST['staffFilters']))   {return false;}
+	
+	if(!isset($_POST['value']))          {echo "checkisset1"; return false;}
+	if(!isset($_POST['action']))         {echo "checkisset2"; return false;}
+	if(!isset($_POST['order']))          {echo "checkisset3"; return false;}
+	if(!isset($_POST['consoleFilters'])) {echo "checkisset4"; return false;}
+	if(!isset($_POST['genreFilters']))   {echo "checkisset5"; return false;}
+	if(!isset($_POST['yearFilters']))    {echo "checkisset6"; return false;}
+	if(!isset($_POST['starFilters']))    {echo "checkisset7"; return false;}
+	if(!isset($_POST['priceFilters']))   {echo "checkisset8"; return false;}
+	if(!isset($_POST['staffFilters']))   {echo "checkisset9"; return false;}
 	
 	return true;
 }
@@ -73,81 +74,109 @@ function getLastPage() {
 
 function generateQuery($order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $start, $results) {
 	
-	//Order query
-	$query = "SELECT * FROM `contentnews_table` ORDER BY "+ $order +" ";
+	$queryWhere = array();
+	$queryWhere[0] = ""; //CONSOLE
+	$queryWhere[1] = ""; //GENRE
+	$queryWhere[2] = ""; //YEAR
+	$queryWhere[3] = ""; //STARS
+	$queryWhere[4] = ""; //PRICE
+	$queryWhere[5] = ""; //STAFF
 	
+	//SELECT table
+	$query = "SELECT * FROM `contentnews_table` ";
 	//Select relevant results
+	
+	if($consoleFilters[0] != "") {
 		//CONSOLE FILTERS
-		$query."WHERE (consoles LIKE ";
+		$queryWhere[0].="(consoles LIKE ";
 		for($i=0; $i<count($consoleFilters); $i++) {
-			$query."`%;"+$consoleFilters[$i]+";%`";
-			if($i<count($consoleFilters)-1) {$query." OR consoles LIKE ";}
-			else {$query.") ";}
+			$queryWhere[0].=("'%;".$consoleFilters[$i].";%'");
+			if($i<count($consoleFilters)-1) {$queryWhere[0].=" OR consoles LIKE ";}
+			else {$queryWhere[0].=") ";}
 		}
-		
+	}
+	
+	if($genreFilters[0] != "") {
 		//GENRE FILTERS
-		$query."AND (genres LIKE ";
+		$queryWhere[1].="(genres LIKE ";
 		for($i=0; $i<count($genreFilters); $i++) {
-			$query."`%;"+$genreFilters[$i]+";%`";
-			if($i<count($genreFilters)-1) {$query." OR genres LIKE ";}
-			else {$query.") ";}
+			$queryWhere[1].=("'%;".$genreFilters[$i].";%'");
+			if($i<count($genreFilters)-1) {$queryWhere[1].=" OR genres LIKE ";}
+			else {$queryWhere[1].=") ";}
 		}
-		
+	}
+	
+	if($yearFilters[0] != "") {
 		//YEAR FILTERS
-		$query."AND (year";
+		$queryWhere[2].="(year";
 		for($i=0; $i<count($yearFilters); $i++) {
-			if(strpos($yearFilters[$i],'pre') !== false) {$query."<="+substr($yearFilters[$i], 3);}
-			else {$query.( "="+(string)$yearFilters[$i] );}
+			if(strpos($yearFilters[$i],'pre') !== false) {$queryWhere[2].="<="+substr($yearFilters[$i], 3);}
+			else {$queryWhere[2].=( "=".(string)$yearFilters[$i] );}
 			
-			if($i<count($yearFilters)-1) {$query." OR year";}
-			else {$query.") ";}
+			if($i<count($yearFilters)-1) {$queryWhere[2].=" OR year";}
+			else {$queryWhere[2].=") ";}
 		}
-		
+	}
+	
+	if($starFilters[0] != "") {
 		//STAR FILTERS
-		$query."OR (stars=";
+		$queryWhere[3].="(stars=";
 		for($i=0; $i<count($starFilters); $i++) {
-			$query.( (string)$starFilters[$i] );
-			if($i<count($starFilters)-1) {$query." OR star=";}
-			else {$query.") ";}
+			$queryWhere[3].=( (string)$starFilters[$i] );
+			if($i<count($starFilters)-1) {$queryWhere[3].=" OR star=";}
+			else {$queryWhere[3].=") ";}
 		}
-		
+	}
+	
+	if($priceFilters[0] != array("", "", "")) {
 		//PRICE FILTERS
-		$query."OR ((price";
+		$queryWhere[4].="((price";
 		for($i=0; $i<count($priceFilters); $i++) {
 			//priceFilter = [operator, low-limit, high-limit] (check getContentFilters.js for more info)
 			switch($priceFilters[$i][0]) {
 				
-				case "=="  : $query."="+$priceFilters[$i][1]; break;
+				case "=="  : $queryWhere[4].="=".$priceFilters[$i][1]; break;
 				
-				case "!="  : $query."!="+$priceFilters[$i][1]; break;
+				case "!="  : $queryWhere[4].="!=".$priceFilters[$i][1]; break;
 				
-				case ">=<" : $query.">="+$priceFilters[$i][1]+" AND price<="+$priceFilters[$i][2]; break;
+				case ">=<" : $queryWhere[4].=">=".$priceFilters[$i][1]." AND price<=".$priceFilters[$i][2]; break;
 				
-				case "><"  : $query.">"+$priceFilters[$i][1]+" AND price<"+$priceFilters[$i][2]; break;
+				case "><"  : $queryWhere[4].=">".$priceFilters[$i][1]." AND price<".$priceFilters[$i][2]; break;
 				
-				case ">="  : $query.">="+$priceFilters[$i][1]; break;
+				case ">="  : $queryWhere[4].=">=".$priceFilters[$i][1]; break;
 				
-				case ">"   : $query.">"+$priceFilters[$i][1]; break;
+				case ">"   : $queryWhere[4].=">".$priceFilters[$i][1]; break;
 				
-				case "<=>" : $query."<="+$priceFilters[$i][1]+" AND price>="+$priceFilters[$i][2]; break;
+				case "<=>" : $queryWhere[4].="<=".$priceFilters[$i][1]." AND price>=".$priceFilters[$i][2]; break;
 				
-				case "<>"  : $query."<"+$priceFilters[$i][1]+" AND price>"+$priceFilters[$i][2]; break;
+				case "<>"  : $queryWhere[4].="<".$priceFilters[$i][1]." AND price>".$priceFilters[$i][2]; break;
 				
-				case "<="  : $query."<="+$priceFilters[$i][2]; break;
+				case "<="  : $queryWhere[4].="<=".$priceFilters[$i][2]; break;
 				
-				case "<"   : $query."<"+$priceFilters[$i][2]; break;
+				case "<"   : $queryWhere[4].="<".$priceFilters[$i][2]; break;
 			}
-			
-			if($i<count($priceFilters)-1) {$query.") AND (price";}
-			else {$query.")) ";}
-		}
 		
-		//STAFF FILTERS
-		if($staffFilters) {$query."AND staff=true ";}
+			
+			if($i<count($priceFilters)-1) {$queryWhere[4].=") OR (price";}
+			else {$queryWhere[4].=")) ";}
+		}
+	}
 	
+	//STAFF FILTERS
+	if($staffFilters == "true") {$queryWhere[5].="AND staff=true ";}
+
+	//JOIN QUERYWHERE
+	$tempString = "";
+	for($i=0; $i<count($queryWhere); $i++) {
+		if($queryWhere[$i] != "") {
+			if($tempString != "") {$tempString.="AND ";}
+			$tempString.=$queryWhere[$i];
+		}
+	}
+	if($tempString != "") {$query.="WHERE ".$tempString;}
 	
-	//Limit query
-	$query."LIMIT $start, $results";
+	$query.= "ORDER BY $order ";       //ORDER
+	$query.="LIMIT $start, $results";  //LIMIT
 	
 	return $query;
 	

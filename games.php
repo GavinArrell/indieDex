@@ -173,7 +173,11 @@ html, body{
 </div>
  					</div>
  					</div>
- 					<div id="rightContainerTwo">						
+ 					<div id="rightContainerTwo">
+ 						 		<?php
+ 								require 'contentAdd.php';
+								addGames(); 						
+ 								?>						
  					<div id="contentContainer">
  						
  						<!--FEZ-------------------------->

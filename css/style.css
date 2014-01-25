@@ -174,7 +174,7 @@ a {
 	color:black;
 }
 
-.contentBoxContainer {
+.contentBoxContainer, .addContentBox {
 	float:right;
 	margin-top:5px;
 	width: 100%;

@@ -4,7 +4,7 @@ var lastPage = 0;
 $(document).ready(function() {
 	getLastPage();
 	updatePageNumbers();
-	
+
 	$('#pageButtonFirst').click(function() {gotoPage(0); updatePageNumbers();});
 	$('#pageButton1').click(function() {movePage(0); updatePageNumbers();});
 	$('#pageButton2').click(function() {movePage(1); updatePageNumbers();});
@@ -31,11 +31,7 @@ function gotoPage(index) {
 			staffFilters: getContentStaffFilters()
 		},
 		success: function(data) {
-			var htmlString = "";
-			for(var i=0; i<data.length; i++) {
-				htmlString += data[i];
-			}
-			
+			var htmlString = data != "" ? data : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';			
 			$("#contentItemContainer").html(htmlString);
 			$('.contentMore').hide();
 		},

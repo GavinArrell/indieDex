@@ -174,7 +174,11 @@ html, body{
 </div>
  					</div>
  					</div>
- 					<div id="rightContainerTwo">						
+ 					<div id="rightContainerTwo">
+ 						<?php
+ 								require 'contentAdd.php';
+								addReviews(); 						
+ 							?>							
  					<div id="contentContainer">
  						
  						<!--FEZ-------------------------->
