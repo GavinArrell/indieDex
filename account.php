@@ -55,7 +55,9 @@ html, body{
 											//IT DOESNT LOOK COMMENTED, BUT IT IS (LINE 117-118).
 																				 	
 											 	echo	'<div id="accountImage">
- 														<img src="img/Digital-Abstract-HD-Background.jpg">
+ 														<img src="';
+ 														if($_SESSION['pic']!=''&& file_exists($_SESSION['pic'])){
+ 														echo $_SESSION['pic'];}else{echo 'img/Digital-Abstract-HD-Background.jpg';}; echo'">
  														</div>
  														<div id="accountDetails">
  														<h3>';echo $_SESSION['username']; echo'</h3>
@@ -133,7 +135,7 @@ html, body{
 </div>
 <?php
 }
-premium();
+dVdA();
 ?>
 
 

@@ -21,11 +21,13 @@
 					$bio = mysql_result($query_run, 0, 'bio');
 					$karma = mysql_result($query_run, 0, 'karma');
 					$status = mysql_result($query_run, 0, 'status');
+					$picture = mysql_result($query_run, 0, 'profile picture');
 					$_SESSION['user_id']=$user_id;
 					$_SESSION['username']=$username;
 					$_SESSION['bio']=$bio;
 					$_SESSION['karma']=$karma;
 					$_SESSION['status']=$status;
+					$_SESSION['pic']=$picture;
 					header('Location: index.php');
 				}
 			}

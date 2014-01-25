@@ -74,6 +74,12 @@
 				});});
 		
 		</script>
+		
+		<style>
+			html, body{
+				background-image:url("img/mLOQIBN - Imgur.jpg");
+		 	}
+		</style>
   	</head>
   	
 	<body>
