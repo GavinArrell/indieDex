@@ -14,7 +14,6 @@
 		<!-- SCRIPTS -->
 		<script src="js/libs/jquery-1.6.2.js"></script>
 	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	  	<script src="js/mylibs/prototypes.js"></script>
 	  	
 	  	<script src="js/header.js"></script>
 	  	<script src="js/displayLogic.js"></script>
