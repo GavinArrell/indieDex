@@ -195,6 +195,12 @@
  				<div id="rightContainerTwo">						
  					<div id="contentContainer">
  						<div id="contentItemContainer">
+ 							
+ 							<?php
+ 								require 'contentAdd.php';
+								addContent(); 						
+ 							?>
+ 							
 	 						<!--FEZ-->
 	 						
 	 	 					<div class="contentBoxContainer">

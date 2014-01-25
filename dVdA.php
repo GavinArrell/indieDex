@@ -93,9 +93,6 @@ else if(isDev()){?>
   	 	 	<input type="submit" value="Submit">
 		</form>
 		</div>
-		<div style="height:100px; width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			ADD CONTENT
-		</div>
 	</div>
 <div>
 <?php ;}
