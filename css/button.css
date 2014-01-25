@@ -1,13 +1,14 @@
 .button {
 	background: #FFFFFF;
 	border: solid;
-	border-color: #333333;
+	border-color: #222222;
 	border-width: 2px;
 	margin: 12px;
 	padding: 2px 4px 2px 4px;
 	min-width: 12px;
 	text-align: center;
 	cursor: pointer;
+	opacity: 1;
 }
 .button:hover {border-color: #B0CEF5;}
 .button:active {border-color: #7EA9E0;}

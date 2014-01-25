@@ -37,6 +37,7 @@
 	  	<script src="js/header.js"></script>
 	  	<script src="js/displayLogic.js"></script>
 	  	<script src="js/expandContent.js"></script>
+	  	<script src="js/changePage.js"></script>
 		
 		<style>
 			body {
@@ -78,8 +79,9 @@
 		<style>
 			html, body{
 				background-image:url("img/mLOQIBN - Imgur.jpg");
-		 	}
+			}
 		</style>
+		
   	</head>
   	
 	<body>
@@ -350,14 +352,13 @@
 	 					<div style="display: table; margin: 0 auto;clear:both;">
 	 						<br/>
 	 						<div id="pageButtonFirst" class="button inline-block"><<</div>
-	 						<div id="pageButtonPrev" class="button inline-block"><</div>
 	 						<div id="pageButton1" class="button inline-block">1</div>
 	 						<div id="pageButton2" class="button inline-block">2</div>
 	 						<div id="pageButton3" class="button inline-block">3</div>
 	 						<div id="pageButton4" class="button inline-block">4</div>
 	 						<div id="pageButton5" class="button inline-block">5</div>
-	 						<div id="pageButtonNext" class="button inline-block">></div>
 	 						<div id="pageButtonLast" class="button inline-block">>></div>
+	 						<div id="pageButtonIndex" class="button inline-block">...</div>
 	 					</div>
 	 					
 	 				</div>
