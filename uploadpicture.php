@@ -2,6 +2,7 @@
 require 'core.inc.php';
 require 'connect.inc.php';
 require 'picturename.php';
+if (empty($_FILES['file']['name'])){header('Location: account.php');}else{
 if(changeName()){
 		
 		$picture = $_SESSION['pic'];
@@ -13,5 +14,5 @@ if(changeName()){
 				header('Location: account.php');
 		}else{echo 'error';}
 			}else
-{echo 'error';}
+{echo 'error';}}
 ?>

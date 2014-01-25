@@ -94,30 +94,34 @@ html, body{
 											//COMMENTED OUT GAMES BADGE AND WISHLIST UNTIL FEATURE IS IMPLEMENTED. BECAUSE IT'S IN THE ECHO
 											//IT DOESNT LOOK COMMENTED, BUT IT IS (LINE 117-118).
 																				 	
-											 	echo	'<div id="accountImage">
- 														<img src="img/Digital-Abstract-HD-Background.jpg">
- 														</div>
- 														<div id="accountDetails">
- 														<h3>';echo $_SESSION['username']; echo'</h3>
- 														<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
- 														';$status = $_SESSION['status'];
-	 													if($status==0){echo'Non-Premium account';}
-														else if($status==1){echo'Premium Account';}
-														else if($status==2){echo'Moderator';}
-														else if($status==3){echo 'Developer';}
-														else{null;}
-														echo '</p>
- 														</div>
+									 echo	'<div id="accountImage">
+ 											<img src="';
+ 											if($_SESSION['pic']!=''&& file_exists($_SESSION['pic'])){
+ 											echo $_SESSION['pic'];}else{echo 'img/Digital-Abstract-HD-Background.jpg';}; echo'">
+ 											</div>
+ 											
+											
+ 											<div id="accountDetails">
+ 											<h3>';echo $_SESSION['username']; echo'</h3>
+ 											<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
+ 											';$status = $_SESSION['status'];
+	 										if($status==0){echo'Non-Premium account';}
+											else if($status==1){echo'Premium Account';}
+											else if($status==2){echo'Moderator';}
+											else if($status==3){echo 'Developer';}
+											else{null;}
+											echo '</p>
+ 											</div>
  						
- 														<div class="clear" id="accountInfo">
- 														<h3>My Bio</h3>
-	 													<p>';echo $_SESSION['bio']; echo'</p><br/>	 													
-	 													
-	 													<!--<div><h3>Games:</h3></div><br/>
-	 													<div><h3>Wishlist:</h3></div><br/>-->
-	 													
-	 													<a href="logout.php">Logout</a><br>
-	 													</div>';
+ 											<div class="clear" id="accountInfo">
+ 											<h3>My Bio</h3>
+	 										<p>';echo stripslashes($_SESSION['bio']); echo'</p><br/>	 													
+	 										
+	 										<!--<div><h3>Games:</h3></div><br/>
+	 										<div><h3>Wishlist:</h3></div><br/>-->
+	 										
+	 										<a href="logout.php">Logout</a><br>
+	 										</div>';
 												}
 												else {
 													include 'loginform.inc.php';
@@ -125,6 +129,19 @@ html, body{
 								?> 
 						<a href="account.php" style="padding: 5px;">Account Settings</a><br>
 	 					</div>
+						<?php
+						include 'dVdA.php';
+						if(!isDev()){
+							if(!isMod()){
+								if(!isPremium()){
+									?>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-top:5px;"src="img/fantaad.png"/></div>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-top:5px;"src="img/subwayad.png"/></div>
+									<?php
+								}else{null;}
+							}else{null;}
+						}else{null;}
+						?>	 					
  					</div>
  				
  				<div class="rightContainer">

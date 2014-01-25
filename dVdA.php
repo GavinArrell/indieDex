@@ -4,16 +4,26 @@ function dVdA(){
 if(isFreemium()){ ?>
 </div>
 	<div class="rightContainer">
-		<div style="height:100px; width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			UPGRADE TO PREMIUM...
-		</div>
-		<div style="width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
+				<a  href="https://donate.childsplaycharity.org/">
+				<p align="center">UPGRADE TO PREMIUM</p><img style="width:100%;"src="img/childsplay.png"/></a>
+			</div>
+			
+			
+		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
+			<p align="center">CUSTOMISE ACCOUNT</p>
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label>
+				<label for="file">Profile Picture</label><br>
 				<input type="file" name="file" id="file"><br>
 				<input type="submit" name="submit" value="Submit">
-			</form>
+		</form><br><br>
+		
+		<form method="post" action="uploadbio.php">
+			<label for="file">Bio</label><br>
+   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
+  	 	 	<input type="submit" value="Submit">
+		</form>
 		</div>
 	</div>
 <div>
@@ -23,14 +33,21 @@ else if(isPremium()){ ?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<p align="center">CUSTOMISE ACCOUNT</p>
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label>
+				<label for="file">Profile Picture</label><br>
 				<input type="file" name="file" id="file"><br>
 				<input type="submit" name="submit" value="Submit">
-			</form>
-			
+		</form><br><br>
+		
+		<form method="post" action="uploadbio.php">
+			<label for="file">Bio</label><br>
+   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
+  	 	 	<input type="submit" value="Submit">
+		</form>
 		</div>
+
 	</div>
 <div>
 <?php ;}
@@ -39,14 +56,21 @@ else if(isMod()){?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<p align="center">CUSTOMISE ACCOUNT</p>
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label>
+				<label for="file">Profile Picture</label><br>
 				<input type="file" name="file" id="file"><br>
 				<input type="submit" name="submit" value="Submit">
-			</form>
-
+		</form><br><br>
+		
+		<form method="post" action="uploadbio.php">
+			<label for="file">Bio</label><br>
+   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
+  	 	 	<input type="submit" value="Submit">
+		</form>
 		</div>
+
 	</div>
 <div>
 <?php ;}
@@ -55,13 +79,19 @@ else if(isDev()){?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<form action="upload.php" method="post"
+			<p align="center">CUSTOMISE ACCOUNT</p>
+			<form action="uploadpicture.php" method="post"
 				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label>
+				<label for="file">Profile Picture</label><br>
 				<input type="file" name="file" id="file"><br>
 				<input type="submit" name="submit" value="Submit">
-			</form>
-
+		</form><br><br>
+		
+		<form method="post" action="uploadbio.php">
+			<label for="file">Bio</label><br>
+   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
+  	 	 	<input type="submit" value="Submit">
+		</form>
 		</div>
 		<div style="height:100px; width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
 			ADD CONTENT

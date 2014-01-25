@@ -35,9 +35,10 @@
     	<script type='text/javascript' src='js/camera.min.js'></script>
 	  	
 	  	<script src="js/header.js"></script>
-	  	<script src="js/displayLogic.js"></script>
+	  	<!--<script src="js/displayLogic.js"></script>-->
 	  	<script src="js/expandContent.js"></script>
 	  	<script src="js/changePage.js"></script>
+	  	<script src="js/getContentFilters.js"></script>
 		
 		<style>
 			body {
@@ -106,8 +107,12 @@
 									//IT DOESNT LOOK COMMENTED, BUT IT IS (LINE 117-118).
 																		 	
 									 echo	'<div id="accountImage">
- 											<img src="img/Digital-Abstract-HD-Background.jpg">
+ 											<img src="';
+ 											if($_SESSION['pic']!=''&& file_exists($_SESSION['pic'])){
+ 											echo $_SESSION['pic'];}else{echo 'img/Digital-Abstract-HD-Background.jpg';}; echo'">
  											</div>
+ 											
+											
  											<div id="accountDetails">
  											<h3>';echo $_SESSION['username']; echo'</h3>
  											<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
@@ -122,7 +127,7 @@
  						
  											<div class="clear" id="accountInfo">
  											<h3>My Bio</h3>
-	 										<p>';echo $_SESSION['bio']; echo'</p><br/>	 													
+	 										<p>';echo stripslashes($_SESSION['bio']); echo'</p><br/>	 													
 	 										
 	 										<!--<div><h3>Games:</h3></div><br/>
 	 										<div><h3>Wishlist:</h3></div><br/>-->
@@ -135,7 +140,21 @@
 								}
 							?> 
 						<a href="account.php" style="padding: 5px;">Account Settings</a><br>
-	 				</div>
+						</div>
+						<?php
+						include 'dVdA.php';
+						if(!isDev()){
+							if(!isMod()){
+								if(!isPremium()){
+									?>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-top:5px;"src="img/fantaad.png"/></div>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%;" src="img/subwayad.png"/></div>
+									<?php
+								}else{null;}
+							}else{null;}
+						}else{null;}
+						?>
+	 				
  				</div>
  				
  				<div class="rightContainer">
@@ -370,57 +389,57 @@
 	 						
 	 						<h3>Console</h3>
 	 						<br/>
-		 					<input class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Mac">Mac<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Linux">Linux<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="PS4">PS4<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="PS3">PS3<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Xbox One">Xbox One<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Xbox 360">Xbox 360<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Wii U">Wii U<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Wii">Wii<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="IOS">IOS<br>
-							<input class="checkboxFilter" type="checkbox" name="Console" value="Android">Android<br><br>
+		 					<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="PC">PC<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Mac">Mac<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Linux">Linux<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="PS4">PS4<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="PS3">PS3<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Xbox One">Xbox One<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Xbox 360">Xbox 360<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Wii U">Wii U<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Wii">Wii<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="IOS">IOS<br>
+							<input class="checkboxFilter checkboxFilterConsole" type="checkbox" name="Console" value="Android">Android<br><br>
 							
 							<h3>Genre</h3>
 							<br/>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Action">Action<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Adventure">Adventure<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Music">Music<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="MMO">MMO<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Puzzle">Puzzle<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="RPG">RPG<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Shooter">Shooter<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Sport">Sport<br>
-							<input class="checkboxFilter" type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Action">Action<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Adventure">Adventure<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Music">Music<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="MMO">MMO<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Puzzle">Puzzle<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="RPG">RPG<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Shooter">Shooter<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Sport">Sport<br>
+							<input class="checkboxFilter checkboxFilterGenre" type="checkbox" name="Genre" value="Strategy">Strategy<br><br>
 							
 							<h3>Release</h3>
 							<br/>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="BETA">BETA<br>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="2013">2013<br>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="2012">2012<br>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="2011">2011<br>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="2010">2010<br>
-							<input class="checkboxFilter" type="checkbox" name="Release" value="2009-">2009-<br><br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="BETA">BETA<br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="2014">2014<br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="2013">2013<br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="2012">2012<br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="2011">2011<br>
+							<input class="checkboxFilter checkboxFilterYear" type="checkbox" name="Release" value="pre2010">2010-<br><br>
 							
 							<h3>Star Rating</h3>
 							<br/>
-							<input class="checkboxFilter" type="checkbox" name="Rating" value="5Stars">&#9733;&#9733;&#9733;&#9733;&#9733;<br>
-							<input class="checkboxFilter" type="checkbox" name="Rating" value="4Stars">&#9733;&#9733;&#9733;&#9733;<br>
-							<input class="checkboxFilter" type="checkbox" name="Rating" value="3Stars">&#9733;&#9733;&#9733;<br>
-							<input class="checkboxFilter" type="checkbox" name="Rating" value="2Stars">&#9733;&#9733;<br>
-							<input class="checkboxFilter" type="checkbox" name="Rating" value="1Stars">&#9733;<br><br>
+							<input class="checkboxFilter checkboxFilterStars" type="checkbox" name="Rating" value="5Stars">&#9733;&#9733;&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter checkboxFilterStars" type="checkbox" name="Rating" value="4Stars">&#9733;&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter checkboxFilterStars" type="checkbox" name="Rating" value="3Stars">&#9733;&#9733;&#9733;<br>
+							<input class="checkboxFilter checkboxFilterStars" type="checkbox" name="Rating" value="2Stars">&#9733;&#9733;<br>
+							<input class="checkboxFilter checkboxFilterStars" type="checkbox" name="Rating" value="1Stars">&#9733;<br><br>
 							
 							<h3>Price</h3>
 							<br/>
-							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00+">£25.00<br>
-							<input class="checkboxFilter" type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
-							<input class="checkboxFilter" type="checkbox" name="Price" value="£15.00-">£15.00-<br>
-							<input class="checkboxFilter" type="checkbox" name="Price" value="Free">Free<br><br>
+							<input class="checkboxFilter checkboxFilterPrice" type="checkbox" name="Price" value="£25.00+">£25.00<br>
+							<input class="checkboxFilter checkboxFilterPrice" type="checkbox" name="Price" value="£25.00-£15.00">£25.00-£15.00<br>
+							<input class="checkboxFilter checkboxFilterPrice" type="checkbox" name="Price" value="£15.00-">£15.00-<br>
+							<input class="checkboxFilter checkboxFilterPrice" type="checkbox" name="Price" value="Free">Free<br><br>
 							
-							<h3>Staff Pick</h3>
+							<h3>Staff Picks</h3>
 							<br/>
-							<input class="checkboxFilter" type="checkbox" name="Staff" value="Staff">Staff Pick<br>
+							<input class="checkboxFilter checkboxFilterStaff" type="checkbox" name="Staff" value="Staff">Staff Picks<br>
 							
 		 				</div>
 		 			</div>

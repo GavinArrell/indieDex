@@ -42,7 +42,7 @@ html, body{
  					</div>
  					
  					<div id="leftSidebar">
-
+ 						
 								<?php
 									require 'core.inc.php';
 									require 'connect.inc.php';
@@ -53,23 +53,36 @@ html, body{
 											//COMMENTED OUT GAMES BADGE AND WISHLIST UNTIL FEATURE IS IMPLEMENTED. BECAUSE IT'S IN THE ECHO
 											//IT DOESNT LOOK COMMENTED, BUT IT IS (LINE 117-118).
 																				 	
-											 	echo	'<div id="accountImage">
- 														<img src="';
- 														if($_SESSION['pic']!=''&& file_exists($_SESSION['pic'])){
- 														echo $_SESSION['pic'];}else{echo 'img/Digital-Abstract-HD-Background.jpg';}; echo'">
- 														</div>
- 														<div id="accountDetails">
- 														<h3>';echo $_SESSION['username']; echo'</h3>
- 														</div>
+									 echo	'<div id="accountImage">
+ 											<img src="';
+ 											if($_SESSION['pic']!=''&& file_exists($_SESSION['pic'])){
+ 											echo $_SESSION['pic'];}else{echo 'img/Digital-Abstract-HD-Background.jpg';}; echo'">
+ 											</div>
+ 											
+											
+ 											<div id="accountDetails">
+ 											<h3>';echo $_SESSION['username']; echo'</h3>
+ 											<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
+ 											';$status = $_SESSION['status'];
+	 										if($status==0){echo'Non-Premium account';}
+											else if($status==1){echo'Premium Account';}
+											else if($status==2){echo'Moderator';}
+											else if($status==3){echo 'Developer';}
+											else{null;}
+											echo '</p>
+ 											</div>
  						
- 														<div class="clear" id="accountInfo">
- 														<h3>My Bio</h3>
-	 													<p>';echo $_SESSION['bio']; echo'</p><br/>
-	 													<!--<div><h3>Games:</h3></div><br/>
-	 													<div><h3>Wishlist:</h3></div><br/>-->
-	 													<div><h3>Karma: ';echo $_SESSION['karma']; echo'</h3></div><br>
-	 													<a href="logout.php">Logout</a><br>
-	 													</div></div>';
+ 											<div class="clear" id="accountInfo">
+ 											<h3>My Bio</h3>
+	 										<p>';echo stripslashes($_SESSION['bio']); echo'</p><br/>	 													
+	 										
+	 										<!--<div><h3>Games:</h3></div><br/>
+	 										<div><h3>Wishlist:</h3></div><br/>-->
+	 										
+	 										<a href="logout.php">Logout</a><br>
+	 										</div></div>';
+	 										
+									
 												
 												
 												}
@@ -77,10 +90,13 @@ html, body{
 													include 'loginform.inc.php';
 													
 													?>
+						</div><br>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-bottom:5px;"src="img/fantaad.png"/></div>
+									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-bottom:5px;"src="img/subwayad.png"/></div>
 </div>
-</div>
+
 <div class="rightContainer">
-<div style="background-color: white; opacity:0.9; width:175px; padding:5px; font-family:"MS Sans Serif", Geneva, sans-serif; ">
+<div style="background-color: white; opacity:0.9; width:200px; padding:5px; font-family:"MS Sans Serif", Geneva, sans-serif; ">
 <h3>Sign Up</h3><br>
 													<?php
 									
