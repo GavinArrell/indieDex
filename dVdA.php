@@ -1,7 +1,7 @@
 <?php
 function dVdA(){
 	
-if(isFreemium()){?>
+if(isFreemium()){ ?>
 </div>
 	<div class="rightContainer">
 		<div style="height:100px; width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
@@ -17,9 +17,9 @@ if(isFreemium()){?>
 		</div>
 	</div>
 <div>
-<?php;}
+<?php ;}
 
-else if(isPremium()){?>
+else if(isPremium()){ ?>
 </div>
 	<div class="rightContainer">
 		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
@@ -33,7 +33,7 @@ else if(isPremium()){?>
 		</div>
 	</div>
 <div>
-<?php;}
+<?php ;}
 
 else if(isMod()){?>
 </div>
@@ -49,7 +49,7 @@ else if(isMod()){?>
 		</div>
 	</div>
 <div>
-<?php;}
+<?php ;}
 
 else if(isDev()){?>
 </div>
@@ -68,7 +68,7 @@ else if(isDev()){?>
 		</div>
 	</div>
 <div>
-<?php;}
+<?php ;}
 
 }
 
