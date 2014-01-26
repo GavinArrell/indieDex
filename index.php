@@ -97,7 +97,7 @@
  										
 										
  										<div id="accountDetails">
- 										<h3>';echo $_SESSION['username']; echo'</h3>
+ 										<br><h3>';echo $_SESSION['username']; echo'</h3>
  										<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
  										';$status = $_SESSION['status'];
 										if($status==0){echo'Non-Premium account';}
@@ -122,7 +122,7 @@
 								include 'loginform.inc.php';
 							}
 						?> 
-					<a href="account.php" style="padding: 5px;">Account Settings</a><br>
+					<a style="padding-left:16px;"href="account.php">Account Settings</a><br>
 					</div>
 					
 					<?php
