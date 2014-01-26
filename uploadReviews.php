@@ -56,26 +56,26 @@ if(!empty($path) && !empty($title) && !empty($intro)){
 	
 $title = addslashes($title);
 $intro = addslashes($intro);
-$title = addslashes($title1);
-$intro = addslashes($intro1);
-$title = addslashes($title2);
-$intro = addslashes($intro2);
-$title = addslashes($title3);
-$intro = addslashes($intro3);
-$title = addslashes($title4);
-$intro = addslashes($intro4);
-$title = addslashes($title5);
-$intro = addslashes($intro5);
-$title = addslashes($title6);
-$intro = addslashes($intro6);
-$title = addslashes($title7);
-$intro = addslashes($intro7);
-$title = addslashes($title8);
-$intro = addslashes($intro8);
-$title = addslashes($title9);
-$intro = addslashes($intro9);
-$title = addslashes($title10);
-$intro = addslashes($intro10);
+$title1 = addslashes($title1);
+$intro1 = addslashes($intro1);
+$title2 = addslashes($title2);
+$intro2 = addslashes($intro2);
+$title3 = addslashes($title3);
+$intro3 = addslashes($intro3);
+$title4 = addslashes($title4);
+$intro4 = addslashes($intro4);
+$title5 = addslashes($title5);
+$intro5 = addslashes($intro5);
+$title6 = addslashes($title6);
+$intro6 = addslashes($intro6);
+$title7 = addslashes($title7);
+$intro7 = addslashes($intro7);
+$title8 = addslashes($title8);
+$intro8 = addslashes($intro8);
+$title9 = addslashes($title9);
+$intro9 = addslashes($intro9);
+$title10 = addslashes($title10);
+$intro10 = addslashes($intro10);
 
 $price = $_POST['price'];
 if($price >= 0){}else{$price = ''; }
@@ -125,9 +125,11 @@ if(isset($_POST['beta'])){$year = 'beta';}
 
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore"><h3>';
 $content = $content.$title1.'</h3><p>'.$intro1.'</p><h3>'.$title2.'</h3><p>'.$intro2.'</p><h3>'.$title3.'</h3><p>'.$intro3.'</p><h3>'.$title4.'</h3><p>'.$intro4.'</p><h3>'.$title5.'</h3><p>'.$intro5.'</p><h3>';
-$content = $content.$title6.'</h3><p>'.$intro6.'</p><h3>'.$title7.'</h3><p>'.$intro7.'</p><h3>'.$title8.'</h3><p>'.$intro8.'</p><h3>'.$title9.'</h3><p>'.$intro9.'</p><h3>'.$title10.'</h3><p>'.$intro10.'</p><h3>';
+$content = $content.$title6.'</h3><p>'.$intro6.'</p><h3>'.$title7.'</h3><p>'.$intro7.'</p><h3>'.$title8.'</h3><p>'.$intro8.'</p><h3>'.$title9.'</h3><p>'.$intro9.'</p><h3>'.$title10.'</h3><p>'.$intro10.'</p>';
 $content = $content.'</div><p class="readMore">Read More</p></div>';
 
+$content = str_replace("<h3></h3>", "", $content);
+$content = str_replace("<p></p>", "", $content);
 
 $query = "INSERT INTO contentreviews_table (title, content, consoles, genres, year, stars, price, staff)
 VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";

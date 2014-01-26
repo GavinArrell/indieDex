@@ -1,0 +1,130 @@
+#accountInfoContainer {
+	background-color: white;
+	width: 100%;
+	min-height: 398px;
+}
+
+#accountInfoLeft {
+	float: left;
+	width: 40%;
+	margin: 5px;
+}
+
+#accountInfoPic {
+	border: solid 2px black;
+	border-radius: 20px;
+	width: 384px;
+	height: 384px;
+}
+
+#accountInfoRight {
+	padding-top: 32px;
+}
+
+#accountInfoDetails {
+	display: inline-block;
+	padding-left: 16px;
+}
+
+#accountInfoRight ul li {
+	padding-bottom: 5px;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+#accountInfoRight h3 {
+	padding: 16px 0px 5px 0px;
+}
+#accountInfoBio {	
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+#accountInfoEdit {
+	width: 100%;
+	background-color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#accountInfoEditLeft{
+	float:left;
+	width:50%;
+	margin:5px;
+}
+
+/*========= ACCOUNT MANAGEMENT EDIT INFO ==========*/
+#accountInfoEditTable {
+	width: 100%;
+	clear: both;
+	margin-top: 16px;
+}
+
+#accountInfoEditTable td {
+	padding: 16px;
+}
+#accountinfoEditTable td label {
+	display: block;
+	font-size: 20px;
+	line-height: 24px;
+}
+.accountManagementSubmit {
+	text-align: center;
+}
+
+/*========= ACCOUNT MANAGEMENT ACCOUNT STATUS ==========*/
+#accountStatus {
+	width: 100%;
+	clear: both;
+	margin-top: 16px;
+}
+
+#accountStatusDetailsContainer {
+	width: 90%;
+	margin: auto;
+	border-bottom: solid 2px #B0CEF5;
+}
+
+#accountStatusDetailsTable {
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 5px;
+}
+#accountStatusDetailsTable tr td {
+	text-align: center;
+}
+
+
+/*========= ACCOUNT MANAGEMENT HEADER BUTTONS ==========*/
+#accountManagementButtonContainer {
+	height: 48px;
+	
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.accountManagementButton {
+	float: left;
+	width: 25%;
+	height: 48px;
+	cursor: pointer;
+	
+	background-color: #111111;
+	border-bottom: solid 4px #111111;
+	
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 48px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+.accountManagementButton:hover {
+	border-color: #B0CEF5;
+	color: #B0CEF5;
+}
+.accountManagementButton:active {
+	border-color: orange;
+	color: orange;
+}

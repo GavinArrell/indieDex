@@ -2,6 +2,7 @@
 require 'core.inc.php';
 require 'connect.inc.php';
 require 'picturename.php';
+function uploadPicture(){
 if (empty($_FILES['file']['name'])){header('Location: account.php');}else{
 if(changeName()){
 		
@@ -11,8 +12,8 @@ if(changeName()){
 		if(!empty($picture)){
 				$updateQuery = "UPDATE users_table SET `profile picture` = '$picture' WHERE `username` = '$username'";
     			mysql_query($updateQuery) or die("Error: ".mysql_error());
-				header('Location: account.php');
+				reutrn;
 		}else{echo 'error';}
 			}else
-{echo 'error';}}
+{echo 'error';}}}
 ?>

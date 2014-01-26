@@ -1,103 +1,136 @@
 <?php
 function dVdA(){
 	
-if(isFreemium()){ ?>
-</div>
+if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
+	<link rel="stylesheet" type="text/css" href="css/account.css"/>
+	<link rel="stylesheet" type="text/css" href="css/button.css"/>
+	<script type='text/javascript' src="js/accountManagement.js"></script>
+	
+	</div>
+	
 	<div class="rightContainer">
-			<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-				<a  href="https://donate.childsplaycharity.org/">
-				<p align="center">UPGRADE TO PREMIUM</p><img style="width:100%;"src="img/childsplay.png"/></a>
+		
+		<div id='accountInfoContainer'>
+			
+			<div id='accountInfoLeft'>
+				<img src="<?php echo $_SESSION['pic']; ?>" id='accountInfoPic'>
 			</div>
 			
+			<div id='accountInfoRight'>
+				<h2><?php echo $_SESSION['firstname']." ".$_SESSION['surname']; ?></h2>
+				<div id="accountInfoDetails">
+					<ul>
+						<li>@<?php echo $_SESSION['username']; ?></li>
+						<li>Karma: <?php echo $_SESSION['karma']; ?></li>
+						<li>Joined: <?php echo $_SESSION['joindate']; ?></li>
+					</ul>
+					<h3>My Bio</h3>
+					<p id="accountInfoBio"><?php echo $_SESSION['bio']; ?></p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="accountInfoEdit">
 			
-		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<p align="center">CUSTOMISE ACCOUNT</p>
-			<form action="uploadpicture.php" method="post"
-				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label><br>
-				<input type="file" name="file" id="file"><br>
-				<input type="submit" name="submit" value="Submit">
-		</form><br><br>
+			<div id="#accountManagementButtonContainer">
+				<div class="accountManagementButton" id="1">edit info</div>
+				<div class="accountManagementButton" id="2">notifications</div>
+				<div class="accountManagementButton" id="3">message board</div>
+				<div class="accountManagementButton" id="4">account status</div>
+			</div>
+			
+			<table id="accountInfoEditTable">
+				<tr>
+					<td>
+						<form action="uploadInfoEdit.php" method="post" enctype="multipart/form-data">
+							<label for="file">Change Your Profile Picture</label>
+							<input type="file" name="file" id="file"><br><br>
+							
+							<label for="file">Edit Your Bio</label>
+			   				<textarea style=" resize:none; height:100px; width:300px;" type="text" name="bio"></textarea><br>
+					</td>
+					
+					<td>
+							
+					</td>
+					
+					<td>
+							<label for="file">Change Your Password</label>
+			   				Old Password:<input style="margin-left:6px;" input type="password" name="oldpw"><br>
+			   				New Password:<input type="password" name="newpw"><br>
+			   				New Password:<input type="password" name="newpwtwo"><br>
+							<br><br>
+							<label for="file">Change Your E-mail</label><br>
+			   				Change Email<input style="margin-left:8px;" type="text" name="email"><br>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="3" class="accountManagementSubmit">
+							<input type="submit" value="Submit">
+						</form>
+					</td>
+				</tr>
+			</table>
+			
+			<div id="accountStatus">
+				
+				<!--
+				account status
+				member since
+				pay date
+				
+				upgrade
+				-->
+				
+				<?php 
+				function convertStatus($status) {
+					switch($status) {
+						case 0 : return "Non-Premimum";
+						case 1 : return "Premimum";
+						case 2 : return "Moderator";
+						case 3 : return "Developer";
+					}
+				}
+				?>
+				
+				<div id="accountStatusDetailsContainer">
+					<table id="accountStatusDetailsTable">
+						<tr>
+							<td><h3>Account Status: <?php echo convertStatus($_SESSION['status']); ?></h3></td>
+							<td><h3>Premium Since: N/A</h3></td>
+							<td><h3>Next Pay Date: N/A</h3></td>
+						</tr>
+					</table>
+				</div>
+			
+				<?php ;}
 		
-		<form method="post" action="uploadbio.php">
-			<label for="file">Bio</label><br>
-   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
-  	 	 	<input type="submit" value="Submit">
-		</form>
+				if(isFreemium()){ ?>
+					<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
+						<p align="center">UPGRADE TO PREMIUM</p>
+						<form action="changeMembershipStatus.php" method="get">
+							<div style=" width:50%; line-height:32px; padding-left:16px;">
+								Premium Cost = £1/per month <br>
+								Name on Card:<input type="text" name="text" value="" style="float:right;"><br>
+								Card Number:<input type="text" name="text" value="" style="float:right;"><br>
+								Expiry Date:<input type="text" name="text" value="" style="float:right;"><br>
+								CV Number:<input type="text" name="text" value="" style="float:right;"><br>
+								<input type="hidden" name="status" value"1">
+								<input type="submit" name="submit" value="Submit">
+							</div>
+						</form>
+					</div>
+					
+				<?php ;} ?>	
+				
+			</div>
+				
 		</div>
 	</div>
-<div>
-<?php ;}
+	
 
-else if(isPremium()){ ?>
-</div>
-	<div class="rightContainer">
-		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<p align="center">CUSTOMISE ACCOUNT</p>
-			<form action="uploadpicture.php" method="post"
-				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label><br>
-				<input type="file" name="file" id="file"><br>
-				<input type="submit" name="submit" value="Submit">
-		</form><br><br>
-		
-		<form method="post" action="uploadbio.php">
-			<label for="file">Bio</label><br>
-   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
-  	 	 	<input type="submit" value="Submit">
-		</form>
-		</div>
-
-	</div>
-<div>
-<?php ;}
-
-else if(isMod()){?>
-</div>
-	<div class="rightContainer">
-		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<p align="center">CUSTOMISE ACCOUNT</p>
-			<form action="uploadpicture.php" method="post"
-				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label><br>
-				<input type="file" name="file" id="file"><br>
-				<input type="submit" name="submit" value="Submit">
-		</form><br><br>
-		
-		<form method="post" action="uploadbio.php">
-			<label for="file">Bio</label><br>
-   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
-  	 	 	<input type="submit" value="Submit">
-		</form>
-		</div>
-
-	</div>
-<div>
-<?php ;}
-
-else if(isDev()){?>
-</div>
-	<div class="rightContainer">
-		<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
-			<p align="center">CUSTOMISE ACCOUNT</p>
-			<form action="uploadpicture.php" method="post"
-				enctype="multipart/form-data">
-				<label for="file">Profile Picture</label><br>
-				<input type="file" name="file" id="file"><br>
-				<input type="submit" name="submit" value="Submit">
-		</form><br><br>
-		
-		<form method="post" action="uploadbio.php">
-			<label for="file">Bio</label><br>
-   			<textarea style="height:100px; width:300px;" type="text" name="name"></textarea><br>
-  	 	 	<input type="submit" value="Submit">
-		</form>
-		</div>
-	</div>
-<div>
-<?php ;}
-
-}
+<?php }
 
 function isDev(){
 	@$status = $_SESSION['status'];

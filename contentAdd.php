@@ -7,7 +7,7 @@ if (isDev()){
 			<h3>ADD NEWS CONTENT</h3><br>
 			<div class="contentMore" style="padding:5px; margin:5px;">
 				
-<form action="uploadReviews.php" method="post"
+<form action="uploadNews.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Image</label>
 				<input type="file" name="file" id="file"><br><br>
@@ -307,7 +307,7 @@ if (isDev()){
 			<h3>ADD GAMES CONTENT</h3><br>
 			<div class="contentMore" style="padding:5px; margin:5px;">
 				
-<form action="uploadReviews.php" method="post"
+<form action="uploadGames.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Image</label>
 				<input type="file" name="file" id="file"><br><br>

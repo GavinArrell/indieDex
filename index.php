@@ -269,7 +269,7 @@
  			
  			</div> <!-- RIGHT CONTAINER TWO -->
  				
-			<header>
+			<header class=".headerFixed">
 				<div class="headerChild">
 					<a href="index.php"><div class="headerButton">Home</div></a>
 					

@@ -10,29 +10,17 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/account.css"/>
 		
 		<!-- SCRIPTS -->
 		<script src="js/libs/jquery-1.6.2.js"></script>
 	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	  	
 	  	<script src="js/header.js"></script>
-	  	<script src="js/displayLogic.js"></script>
 	  	<script src="js/expandContent.js"></script>
   	</head>
   	
-
-<style>
-html, body{
-	background-image:url("img/mLOQIBN - Imgur.jpg");
-		  }
-</style>
 	<body>
-		<div id="wrapper">
-			
-	
-				<!--END OF TOP TAB?-->
-			
-
  			<div id="containerDeev">
  				
  				<div id="leftContainer">
@@ -91,41 +79,41 @@ html, body{
 													
 													?>
 						</div><br>
-									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-bottom:5px;"src="img/fantaad.png"/></div>
-									<div style="margin:auto; width:95%; opacity:0.9;"><img style="width:100%; margin-bottom:5px;"src="img/subwayad.png"/></div>
+						<div style="margin:auto; width:95%; opacity:0.95;"><img style="width:100%; margin-bottom:5px;"src="img/fantaad.png"/></div>
+						<div style="margin:auto; width:95%; opacity:0.95;"><img style="width:100%; margin-bottom:5px;"src="img/subwayad.png"/></div>
 </div>
 
-<div class="rightContainer">
-<div style="background-color: white; opacity:0.9; width:200px; padding:5px; font-family:"MS Sans Serif", Geneva, sans-serif; ">
-<h3>Sign Up</h3><br>
-													<?php
+			<div class="rightContainer">
+			<div style="background-color: white; opacity:0.9; width:200px; padding:5px; font-family:"MS Sans Serif", Geneva, sans-serif; ">
+			<h3>Sign Up</h3><br>
+					<?php
 									
-	if(isset($_POST['username'])&& isset($_POST['password'])&& isset($_POST['password_again']) &&isset($_POST['firstname']) &&isset($_POST['surname']) &&isset($_POST['email'])){
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$password_again = $_POST['password_again'];
-		$firstname = $_POST['firstname'];
-		$surname = $_POST['surname'];
-		$email = $_POST['email'];
-			
-			if(!empty($username) && !empty($password) && !empty($password_again) && !empty($firstname) && !empty($surname) && !empty($email)){
-				if($password!=$password_again){ echo 'Passwords do not match';}
-				else {
-					
-					
-					$query = "SELECT `username` FROM `users_table` WHERE `username`='$username'";
-					$query_run = mysql_query($query);
-					
-					if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
-					else{
-						$password_hash = md5($password); 
-						$query = "INSERT INTO `users_table` VALUES ('','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password_hash)."','".mysql_real_escape_string($email)."','','".mysql_real_escape_string($firstname)."','".mysql_real_escape_string($surname)."','','','','','','')";
-								if	($query_run = mysql_query($query)){
-									echo'Process Complete, you may Login.';
-								}else{
-									echo 'Sorry, we could not process your request. Try again later.';
-								}
-					}
+						if(isset($_POST['username'])&& isset($_POST['password'])&& isset($_POST['password_again']) &&isset($_POST['firstname']) &&isset($_POST['surname']) &&isset($_POST['email'])){
+							$username = $_POST['username'];
+							$password = $_POST['password'];
+							$password_again = $_POST['password_again'];
+							$firstname = $_POST['firstname'];
+							$surname = $_POST['surname'];
+							$email = $_POST['email'];
+								
+								if(!empty($username) && !empty($password) && !empty($password_again) && !empty($firstname) && !empty($surname) && !empty($email)){
+									if($password!=$password_again){ echo 'Passwords do not match';}
+									else {
+										
+										
+										$query = "SELECT `username` FROM `users_table` WHERE `username`='$username'";
+										$query_run = mysql_query($query);
+										
+										if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
+										else{
+											$password_hash = md5($password); 
+											$query = "INSERT INTO `users_table` VALUES ('','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password_hash)."','".mysql_real_escape_string($email)."','','".mysql_real_escape_string($firstname)."','".mysql_real_escape_string($surname)."','','','','','','')";
+													if	($query_run = mysql_query($query)){
+														echo'Process Complete, you may Login.';
+													}else{
+														echo 'Sorry, we could not process your request. Try again later.';
+													}
+										}
 					
 					
 				}

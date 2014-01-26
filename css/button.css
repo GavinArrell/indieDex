@@ -12,3 +12,25 @@
 }
 .button:hover {border-color: #B0CEF5;}
 .button:active {border-color: #7EA9E0;}
+
+.headerButtons {
+	float: left;
+	width: 33.1%;
+	height: 48px;
+	
+	background-color: #040404;
+	border: solid #D9D9D9;
+	border-width: 1px 1px 2px 1px;
+	
+	line-height: 48px;
+	
+	font-family: Geneva, sans-serif;
+	font-size: 24px;
+	
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+.headerButtonContainer {
+	margin: auto;
+}

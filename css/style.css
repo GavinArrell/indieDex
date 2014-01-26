@@ -70,7 +70,7 @@ html, body{
 .rightContainer{
 	float:right;
 	min-width:720px;
-	width:80%;	
+	width:80%;
 				}
 				
 #rightContainerTwo{
@@ -169,7 +169,7 @@ h2 {
 h3 {
 	font-family:"MS Sans Serif", Geneva, sans-serif;
 	font-size: 18px;
-	color: black;
+	color black;
 	padding-left: 16px;
 }
 a {

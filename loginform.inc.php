@@ -22,12 +22,20 @@
 					$karma = mysql_result($query_run, 0, 'karma');
 					$status = mysql_result($query_run, 0, 'status');
 					$picture = mysql_result($query_run, 0, 'profile picture');
+					$firstname = mysql_result($query_run, 0, 'first name');
+					$surname = mysql_result($query_run, 0, 'surname');
+					$joindate = mysql_result($query_run, 0, 'join date');
+					$email = mysql_result($query_run, 0, 'email');
 					$_SESSION['user_id']=$user_id;
 					$_SESSION['username']=$username;
 					$_SESSION['bio']=$bio;
 					$_SESSION['karma']=$karma;
 					$_SESSION['status']=$status;
 					$_SESSION['pic']=$picture;
+					$_SESSION['firstname']=$firstname;
+					$_SESSION['surname']=$surname;
+					$_SESSION['joindate']=$joindate;
+					$_SESSION['email']=$email;
 					header('Location: index.php');
 				}
 			}
