@@ -7,6 +7,7 @@ $(document).ready(function() {
 	currentPage = 0;
 	lastPage = 0;
 	
+	
 	//get current table
 	switch(general_getCurrentFileNameNoType()) {
 		case "index"   : currentTable = "contentnews_table";   break;
@@ -15,27 +16,23 @@ $(document).ready(function() {
 		default : currentTable = "contentnews_table"; break;
 	}
 	
-	getLastPage();
-	updatePageNumbers();
-
-	$('#pageButtonFirst').click(function() {gotoPage(0); updatePageNumbers();});
-	$('#pageButton1').click(function() {movePage(0); updatePageNumbers();});
-	$('#pageButton2').click(function() {movePage(1); updatePageNumbers();});
-	$('#pageButton3').click(function() {movePage(2); updatePageNumbers();});
-	$('#pageButton4').click(function() {movePage(3); updatePageNumbers();});
-	$('#pageButton5').click(function() {movePage(4); updatePageNumbers();});
-	$('#pageButtonLast').click(function() {gotoPageIndex(lastPage); updatePageNumbers();});
-	$('#pageButtonIndex').click(function() {startCustomPageMove(); updatePageNumbers();});
+	$('#pageButtonFirst').click(function() {gotoPage(0, true); currentPage = 0;});
+	$('#pageButton1').click(function() {movePage(0);});
+	$('#pageButton2').click(function() {movePage(1);});
+	$('#pageButton3').click(function() {movePage(2);});
+	$('#pageButton4').click(function() {movePage(3);});
+	$('#pageButton5').click(function() {movePage(4);});
+	$('#pageButtonLast').click(function() {gotoPage(lastPage-1, true); currentPage = lastPage-1;});
+	$('#pageButtonIndex').click(function() {startCustomPageMove();});
 });
 
-function gotoPage(index) {
-	$('html, body').animate({scrollTop: 250}, 'slow');
+function gotoPage(index, jump) {
+	if(jump) {$('html, body').animate({scrollTop: 250}, 'slow');}
 	$.ajax({
 		type: 'POST',
 		url: '../showcontent.php',
 		data: {
-			value: index,
-			action: "gotoPage",
+			index: index,
 			table: currentTable,
 			order: getContentFilterOrder(),
 			consoleFilters: getContentConsoleFilters(),
@@ -43,10 +40,16 @@ function gotoPage(index) {
 			yearFilters: getContentYearFilters(),
 			starFilters: getContentStarFilters(),
 			priceFilters: getContentPriceFilters(),
-			staffFilters: getContentStaffFilters()
+			staffFilters: getContentStaffFilters(),
+			titleSearch: queryDB_getSearch()
 		},
-		success: function(data) {
-			var htmlString = data != "" ? data : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';			
+		success: function(response) {
+			data = JSON.parse(response);			
+			var htmlString = data[0] != "" ? data[0] : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';
+			
+			lastPage = data[1];
+			updatePageNumbers();
+			
 			$('#contentItemContainer').html(htmlString);
 			$('.contentMore').hide();
 		},
@@ -63,23 +66,23 @@ function movePage(buttonID) {
 		if(buttonID < lastPage) {temp = buttonID;}
 		else {temp = lastPage-1;}
 		
-		gotoPage(temp);
+		gotoPage(temp, true);
 		currentPage = temp;
 		return;
 	}
 	
 	if(currentPage > lastPage-5) {
-		gotoPage(lastPage-4+buttonID);
+		gotoPage(lastPage-4+buttonID, true);
 		currentPage = lastPage-4+buttonID;
 		return;
 	}
 
 	switch(buttonID) {
-		case 0: gotoPage(currentPage-2); currentPage -= 2; break;
-		case 1: gotoPage(currentPage-1); currentPage -= 1; break;
-		case 2: gotoPage(currentPage);                     break;
-		case 3: gotoPage(currentPage+1); currentPage += 1; break;
-		case 4: gotoPage(currentPage+2); currentPage += 2; break;
+		case 0: gotoPage(currentPage-2, true); currentPage -= 2; break;
+		case 1: gotoPage(currentPage-1, true); currentPage -= 1; break;
+		case 2: gotoPage(currentPage, true);                     break;
+		case 3: gotoPage(currentPage+1, true); currentPage += 1; break;
+		case 4: gotoPage(currentPage+2, true); currentPage += 2; break;
 	}
 }
 
@@ -90,8 +93,8 @@ function startCustomPageMove() {
 	else if(index < 1)     {alert("You must enter a positive value.");}
 	else if(parseFloat(index) != parseInt(index)) {alert("You must enter a whole number.");}
 	else {
-		if(index > lastPage) {index = lastPage;}
-		gotoPage(index-1);
+		if(index > lastPage) {alert("We don't have that many pages!\r\nTaking you to page "+lastPage+" instead."); index = lastPage;}
+		gotoPage(index-1, true);
 		currentPage = index-1;
 	}
 }
@@ -101,16 +104,8 @@ function getLastPage() {
 		type: 'POST',
 		url: '../showcontent.php',
 		data: {
-			value: -1,
 			action: "getLastPage",
-			table: currentTable,
-			order: -1,
-			consoleFilters: -1,
-			genreFilters: -1,
-			yearFilters: -1,
-			starFilters: -1,
-			priceFilters: -1,
-			staffFilters: -1
+			table: currentTable
 		},
 		async: false,
 		success: function(data) {
@@ -162,27 +157,27 @@ function highlightCurrentPage() {
 	
 	if(currentPage < 2) {
 		switch(currentPage) {
-			case 0 : $('#pageButton1').css("background-color", "#999999"); return;
-			case 1 : $('#pageButton2').css("background-color", "#999999"); return;
+			case 0 : $('#pageButton1').addClass("pageButtonSelected"); return;
+			case 1 : $('#pageButton2').addClass("pageButtonSelected"); return;
 			default: break;
 		}
 	}
 	
 	if(currentPage > lastPage-3) {
 		switch(currentPage) {
-			case lastPage-2 : $('#pageButton4').css("background-color", "#999999"); return;
-			case lastPage-1 : $('#pageButton5').css("background-color", "#999999"); return;
+			case lastPage-2 : $('#pageButton4').addClass("pageButtonSelected"); return;
+			case lastPage-1 : $('#pageButton5').addClass("pageButtonSelected"); return;
 			default: break;
 		}
 	}
 	
-	$('#pageButton3').css("background-color", "#999999");
+	$('#pageButton3').addClass("pageButtonSelected");
 }
 
 function clearHighlighting() {
-	$('#pageButton1').css("background-color", "#FFFFFF");
-	$('#pageButton2').css("background-color", "#FFFFFF");
-	$('#pageButton3').css("background-color", "#FFFFFF");
-	$('#pageButton4').css("background-color", "#FFFFFF");
-	$('#pageButton5').css("background-color", "#FFFFFF");
+	$('#pageButton1').removeClass("pageButtonSelected");
+	$('#pageButton2').removeClass("pageButtonSelected");
+	$('#pageButton3').removeClass("pageButtonSelected");
+	$('#pageButton4').removeClass("pageButtonSelected");
+	$('#pageButton5').removeClass("pageButtonSelected");
 }

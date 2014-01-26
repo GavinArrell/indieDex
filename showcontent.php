@@ -2,80 +2,52 @@
 require 'core.inc.php';
 require 'connect.inc.php';
 
-$resultsStartNo = 0;
-$resultsToShow  = 9;
+//START
+if(!isset($_POST['table']))          {echo mysqli_error; return false;} else {$table  = $_POST['table'];  } //VITAL
 
-$query = "SELECT * FROM `content-index_table` ORDER BY `id` DESC LIMIT '$resultsStartNo', '$resultsToShow'";
+if(!isset($_POST['index']))          {$index          = 0;       } else {$index          = $_POST['index'];          }
+if(!isset($_POST['order']))          {$order          = "";      } else {$order          = $_POST['order'];          }
 
-if(checkisset()) {
+if(!isset($_POST['consoleFilters'])) {$consoleFilters = "";      } else {$consoleFilters = $_POST['consoleFilters']; }
+if(!isset($_POST['genreFilters']))   {$genreFilters   = "";      } else {$genreFilters   = $_POST['genreFilters'];   }
+if(!isset($_POST['yearFilters']))    {$yearFilters    = "";      } else {$yearFilters    = $_POST['yearFilters'];    }
+if(!isset($_POST['starFilters']))    {$starFilters    = "";      } else {$starFilters    = $_POST['starFilters'];    }
+if(!isset($_POST['priceFilters']))   {$priceFilters   = "";      } else {$priceFilters   = $_POST['priceFilters'];   }
+if(!isset($_POST['staffFilters']))   {$staffFilters   = "";      } else {$staffFilters   = $_POST['staffFilters'];   }
 
-	$value   = $_POST['value'];
-    $action  = $_POST['action'];
-	$table   = $_POST['table'];
-	$order   = $_POST['order'];
-	$consoleFilters = $_POST['consoleFilters'];
-	$genreFilters   = $_POST['genreFilters'];
-	$yearFilters    = $_POST['yearFilters'];
-	$starFilters    = $_POST['starFilters'];
-	$priceFilters   = $_POST['priceFilters'];
-	$staffFilters   = $_POST['staffFilters'];
-	
-    switch($action) {
-        case 'gotoPage'    : gotoPage($value, $table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters); break;
-		case 'getLastPage' : getLastPage($table); break;
-    }
-	
-} else echo mysql_error;
+if(!isset($_POST['titleSearch']))    {$titleSearch    = "";      } else {$titleSearch    = $_POST['titleSearch'];    }
 
-function checkisset() {
-	
-	if(!isset($_POST['value']))          {echo "checkisset1";  return false;}
-	if(!isset($_POST['action']))         {echo "checkisset2";  return false;}
-	if(!isset($_POST['table']))          {echo "checkisset3";  return false;}
-	if(!isset($_POST['order']))          {echo "checkisset4";  return false;}
-	if(!isset($_POST['consoleFilters'])) {echo "checkisset5";  return false;}
-	if(!isset($_POST['genreFilters']))   {echo "checkisset6";  return false;}
-	if(!isset($_POST['yearFilters']))    {echo "checkisset7";  return false;}
-	if(!isset($_POST['starFilters']))    {echo "checkisset8";  return false;}
-	if(!isset($_POST['priceFilters']))   {echo "checkisset9";  return false;}
-	if(!isset($_POST['staffFilters']))   {echo "checkisset10"; return false;}
-	
-	return true;
-}
+$start   = 9*$index;
+$results = 9;
+$query = generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $titleSearch, $start, $results);
 
-function gotoPage($index, $table, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters) {
+gotoPage($query."LIMIT $start, $results", getLastPage($query));
+
+function gotoPage($query, $lastPage) {
 	
-	$resultsStartNo = 9*$index;
-	$resultsToShow  = 9;
-	$query = generateQuery($table, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters, $resultsStartNo, $resultsToShow);
-	//$query = "SELECT * FROM `contentnews_table` ORDER BY `id` DESC LIMIT $resultsStartNo, $resultsToShow";
-	
-	$content = array();
-	$html;
+	$html = "";	
+	//echo $query;
 	
 	if($query_run = mysql_query($query)) {
 		while($query_row = mysql_fetch_assoc($query_run)) {
-			$html = $query_row['content'];
-			echo $html;
+			$html.=$query_row['content'];
 		}
 	} else die("Agh! Looks like we can't find our games!");
 	
+	echo json_encode(array($html, $lastPage));
+	//echo $html;
 }
 
-function getLastPage($table) {
-	
-	$resultsToShow = 9;
-	$query = "SELECT * FROM $table";
-	
+function getLastPage($query) {
 	if($query_run = mysql_query($query)) {
 		$query_row_total = mysql_num_rows($query_run);
-		$result = ceil(($query_row_total)/$resultsToShow);
-		echo $result;
+		$result = ceil(($query_row_total)/9);
+		return $result;
 	} else die("Agh! Looks like we can't find our games!");
 
 }
 
-function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $start, $results) {
+function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $titleSearch, $start, $results) {
 	
 	$queryWhere = array();
 	$queryWhere[0] = ""; //CONSOLE
@@ -84,12 +56,13 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 	$queryWhere[3] = ""; //STARS
 	$queryWhere[4] = ""; //PRICE
 	$queryWhere[5] = ""; //STAFF
+	$queryWhere[6] = ""; //TITLE
 	
 	//SELECT table
 	$query = "SELECT * FROM $table ";
 	//Select relevant results
 	
-	if($consoleFilters[0] != "") {
+	if(!empty($consoleFilters)) {
 		//CONSOLE FILTERS
 		$queryWhere[0].="(consoles LIKE ";
 		for($i=0; $i<count($consoleFilters); $i++) {
@@ -99,7 +72,7 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 		}
 	}
 	
-	if($genreFilters[0] != "") {
+	if(!empty($genreFilters)) {
 		//GENRE FILTERS
 		$queryWhere[1].="(genres LIKE ";
 		for($i=0; $i<count($genreFilters); $i++) {
@@ -109,7 +82,7 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 		}
 	}
 	
-	if($yearFilters[0] != "") {
+	if(!empty($yearFilters)) {
 		//YEAR FILTERS
 		$queryWhere[2].="(year";
 		for($i=0; $i<count($yearFilters); $i++) {
@@ -121,7 +94,7 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 		}
 	}
 	
-	if($starFilters[0] != "") {
+	if(!empty($starFilters)) {
 		//STAR FILTERS
 		$queryWhere[3].="(stars=";
 		for($i=0; $i<count($starFilters); $i++) {
@@ -131,7 +104,7 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 		}
 	}
 	
-	if($priceFilters[0] != array("", "", "")) {
+	if(!empty($priceFilters)) {
 		//PRICE FILTERS
 		$queryWhere[4].="((price";
 		for($i=0; $i<count($priceFilters); $i++) {
@@ -167,6 +140,9 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 	
 	//STAFF FILTERS
 	if($staffFilters == "true") {$queryWhere[5].="AND staff=true ";}
+	
+	//TITLE SEARCH
+	if($titleSearch != "") {$queryWhere[6].="title LIKE '%".$titleSearch."%' ";}
 
 	//JOIN QUERYWHERE
 	$tempString = "";
@@ -178,9 +154,8 @@ function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilt
 	}
 	if($tempString != "") {$query.="WHERE ".$tempString;}
 	
-	$query.= "ORDER BY $order ";       //ORDER
-	$query.="LIMIT $start, $results";  //LIMIT
-	
+	if($order != "") {$query.= "ORDER BY $order ";} //ORDER
+		
 	return $query;
 	
 }

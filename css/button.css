@@ -1,17 +1,24 @@
 .button {
 	background: #FFFFFF;
 	border: solid;
-	border-color: #222222;
+	border-color: #111111;
 	border-width: 2px;
 	margin: 12px;
-	padding: 2px 4px 2px 4px;
+	padding: 5px 5px 5px 5px;
 	min-width: 12px;
 	text-align: center;
 	cursor: pointer;
 	opacity: 1;
 }
-.button:hover {border-color: #B0CEF5;}
-.button:active {border-color: #7EA9E0;}
+.button:hover {border-color: #0099FF;}
+.button:active {border-color: #FFAA00; background: #FFFFFF;}
+
+.pageButtonSelected {
+	background: #111111;
+	border-color: #FFAA00;
+	color: #FFAA00;
+	font-weight: bold;
+}
 
 .headerButtons {
 	float: left;

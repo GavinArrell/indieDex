@@ -108,7 +108,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
 				if(isFreemium()){ ?>
 					<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">
 						<p align="center">UPGRADE TO PREMIUM</p>
-						<form action="changeMembershipStatus.php" method="get">
+						<form action="changeMembershipStatus.php" method="post">
 							<div style=" width:50%; line-height:32px; padding-left:16px;">
 								Premium Cost = £1/per month <br>
 								Name on Card:<input type="text" name="text" value="" style="float:right;"><br>

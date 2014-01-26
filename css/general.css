@@ -1,3 +1,12 @@
 .inline-block {
 	display: inline-block;
 }
+
+.no-margin {
+	margin: 0;
+}
+
+.fillWidth {
+	width: 100%;
+	margin: auto;
+}

@@ -8,17 +8,25 @@ var checkboxPriceValues   = ["25more", "15to25", "15less", "0"];
 var checkboxStaffValues   = ["Staff"];
 
 $(document).ready(function() {
-	$('.checkBoxFilter').prop('checked', false);
+	clearAllFilters();
 	
-	$('.checkboxFilter').click(function() {gotoPage(0);});
+	$('.checkboxFilter').click(function() {gotoPage(0, true);});
 	
-	$('.filterTop').click(function()   {organisationMode = 0; gotoPage(0); return false;});
-	$('.filterNew').click(function()   {organisationMode = 1; gotoPage(0); return false;});
-	$('.filterHot').click(function()   {organisationMode = 2; gotoPage(0); return false;});
-	$('.filterTrend').click(function() {organisationMode = 3; gotoPage(0); return false;});
+	$('.filterTop').click(function()   {organisationMode = 0; gotoPage(0, true); return false;});
+	$('.filterNew').click(function()   {organisationMode = 1; gotoPage(0, true); return false;});
+	$('.filterHot').click(function()   {organisationMode = 2; gotoPage(0, true); return false;});
+	$('.filterTrend').click(function() {organisationMode = 3; gotoPage(0, true); return false;});
 	
-	gotoPage(0);
+	$('#clearFilters').click(function() {clearAllFilters();});
+	
+	gotoPage(0, false);
 });
+
+function clearAllFilters() {
+	$('.checkBoxFilter').prop('checked', false);
+	$('#searchBar').val("Search Titles...");
+	queryDB_setSearch("");
+}
 
 function getContentFilterOrder() {
 	var order;
@@ -39,7 +47,6 @@ function getContentConsoleFilters() {
 		}
 	}
 	
-	if(filters.length == 0) {filters.push("");}
 	return filters;
 }
 
@@ -51,7 +58,6 @@ function getContentGenreFilters() {
 		}
 	}
 	
-	if(filters.length == 0) {filters.push("");}
 	return filters;
 }
 
@@ -63,7 +69,6 @@ function getContentYearFilters() {
 		}
 	}
 	
-	if(filters.length == 0) {filters.push("");}
 	return filters;
 }
 
@@ -75,7 +80,6 @@ function getContentStarFilters() {
 		}
 	}
 	
-	if(filters.length == 0) {filters.push("");}
 	return filters;
 }
 
@@ -99,7 +103,6 @@ function getContentPriceFilters() {
 		}
 	}
 	
-	if(filters.length == 0) {filters[0] = ["", "", ""];}
 	return filters;
 }
 

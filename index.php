@@ -27,6 +27,7 @@
 	  	<script src="js/header.js"></script>
 	  	<script src="js/expandContent.js"></script>
 	  	<script src="js/changePage.js"></script>
+	  	<script src="js/queryDB.js"></script>
 	  	<script src="js/getContentFilters.js"></script>
 	  	<script src="js/general.js"></script>
 		
@@ -210,6 +211,10 @@
 					<div id="rightSidebar">
 						<br>
 						
+						<input id="searchBar" type="text" value="Search Titles..." onfocus="this.value = '';" onblur="this.value = 'Search Titles...'; }" style="width: 77%; max-width: 100%">
+						<div id="queryDBButton" class="button inline-block no-margin" type="submit"><img src="img/search_icon.png" height="12px"></div>
+						
+						<br><br>
 						<h3>Console</h3>
 						<br/>
 	 					<input class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
@@ -262,7 +267,9 @@
 						
 						<h3>Staff Picks</h3>
 						<br/>
-						<input class="checkboxFilter" type="checkbox" name="Staff" value="Staff">Staff Picks<br>
+						<input class="checkboxFilter" type="checkbox" name="Staff" value="Staff">Staff Picks<br><br>
+						
+						<div id="clearFilters" class="button no-margin">Clear Filters</div>
 						
 	 				</div> <!-- RIGHT SIDEBAR -->
 	 			</div> <!-- RIGHT SIDEBAR CONTAINER -->
