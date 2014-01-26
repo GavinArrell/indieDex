@@ -14,7 +14,7 @@ if (isDev()){
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:16px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>
@@ -104,15 +104,75 @@ if (isDev()){
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:16px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
 				
-				
-				<label for="file">Read More Section</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="more"></textarea>
+				<div style="height:300px; overflow-y:auto;">
+				<label for="file">Read More Section</label><br><br>
+   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title1"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction1"></textarea><br>
+   				
+   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title2"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction2"></textarea><br>
+   				
+   				 
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title3"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction3"></textarea><br>
+   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title4"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction4"></textarea><br>
+   				
+   				 
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title5"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction5"></textarea><br>
+   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title6"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction6"></textarea><br>
+   				   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title7"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction7"></textarea><br>
+   				   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title8"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction8"></textarea><br>
+   				   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title9"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction9"></textarea><br>
+   				   				
+   				   				
+   				<label for="file">Title</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title10"></textarea><br>
+				<label for="file">Paragraph</label><br>
+   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction10"></textarea><br>
+   				</div>
+   				
    				
    				<div style="float:left; width:20%">
    					<h3>Console</h3>
@@ -194,7 +254,7 @@ if (isDev()){
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:16px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>

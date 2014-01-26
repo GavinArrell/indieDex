@@ -24,18 +24,7 @@
     	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
     	<script type='text/javascript' src='js/camera.min.js'></script>
 	  	
-	  	<script type='text/javascript' src='js/jquery.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
-    	<script type='text/javascript' src='js/camera.min.js'></script>
-	  	
-	  	<script type='text/javascript' src='js/jquery.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
-    	<script type='text/javascript' src='js/camera.min.js'></script>
-	  	
 	  	<script src="js/header.js"></script>
-	  	<!--<script src="js/displayLogic.js"></script>-->
 	  	<script src="js/expandContent.js"></script>
 	  	<script src="js/changePage.js"></script>
 	  	<script src="js/getContentFilters.js"></script>
