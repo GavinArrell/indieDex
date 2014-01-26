@@ -78,7 +78,7 @@ $title = addslashes($title10);
 $intro = addslashes($intro10);
 
 $price = $_POST['price'];
-if($price > 0){}else{$price = ''; }
+if($price >= 0){}else{$price = ''; }
 
 $console = '';
 $genre = '';
@@ -97,8 +97,6 @@ if(isset($_POST['wiiu'])){$console = $console.';wiiu;';}
 if(isset($_POST['wii'])){$console = $console.';wii;';}
 if(isset($_POST['ios'])){$console = $console.';ios;';}
 if(isset($_POST['android'])){$console = $console.';android;';}
-echo $console;
-echo '<br>';
 
 if(isset($_POST['action'])){$genre = $genre.';action;';}
 if(isset($_POST['adventure'])){$genre = $genre.';adventure;';}
@@ -109,20 +107,14 @@ if(isset($_POST['rpg'])){$genre = $genre.';rpg;';}
 if(isset($_POST['shooter'])){$genre = $genre.';shooter;';}
 if(isset($_POST['action'])){$genre = $genre.';sport;';}
 if(isset($_POST['strategy'])){$genre = $genre.';strategy;';}
-echo $genre;
-echo '<br>';
 
 if(isset($_POST['1'])){$star = '1';}
 if(isset($_POST['2'])){$star = '2';}
 if(isset($_POST['3'])){$star = '3';}
 if(isset($_POST['4'])){$star = '4';}
 if(isset($_POST['5'])){$star = '5';}
-echo $star;
-echo '<br>';
 
 if(isset($_POST['staff'])){$staff = 'staff';}
-echo $staff;
-echo '<br>';
 
 if(isset($_POST['pre2010'])){$year = 'pre2010';}
 if(isset($_POST['2011'])){$year = '2011';}
@@ -130,8 +122,6 @@ if(isset($_POST['2012'])){$year = '2012';}
 if(isset($_POST['2013'])){$year = '2013';}
 if(isset($_POST['2014'])){$year = '2014';}
 if(isset($_POST['beta'])){$year = 'beta';}
-echo $year;
-echo '<br';
 
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore"><h3>';
 $content = $content.$title1.'</h3><p>'.$intro1.'</p><h3>'.$title2.'</h3><p>'.$intro2.'</p><h3>'.$title3.'</h3><p>'.$intro3.'</p><h3>'.$title4.'</h3><p>'.$intro4.'</p><h3>'.$title5.'</h3><p>'.$intro5.'</p><h3>';

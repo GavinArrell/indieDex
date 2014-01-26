@@ -19,10 +19,10 @@ $(window).scroll(function() {
 });
 
 function header_fadeIn() {
-	$('header').stop(true, false).fadeTo("slow", 1);
+	$('header').stop(true, false).fadeTo("", 1);
 }
 function header_fadeOut() {
-	$('header').stop(true, false).fadeTo("slow", 0.2);
+	$('header').stop(true, false).fadeTo("", 0.2);
 }
 
 //HEADER CHILD MENUS
