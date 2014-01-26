@@ -137,12 +137,12 @@ $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img
 $content = $content.$title1.'</h3><p>'.$intro1.'</p><h3>'.$title2.'</h3><p>'.$intro2.'</p><h3>'.$title3.'</h3><p>'.$intro3.'</p><h3>'.$title4.'</h3><p>'.$intro4.'</p><h3>'.$title5.'</h3><p>'.$intro5.'</p><h3>';
 $content = $content.$title6.'</h3><p>'.$intro6.'</p><h3>'.$title7.'</h3><p>'.$intro7.'</p><h3>'.$title8.'</h3><p>'.$intro8.'</p><h3>'.$title9.'</h3><p>'.$intro9.'</p><h3>'.$title10.'</h3><p>'.$intro10.'</p><h3>';
 $content = $content.'</div><p class="readMore">Read More</p></div>';
-echo $content;
+
 
 $query = "INSERT INTO contentreviews_table (title, content, consoles, genres, year, stars, price, staff)
 VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";
 if	($query_run = mysql_query($query)){
-									//header('Location: review.php');
+									header('Location: review.php');
 								}else{
 									echo 'Sorry, we could not process your request. Try again later.';
 								}
