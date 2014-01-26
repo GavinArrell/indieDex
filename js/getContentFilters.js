@@ -16,6 +16,8 @@ $(document).ready(function() {
 	$('.filterNew').click(function()   {organisationMode = 1; gotoPage(0); return false;});
 	$('.filterHot').click(function()   {organisationMode = 2; gotoPage(0); return false;});
 	$('.filterTrend').click(function() {organisationMode = 3; gotoPage(0); return false;});
+	
+	gotoPage(0);
 });
 
 function getContentFilterOrder() {

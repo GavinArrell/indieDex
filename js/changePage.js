@@ -97,7 +97,8 @@ function getLastPage() {
 			staffFilters: -1
 		},
 		success: function(data) {
-			lastPage = data;
+			lastPage = 2;
+			alert(data);
 		},
 		error: function() {
 			alert("ERROR");

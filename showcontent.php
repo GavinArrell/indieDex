@@ -3,7 +3,7 @@ require 'core.inc.php';
 require 'connect.inc.php';
 
 $resultsStartNo = 0;
-$resultsToShow  = 10;
+$resultsToShow  = 9;
 
 $query = "SELECT * FROM `content-index_table` ORDER BY `id` DESC LIMIT '$resultsStartNo', '$resultsToShow'";
 
@@ -43,8 +43,8 @@ function checkisset() {
 
 function gotoPage($index, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters) {
 	
-	$resultsStartNo = 10*$index;
-	$resultsToShow  = 10;
+	$resultsStartNo = 9*$index;
+	$resultsToShow  = 9;
 	$query = generateQuery($order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters, $resultsStartNo, $resultsToShow);
 	//$query = "SELECT * FROM `contentnews_table` ORDER BY `id` DESC LIMIT $resultsStartNo, $resultsToShow";
 	
@@ -62,7 +62,7 @@ function gotoPage($index, $order, $consoleFilters, $genreFilter, $yearFilters, $
 
 function getLastPage() {
 	
-	$resultsToShow = 10;
+	$resultsToShow = 9;
 	$query = "SELECT COUNT(*) FROM `contentnews_table`";
 	
 	if($query_run = mysql_query($query)) {
@@ -182,8 +182,4 @@ function generateQuery($order, $consoleFilters, $genreFilters, $yearFilters, $st
 	
 }
 
-function arrayInString( $array , $string , $seperator=' ' ){
-  $inStringAsArray = explode( $seperator , $string );
-  return ( count( array_intersect( $array , $inStringAsArray ) )>0 );
-}
 ?>

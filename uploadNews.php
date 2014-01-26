@@ -3,22 +3,13 @@
 require 'core.inc.php';
 require 'connect.inc.php';
 
-
+if (empty($_FILES['file']['name'])){header('Location: index.php');}else{
 $file_name = $_FILES['file']['name'];
 
-// random 4 digit to add to our file name
-// some people use date and time in stead of random digit
 $random_digit=rand(0000,999999);
-
-//combine random digit to you file name to create new file name
-//use dot (.) to combile these two variables
 
 $new_file_name=$random_digit.$file_name;
 
-//set where you want to store files
-//in this example we keep file in folder upload
-//$new_file_name = new upload file name
-//for example upload file name cartoon.gif . $path will be upload/cartoon.gif
 $path= "img/uploads/".$new_file_name;
 if($_FILES['file'] != null)
 {
@@ -115,5 +106,5 @@ if	($query_run = mysql_query($query)){
 								}
 
 
-}else{echo'Error - Required Fields Left Blank';}
+}else{echo'Error - Required Fields Left Blank';}}
 ?>
