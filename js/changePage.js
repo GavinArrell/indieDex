@@ -2,6 +2,10 @@ var currentPage = 0;
 var lastPage = 0;
 
 $(document).ready(function() {
+	
+	currentPage = 0;
+	lastPage = 0;
+	
 	getLastPage();
 	updatePageNumbers();
 
@@ -96,9 +100,9 @@ function getLastPage() {
 			priceFilters: -1,
 			staffFilters: -1
 		},
+		async: false,
 		success: function(data) {
-			lastPage = 2;
-			alert(data);
+			lastPage = data;
 		},
 		error: function() {
 			alert("ERROR");
@@ -114,11 +118,11 @@ function updatePageNumbers() {
 	$('#pageButton5').html('-');
 	
 	if(currentPage < 3) {
-		if(currentPage >= 0) {$('#pageButton1').html(1);}
-		if(currentPage > 0)  {$('#pageButton2').html(2);}
-		if(currentPage > 1)  {$('#pageButton3').html(3);}
-		if(currentPage > 2)  {$('#pageButton4').html(4);}
-		if(currentPage > 3)  {$('#pageButton5').html(5);}
+		if(lastPage >= 1) {$('#pageButton1').html(1);}
+		if(lastPage > 1)  {$('#pageButton2').html(2);}
+		if(lastPage > 2)  {$('#pageButton3').html(3);}
+		if(lastPage > 3)  {$('#pageButton4').html(4);}
+		if(lastPage > 4)  {$('#pageButton5').html(5);}
 		highlightCurrentPage();
 		return;
 	}
@@ -142,6 +146,8 @@ function updatePageNumbers() {
 }
 
 function highlightCurrentPage() {
+	clearHighlighting();
+	
 	if(currentPage < 2) {
 		switch(currentPage) {
 			case 0 : $('#pageButton1').css("background-color", "#999999"); return;
@@ -159,4 +165,12 @@ function highlightCurrentPage() {
 	}
 	
 	$('#pageButton3').css("background-color", "#999999");
+}
+
+function clearHighlighting() {
+	$('#pageButton1').css("background-color", "#FFFFFF");
+	$('#pageButton2').css("background-color", "#FFFFFF");
+	$('#pageButton3').css("background-color", "#FFFFFF");
+	$('#pageButton4').css("background-color", "#FFFFFF");
+	$('#pageButton5').css("background-color", "#FFFFFF");
 }

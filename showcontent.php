@@ -63,10 +63,11 @@ function gotoPage($index, $order, $consoleFilters, $genreFilter, $yearFilters, $
 function getLastPage() {
 	
 	$resultsToShow = 9;
-	$query = "SELECT COUNT(*) FROM `contentnews_table`";
+	$query = "SELECT * FROM `contentnews_table`";
 	
 	if($query_run = mysql_query($query)) {
-		$result = ceil(($query_run)/$resultsToShow);
+		$query_row_total = mysql_num_rows($query_run);
+		$result = ceil(($query_row_total)/$resultsToShow);
 		echo $result;
 	} else die("Agh! Looks like we can't find our games!");
 
