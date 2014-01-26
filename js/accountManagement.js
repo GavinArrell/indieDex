@@ -1,24 +1,36 @@
 $(document).ready(function() {
 	
-	$('.accountManagementButton').click(function() {
-		accountManagement_highlightButton($(this));
-		switch($(this).attr('id')) {
-			case 1 : accountManagement_loadEditInfo();      alert("hi"); break;
-			case 2 : accountManagement_loadNotifications(); break;
-			case 3 : accountManagement_loadMessageBoard();  break;
-			case 4 : accountManagement_loadStatus();       break;
-		}
-	});
+	accountManagement_load(2);
+	
+	$('#accountManagementButton_editInfo').click(function() {accountManagement_load(0);});
+	$('#accountManagementButton_notifs').click(function()   {accountManagement_load(1);});
+	$('#accountManagementButton_messages').click(function() {accountManagement_load(2);});
+	$('#accountManagementButton_status').click(function()   {accountManagement_load(3);});
 	
 });
 
-function accountManagement_loadEditInfo() {
+function accountManagement_load(button) {
 	$('#accountStatus').hide();
+	$('#accountNotifications').hide();
+	$('#accountMessageBoard').hide();
+	$('#accountInfoEditTable').hide();
 	
-	$('#accountInfoEditTable').show();
+	switch(button) {
+		case 0 : $('#accountInfoEditTable').show(); break;
+		case 1 : $('#accountNotifications').show(); break;
+		case 2 : $('#accountMessageBoard').show();  break;
+		case 3 : $('#accountStatus').show();        break;
+	}
+	
+	accountManagement_highlightButton(button);
 }
 
 function accountManagement_highlightButton(button) {
-	$('.accountManagementButton').css("color: white;");
-	$(this).css("color: orange;");
+	
+	$('.accountManagementButton').removeClass('accountManagementButtonSelected');
+		
+	if(button == 0) {$('#accountManagementButton_editInfo').addClass('accountManagementButtonSelected');}
+	if(button == 1) {$('#accountManagementButton_notifs').addClass('accountManagementButtonSelected');}
+	if(button == 2) {$('#accountManagementButton_messages').addClass('accountManagementButtonSelected');}
+	if(button == 3) {$('#accountManagementButton_status').addClass('accountManagementButtonSelected');}
 }

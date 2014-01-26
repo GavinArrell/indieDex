@@ -2,8 +2,11 @@
 function dVdA(){
 	
 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
+	<script src="js/libs/jquery-1.6.2.js"></script>
+	<script src="ttp://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/account.css"/>
 	<link rel="stylesheet" type="text/css" href="css/button.css"/>
+	
 	<script type='text/javascript' src="js/accountManagement.js"></script>
 	
 	</div>
@@ -33,10 +36,10 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
 		<div id="accountInfoEdit">
 			
 			<div id="#accountManagementButtonContainer">
-				<div class="accountManagementButton" id="1">edit info</div>
-				<div class="accountManagementButton" id="2">notifications</div>
-				<div class="accountManagementButton" id="3">message board</div>
-				<div class="accountManagementButton" id="4">account status</div>
+				<div class="accountManagementButton" id="accountManagementButton_editInfo">edit info</div>
+				<div class="accountManagementButton" id="accountManagementButton_notifs">notifications</div>
+				<div class="accountManagementButton" id="accountManagementButton_messages">message board</div>
+				<div class="accountManagementButton" id="accountManagementButton_status">account status</div>
 			</div>
 			
 			<table id="accountInfoEditTable">
@@ -73,15 +76,11 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
 				</tr>
 			</table>
 			
+			<div id="accountNotifications">NOTIFICATIONS</div>
+			
+			<div id="accountMessageBoard">MESSAGE BOARD</div>
+			
 			<div id="accountStatus">
-				
-				<!--
-				account status
-				member since
-				pay date
-				
-				upgrade
-				-->
 				
 				<?php 
 				function convertStatus($status) {

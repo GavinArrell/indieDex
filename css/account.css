@@ -52,6 +52,11 @@
 	margin:5px;
 }
 
+/*========= ACCOUNT MANAGEMENT ==========*/
+#accountInfoEditTable, #accountNotifications, #accountMessageBoard. #accountStatus {
+	display: none;
+}
+
 /*========= ACCOUNT MANAGEMENT EDIT INFO ==========*/
 #accountInfoEditTable {
 	width: 100%;
@@ -82,6 +87,7 @@
 	width: 90%;
 	margin: auto;
 	border-bottom: solid 2px #B0CEF5;
+	padding-top: 16px;
 }
 
 #accountStatusDetailsTable {
@@ -125,6 +131,15 @@
 	color: #B0CEF5;
 }
 .accountManagementButton:active {
+	border-color: orange;
+	color: orange;
+}
+
+.accountManagementButtonSelected {
+	border-color: orange;
+	color: orange;
+}
+.accountManagementButtonSelected:hover {
 	border-color: orange;
 	color: orange;
 }
