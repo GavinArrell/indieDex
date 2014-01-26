@@ -28,6 +28,7 @@
 	  	<script src="js/expandContent.js"></script>
 	  	<script src="js/changePage.js"></script>
 	  	<script src="js/getContentFilters.js"></script>
+	  	<script src="js/general.js"></script>
 		
 		<style>
 			body {

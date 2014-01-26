@@ -11,6 +11,7 @@ if(checkisset()) {
 
 	$value   = $_POST['value'];
     $action  = $_POST['action'];
+	$table   = $_POST['table'];
 	$order   = $_POST['order'];
 	$consoleFilters = $_POST['consoleFilters'];
 	$genreFilters   = $_POST['genreFilters'];
@@ -20,32 +21,33 @@ if(checkisset()) {
 	$staffFilters   = $_POST['staffFilters'];
 	
     switch($action) {
-        case 'gotoPage'    : gotoPage($value, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters); break;
-		case 'getLastPage' : getLastPage(); break;
+        case 'gotoPage'    : gotoPage($value, $table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters); break;
+		case 'getLastPage' : getLastPage($table); break;
     }
 	
 } else echo mysql_error;
 
 function checkisset() {
 	
-	if(!isset($_POST['value']))          {echo "checkisset1"; return false;}
-	if(!isset($_POST['action']))         {echo "checkisset2"; return false;}
-	if(!isset($_POST['order']))          {echo "checkisset3"; return false;}
-	if(!isset($_POST['consoleFilters'])) {echo "checkisset4"; return false;}
-	if(!isset($_POST['genreFilters']))   {echo "checkisset5"; return false;}
-	if(!isset($_POST['yearFilters']))    {echo "checkisset6"; return false;}
-	if(!isset($_POST['starFilters']))    {echo "checkisset7"; return false;}
-	if(!isset($_POST['priceFilters']))   {echo "checkisset8"; return false;}
-	if(!isset($_POST['staffFilters']))   {echo "checkisset9"; return false;}
+	if(!isset($_POST['value']))          {echo "checkisset1";  return false;}
+	if(!isset($_POST['action']))         {echo "checkisset2";  return false;}
+	if(!isset($_POST['table']))          {echo "checkisset3";  return false;}
+	if(!isset($_POST['order']))          {echo "checkisset4";  return false;}
+	if(!isset($_POST['consoleFilters'])) {echo "checkisset5";  return false;}
+	if(!isset($_POST['genreFilters']))   {echo "checkisset6";  return false;}
+	if(!isset($_POST['yearFilters']))    {echo "checkisset7";  return false;}
+	if(!isset($_POST['starFilters']))    {echo "checkisset8";  return false;}
+	if(!isset($_POST['priceFilters']))   {echo "checkisset9";  return false;}
+	if(!isset($_POST['staffFilters']))   {echo "checkisset10"; return false;}
 	
 	return true;
 }
 
-function gotoPage($index, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters) {
+function gotoPage($index, $table, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters) {
 	
 	$resultsStartNo = 9*$index;
 	$resultsToShow  = 9;
-	$query = generateQuery($order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters, $resultsStartNo, $resultsToShow);
+	$query = generateQuery($table, $order, $consoleFilters, $genreFilter, $yearFilters, $starFilters, $priceFilters, $staffFilters, $resultsStartNo, $resultsToShow);
 	//$query = "SELECT * FROM `contentnews_table` ORDER BY `id` DESC LIMIT $resultsStartNo, $resultsToShow";
 	
 	$content = array();
@@ -60,10 +62,10 @@ function gotoPage($index, $order, $consoleFilters, $genreFilter, $yearFilters, $
 	
 }
 
-function getLastPage() {
+function getLastPage($table) {
 	
 	$resultsToShow = 9;
-	$query = "SELECT * FROM `contentnews_table`";
+	$query = "SELECT * FROM $table";
 	
 	if($query_run = mysql_query($query)) {
 		$query_row_total = mysql_num_rows($query_run);
@@ -73,7 +75,7 @@ function getLastPage() {
 
 }
 
-function generateQuery($order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $start, $results) {
+function generateQuery($table, $order, $consoleFilters, $genreFilters, $yearFilters, $starFilters, $priceFilters, $staffFilters, $start, $results) {
 	
 	$queryWhere = array();
 	$queryWhere[0] = ""; //CONSOLE
@@ -84,7 +86,7 @@ function generateQuery($order, $consoleFilters, $genreFilters, $yearFilters, $st
 	$queryWhere[5] = ""; //STAFF
 	
 	//SELECT table
-	$query = "SELECT * FROM `contentnews_table` ";
+	$query = "SELECT * FROM $table ";
 	//Select relevant results
 	
 	if($consoleFilters[0] != "") {

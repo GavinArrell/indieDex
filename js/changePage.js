@@ -1,10 +1,19 @@
 var currentPage = 0;
 var lastPage = 0;
 
+var currentTable;
+
 $(document).ready(function() {
-	
 	currentPage = 0;
 	lastPage = 0;
+	
+	//get current table
+	switch(general_getCurrentFileNameNoType()) {
+		case "index"   : currentTable = "contentnews_table";   break;
+		case "review" : currentTable = "contentreviews_table"; break;
+		case "games"   : currentTable = "contentgames_table";  break;
+		default : currentTable = "contentnews_table"; break;
+	}
 	
 	getLastPage();
 	updatePageNumbers();
@@ -20,12 +29,14 @@ $(document).ready(function() {
 });
 
 function gotoPage(index) {
+	$('html, body').animate({scrollTop: 250}, 'slow');
 	$.ajax({
 		type: 'POST',
 		url: '../showcontent.php',
 		data: {
 			value: index,
 			action: "gotoPage",
+			table: currentTable,
 			order: getContentFilterOrder(),
 			consoleFilters: getContentConsoleFilters(),
 			genreFilters: getContentGenreFilters(),
@@ -36,7 +47,7 @@ function gotoPage(index) {
 		},
 		success: function(data) {
 			var htmlString = data != "" ? data : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';			
-			$("#contentItemContainer").html(htmlString);
+			$('#contentItemContainer').html(htmlString);
 			$('.contentMore').hide();
 		},
 		error: function() {
@@ -92,6 +103,7 @@ function getLastPage() {
 		data: {
 			value: -1,
 			action: "getLastPage",
+			table: currentTable,
 			order: -1,
 			consoleFilters: -1,
 			genreFilters: -1,
