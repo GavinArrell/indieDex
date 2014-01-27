@@ -7,25 +7,23 @@ var checkboxStarValues    = ["5", "4", "3", "2", "1"];
 var checkboxPriceValues   = ["25more", "15to25", "15less", "0"];
 var checkboxStaffValues   = ["Staff"];
 
-$(document).ready(function() {
-	clearAllFilters();
-	
-	$('.checkboxFilter').click(function() {gotoPage(0, true);});
-	
-	$('.filterTop').click(function()   {organisationMode = 0; gotoPage(0, true); return false;});
-	$('.filterNew').click(function()   {organisationMode = 1; gotoPage(0, true); return false;});
-	$('.filterHot').click(function()   {organisationMode = 2; gotoPage(0, true); return false;});
-	$('.filterTrend').click(function() {organisationMode = 3; gotoPage(0, true); return false;});
-	
+$(document).ready(function() {	
+	$('.checkboxFilter').click(function() {gotoPage(0, true);});	
 	$('#clearFilters').click(function() {clearAllFilters();});
 	
 	gotoPage(0, false);
 });
 
 function clearAllFilters() {
-	$('.checkBoxFilter').prop('checked', false);
+	$('.checkboxFilter').prop('checked', false);	
 	$('#searchBar').val("Search Titles...");
 	queryDB_setSearch("");
+	gotoPage(0, true);
+}
+
+function setOrganisationMode(mode) {
+	organisationMode = mode;
+	gotoPage(0, true);
 }
 
 function getContentFilterOrder() {

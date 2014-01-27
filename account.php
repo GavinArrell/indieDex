@@ -96,30 +96,47 @@
 							$surname = $_POST['surname'];
 							$email = $_POST['email'];
 								
-								if(!empty($username) && !empty($password) && !empty($password_again) && !empty($firstname) && !empty($surname) && !empty($email)){
-									if($password!=$password_again){ echo 'Passwords do not match';}
-									else {
+							if(!empty($username) && !empty($password) && !empty($password_again) && !empty($firstname) && !empty($surname) && !empty($email)){
+								if($password!=$password_again){ echo 'Passwords do not match';}
+								else {
+									
+									
+									$query = "SELECT `username` FROM `users_table` WHERE `username`='$username'";
+									$query_run = mysql_query($query);
+									
+									if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
+									else{
+										$password_hash = md5($password); 
+										$query = "INSERT INTO `users_table` VALUES ('','";
+										$query.= mysql_real_escape_string($username)."','";
+										$query.= mysql_real_escape_string($password_hash)."','";
+										$query.= mysql_real_escape_string($email)."','";
+										$query.= "','"; //status
+										$query.= mysql_real_escape_string($firstname)."','";
+										$query.= mysql_real_escape_string($surname)."','";
+										$query.= "','"; //profile pic
+										$query.= "','"; //join date
+										$query.= "','"; //bio
+										$query.= "','"; //karma
+										$query.= "','"; //games
+										$query.= "','"; //wishlist
+										$query.= date_timestamp_get(new DateTime())."')"; //lastSeen
+												
+										//put comma at start so it doesn't screw up in the end
 										
-										
-										$query = "SELECT `username` FROM `users_table` WHERE `username`='$username'";
-										$query_run = mysql_query($query);
-										
-										if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
-										else{
-											$password_hash = md5($password); 
-											$query = "INSERT INTO `users_table` VALUES ('','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password_hash)."','".mysql_real_escape_string($email)."','','".mysql_real_escape_string($firstname)."','".mysql_real_escape_string($surname)."','','','','','','')";
-													if	($query_run = mysql_query($query)){
-														echo'Process Complete, you may Login.';
-													}else{
-														echo 'Sorry, we could not process your request. Try again later.';
-													}
+										if	($query_run = mysql_query($query)){
+											echo'Process Complete, you may Login.';
+										}else{
+											echo 'Sorry, we could not process your request. Try again later.';
 										}
+								}
 					
 					
-				}
-			} else {
-				echo 'ALL FIELDS REQUIRED';
-			}
+							}
+							
+						} else {
+							echo 'ALL FIELDS REQUIRED';
+						}
 		
 	}
 	
