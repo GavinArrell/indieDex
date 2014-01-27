@@ -27,7 +27,8 @@ if(!loggedin()){
 								if	($query_run = mysql_query($query)){
 									header('Location: register_sucess.php');
 								}else{
-									echo 'Sorry, we could not process your request. Try again later.';
+									//echo 'Sorry, we could not process your request. Try again later.';
+									echo $query;
 								}
 					}
 					
