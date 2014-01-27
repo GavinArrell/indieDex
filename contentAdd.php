@@ -2,6 +2,7 @@
 function addNews(){
 if (isDev()){
 	?>
+	
 		<div class="addContentBox">
 			<br>
 			<h3>ADD NEWS CONTENT</h3><br>
@@ -28,36 +29,48 @@ if (isDev()){
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction1"></textarea><br>
    				
+   				<label for="file">Video</label><br>
+   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="video"></textarea><br>
    				
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title2"></textarea><br>
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction2"></textarea><br>
    				
+   				<label for="file">Picture</label>
+   				<input type="file" name="picture" id="picture"><br><br>
    				 
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title3"></textarea><br>
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction3"></textarea><br>
    				
+   				<label for="file">Picture Two</label>
+   				<input type="file" name="pictureTwo" id="pictureTwo"><br><br>
    				   				
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title4"></textarea><br>
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction4"></textarea><br>
    				
+   				<label for="file">Picture Three</label>
+   				<input type="file" name="pictureThree" id="pictureThree"><br><br> 
    				 
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title5"></textarea><br>
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction5"></textarea><br>
    				
+   				<label for="file">Picture Four</label>
+   				<input type="file" name="pictureFour" id="pictureFour"><br><br>
    				   				
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title6"></textarea><br>
 				<label for="file">Paragraph</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction6"></textarea><br>
    				   				
+   				<label for="file">Picture Five</label>
+   				<input type="file" name="pictureFive" id="pictureFive"><br><br>
    				   				
    				<label for="file">Title</label><br>
    				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title7"></textarea><br>

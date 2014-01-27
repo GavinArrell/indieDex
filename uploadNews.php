@@ -5,11 +5,8 @@ require 'connect.inc.php';
 
 if (empty($_FILES['file']['name'])){header('Location: index.php');}else{
 $file_name = $_FILES['file']['name'];
-
 $random_digit=rand(0000,999999);
-
 $new_file_name=$random_digit.$file_name;
-
 $path= "img/uploads/".$new_file_name;
 if($_FILES['file'] != null)
 {
@@ -18,6 +15,7 @@ if($_FILES['file'] != null)
 	}else{}
 }
 
+$video = $_POST['video'];
 $title = $_POST['title'];
 $intro = $_POST['introduction'];
 $title1 = $_POST['title1'];
@@ -40,8 +38,6 @@ $title9 = $_POST['title9'];
 $intro9 = $_POST['introduction9'];
 $title10 = $_POST['title10'];
 $intro10 = $_POST['introduction10'];
-
-
 
 if(!empty($path) && !empty($title) && !empty($intro)){
 	
@@ -117,7 +113,7 @@ if(isset($_POST['2014'])){$year = '2014';}
 if(isset($_POST['beta'])){$year = 'beta';}
 
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore"><h3>';
-$content = $content.$title1.'</h3><p>'.$intro1.'</p><h3>'.$title2.'</h3><p>'.$intro2.'</p><h3>'.$title3.'</h3><p>'.$intro3.'</p><h3>'.$title4.'</h3><p>'.$intro4.'</p><h3>'.$title5.'</h3><p>'.$intro5.'</p><h3>';
+$content = $content.$title1.'</h3><p>'.$intro1.'</p><div style="width:100%; margin:auto;">'.$video.'</div><br><h3>'.$title2.'</h3><p>'.$intro2.'</p><h3>'.$title3.'</h3><p>'.$intro3.'</p><h3>'.$title4.'</h3><p>'.$intro4.'</p><h3>'.$title5.'</h3><p>'.$intro5.'</p><h3>';
 $content = $content.$title6.'</h3><p>'.$intro6.'</p><h3>'.$title7.'</h3><p>'.$intro7.'</p><h3>'.$title8.'</h3><p>'.$intro8.'</p><h3>'.$title9.'</h3><p>'.$intro9.'</p><h3>'.$title10.'</h3><p>'.$intro10.'</p>';
 $content = $content.'</div><p class="readMore">Read More</p></div>';
 
