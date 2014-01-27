@@ -1,16 +1,16 @@
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -18,39 +18,78 @@
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 	
 html, body{
-	/*background-image: url('../img/background2.png');
+	/*background-image: url('../img/footer5.png');
 	background-repeat: repeat;*/
+	background: #0D0F0E;
 	background-image: url('../img/mLOQIBN - Imgur.jpg');
-	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-attachment:fixed;
+	background-size: 100% contain;
+	background: #111111;
 	margin:0px;
 	padding:0px;
-		  }
+}
+
+h1 {
+	font-family:"Monofett",cursive;
+	font-size: 42px;
+	color: black;
+}
+h2 {
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 26px;
+	color: black;
+	line-height: 36px;
+	padding-bottom: 4px;
+	padding-left: 16px;
+}
+h3 {
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 18px;
+	color black;
+	padding-left: 16px;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #88CCFF;
+}
+a:hover {color: #0099FF;}
+a:active {color: #FFAA00;}
+
 #wrapper {
 	margin:auto;
 	max-width:2560px;
@@ -168,31 +207,6 @@ html, body{
 	clear: both;
 }
 
-h1 {
-	font-family:"Monofett",cursive;
-	font-size: 42px;
-	color: black;
-}
-h2 {
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 26px;
-	color: black;
-	line-height: 36px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-}
-h3 {
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 18px;
-	color black;
-	padding-left: 16px;
-}
-a {
-	text-decoration: none;
-	color: #88CCFF;
-}
-a:hover {color: #0099FF;}
-
 .contentBoxContainer, .addContentBox {
 	float:right;
 	margin-top:5px;
@@ -201,7 +215,8 @@ a:hover {color: #0099FF;}
 	opacity:0.95;
 	position: relative;
 	overflow-y:hidden;
-				     }
+}
+
 				     
 #contentContainer {
 	
@@ -245,7 +260,6 @@ a:hover {color: #0099FF;}
 	width:70%;
 	display: inline block;
 }
-img {width: 100%:}
 
 #exampleSlider {
 	overflow: hidden;
@@ -295,4 +309,10 @@ footer {
 	opacity: 0;
 	
 	
+}
+
+#contentLoader {
+	display: block;
+	margin: auto;
+	padding: 32px 16px 16px 16px;
 }

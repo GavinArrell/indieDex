@@ -15,21 +15,24 @@
 		<link rel="stylesheet" type="text/css" href="css/general.css"/>
 		<link rel='stylesheet' id='camera-css'  href='../css/camera.css' type='text/css' media='all'>
 		
-		<!-- SCRIPTS -->
-		<script src="js/libs/jquery-1.6.2.js"></script>
-	  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	  	
+		<!-- JAVASCRIPT -->
+		<script type='text/javascript' src="js/libs/jquery-1.6.2.js"></script>
+	  	<script type='text/javascript' src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  	        
 	  	<script type='text/javascript' src='js/jquery.min.js'></script>
     	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
     	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
-    	<script type='text/javascript' src='js/camera.min.js'></script>
+    	<script type='text/javascript' src='js/camera.js'></script>
 	  	
-	  	<script src="js/header.js"></script>
-	  	<script src="js/expandContent.js"></script>
-	  	<script src="js/changePage.js"></script>
-	  	<script src="js/queryDB.js"></script>
-	  	<script src="js/getContentFilters.js"></script>
-	  	<script src="js/general.js"></script>
+	  	<script type='text/javascript' src="js/header.js"></script>
+	  	<script type='text/javascript' src="js/expandContent.js"></script>
+	  	<script type='text/javascript' src="js/changePage.js"></script>
+	  	<script type='text/javascript' src="js/queryDB.js"></script>
+	  	<script type='text/javascript' src="js/getContentFilters.js"></script>
+	  	<script type='text/javascript' src="js/general.js"></script>
+	  	
+	  	<!-- PHP -->
+	  	<?php include('php/updateSession.php'); ?>
 		
 		<style>
 			body {
@@ -54,11 +57,9 @@
   
 			jQuery(function(){
 				
-				jQuery('#camera_wrap_1').camera({
-					loader: 'bar',
-					pagination: false,
-					thumbnail: false
-				});});
+				jQuery('#camera_wrap_1').camera();
+				
+			});
 		
 		</script>
 		
@@ -194,14 +195,14 @@
 				
 					<div style="display: table; margin: 0 auto;clear:both;">
 						<br/>
-						<div id="pageButtonFirst" class="button inline-block"><<</div>
-						<div id="pageButton1" class="button inline-block">1</div>
-						<div id="pageButton2" class="button inline-block">2</div>
-						<div id="pageButton3" class="button inline-block">3</div>
-						<div id="pageButton4" class="button inline-block">4</div>
-						<div id="pageButton5" class="button inline-block">5</div>
-						<div id="pageButtonLast" class="button inline-block">>></div>
-						<div id="pageButtonIndex" class="button inline-block">...</div>
+						<div type="button" id="pageButtonFirst" class="button inline-block"><<</div>
+						<div type="button" id="pageButton1" class="button inline-block">-</div>
+						<div type="button" id="pageButton2" class="button inline-block">-</div>
+						<div type="button" id="pageButton3" class="button inline-block">-</div>
+						<div type="button" id="pageButton4" class="button inline-block">-</div>
+						<div type="button" id="pageButton5" class="button inline-block">-</div>
+						<div type="button" id="pageButtonLast" class="button inline-block">>></div>
+						<div type="button" id="pageButtonIndex" class="button inline-block">...</div>
 					</div>
 					
 				</div> <!-- CONTENT CONTAINER -->
@@ -217,7 +218,7 @@
 						<br><br>
 						<h3>Console</h3>
 						<br/>
-	 					<input class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
+	 					<input id="hi" class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>
 						<input class="checkboxFilter" type="checkbox" name="Console" value="Mac">Mac<br>
 						<input class="checkboxFilter" type="checkbox" name="Console" value="Linux">Linux<br>
 						<input class="checkboxFilter" type="checkbox" name="Console" value="PS4">PS4<br>
@@ -282,10 +283,10 @@
 					
 	 				<div class="headerGrandchild">
 	 					<ul>
-	 						<a class="filterTop"   href=""> <li>Top</li> </a>
-	 						<a class="filterNew"   href=""> <li>New</li> </a>
-	 						<a class="filterHot"   href=""> <li>Hot</li> </a>
-	 						<a class="filterTrend" href=""> <li>Trending</li> </a>
+	 						<a class="filterTop"  > <li>Top</li> </a>
+	 						<a class="filterNew"  > <li>New</li> </a>
+	 						<a class="filterHot"  > <li>Hot</li> </a>
+	 						<a class="filterTrend"> <li>Trending</li> </a>
 	 					</ul>
 	 				</div>
 				</div>
@@ -293,10 +294,10 @@
 				<a href="review.php"><div class="headerChild">Reviews
 					<div class="headerGrandchild">
 						<ul>
-							<li>Top</li>
-							<li>New</li>
-							<li>Hot</li>
-							<li>Trending</li>
+							<a class="filterTop"  > <li>Top</li> </a>
+	 						<a class="filterNew"  > <li>New</li> </a>
+	 						<a class="filterHot"  > <li>Hot</li> </a>
+	 						<a class="filterTrend"> <li>Trending</li> </a>
 						</ul>
 					</div>
 				</div></a>
@@ -304,10 +305,10 @@
 				<a href="games.php"><div class="headerChild">Games
 					<div class="headerGrandchild">
 						 <ul>
-							<li>Top</li>
-							<li>New</li>
-							<li>Hot</li>
-							<li>Trending</li>
+							<a class="filterTop"  > <li>Top</li> </a>
+	 						<a class="filterNew"  > <li>New</li> </a>
+	 						<a class="filterHot"  > <li>Hot</li> </a>
+	 						<a class="filterTrend"> <li>Trending</li> </a>
 						</ul>
 					</div>
 				</div></a>

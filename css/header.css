@@ -1,6 +1,7 @@
 header {
 	height: 48px;
 	background-color: #FFFFFF;
+	border-bottom: solid 2px #111111;
 	
 	position: fixed;
 	left: 0;
@@ -19,15 +20,16 @@ header {
 }
 
 .headerGrandchild {
-	border-top: solid #B0CEF5;
+	border-top: solid #FFAA00;
 	background: #FFFFFF;
 	opacity: 0.9;
 }
 .headerGrandchild ul li:hover {
-	background: #B0CEF5;
+	background: #88CCFF;
 }
 .headerGrandchild ul li:active {
-	background: #7EA9E0;
+	background: #111111;
+	color: #FFAA00;
 }
 
 .headerButton {

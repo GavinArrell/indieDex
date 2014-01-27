@@ -14,7 +14,7 @@
 		
 		barPosition			: 'bottom',	//'bottom', 'left', 'top', 'right'
 		
-		cols				: 6,
+		cols				: 5,
 		
 		easing				: 'easeInOutExpo',	//for the complete list http://jqueryui.com/demos/effect/easing.html
 		
@@ -25,25 +25,25 @@
 
 		mobileFx			: '',	//leave empty if you want to display the same effect on mobile devices and on desktop etc.
 
-		gridDifference		: 250,	//to make the grid blocks slower than the slices, this value must be smaller than transPeriod
+		gridDifference		: 500,	//to make the grid blocks slower than the slices, this value must be smaller than transPeriod
 		
-		height				: '50%',	//here you can type pixels (for instance '300px'), a percentage (relative to the width of the slideshow, for instance '50%') or 'auto'
+		height				: '56.25%',	//here you can type pixels (for instance '300px'), a percentage (relative to the width of the slideshow, for instance '50%') or 'auto'
 		
-		imagePath			: 'images/',	//he path to the image folder (it serves for the blank.gif, when you want to display videos)
+		imagePath			: '../img/',	//he path to the image folder (it serves for the blank.gif, when you want to display videos)
 		
 		hover				: true,	//true, false. Puase on state hover. Not available for mobile devices
 				
-		loader				: 'pie',	//pie, bar, none (even if you choose "pie", old browsers like IE8- can't display it... they will display always a loading bar)
+		loader				: 'bar',	//pie, bar, none (even if you choose "pie", old browsers like IE8- can't display it... they will display always a loading bar)
 		
 		loaderColor			: '#eeeeee', 
 		
-		loaderBgColor		: '#222222', 
+		loaderBgColor		: '#111111', 
 		
-		loaderOpacity		: .8,	//0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
+		loaderOpacity		: 1,	//0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
 		
 		loaderPadding		: 2,	//how many empty pixels you want to display between the loader and its background
 		
-		loaderStroke		: 7,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
+		loaderStroke		: 6,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
 				
 		minHeight			: '200px',	//you can also leave it blank
 		
@@ -51,13 +51,13 @@
 		
 		navigationHover		: true,	//if true the navigation button (prev, next and play/stop buttons) will be visible on hover state only, if false they will be visible always
 		
-		mobileNavHover		: true,	//same as above, but only for mobile devices
+		mobileNavHover		: false,	//same as above, but only for mobile devices
 		
 		opacityOnGrid		: false,	//true, false. Decide to apply a fade effect to blocks and slices: if your slideshow is fullscreen or simply big, I recommend to set it false to have a smoother effect 
 		
 		overlayer			: true,	//a layer on the images to prevent the users grab them simply by clicking the right button of their mouse (.camera_overlayer)
 		
-		pagination			: true,
+		pagination			: false,
 		
 		playPause			: true,	//true or false, to display or not the play/pause buttons
 		
@@ -79,7 +79,7 @@
 		
 		thumbnails			: false,
 		
-		time				: 7000,	//milliseconds between the end of the sliding effect and the start of the nex one
+		time				: 10000,	//milliseconds between the end of the sliding effect and the start of the nex one
 		
 		transPeriod			: 2000,	//length of the sliding effect in milliseconds
 		

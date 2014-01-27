@@ -33,11 +33,8 @@ function queryDB_emptyVal() {
 
 function queryDB_checkInput() {
 	
-	if($('#searchBar').val().length > 0) {
-		search = $('#searchBar').val() != "Search Titles..." ? $('#searchBar').val() : "";
-		return true;
-	}
-	return false;
+	search = $('#searchBar').val() != "Search Titles..." ? $('#searchBar').val() : "";
+	return true;
 	
 }
 
