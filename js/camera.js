@@ -35,17 +35,17 @@
 				
 		loader				: 'bar',	//pie, bar, none (even if you choose "pie", old browsers like IE8- can't display it... they will display always a loading bar)
 		
-		loaderColor			: '#eeeeee', 
+		loaderColor			: '#FFAA00', 
 		
 		loaderBgColor		: '#111111', 
 		
 		loaderOpacity		: 1,	//0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
 		
-		loaderPadding		: 2,	//how many empty pixels you want to display between the loader and its background
+		loaderPadding		: 0,	//how many empty pixels you want to display between the loader and its background
 		
-		loaderStroke		: 6,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
+		loaderStroke		: 3,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
 				
-		minHeight			: '200px',	//you can also leave it blank
+		minHeight			: '405px',	//you can also leave it blank
 		
 		navigation			: true,	//true or false, to display or not the navigation buttons
 		

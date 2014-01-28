@@ -3,19 +3,19 @@ require 'core.inc.php';
 require 'connect.inc.php';
 
 //START
-if(!isset($_POST['table']))          {echo mysqli_error; return false;} else {$table  = $_POST['table'];  } //VITAL
+if(!isset($_GET['table']))          {echo mysqli_error; return false;} else {$table  = $_GET['table'];  } //VITAL
 
-if(!isset($_POST['index']))          {$index          = 0;       } else {$index          = $_POST['index'];          }
-if(!isset($_POST['order']))          {$order          = "";      } else {$order          = $_POST['order'];          }
+if(!isset($_GET['index']))          {$index          = 0;       } else {$index          = $_GET['index'];          }
+if(!isset($_GET['order']))          {$order          = "";      } else {$order          = $_GET['order'];          }
 
-if(!isset($_POST['consoleFilters'])) {$consoleFilters = "";      } else {$consoleFilters = $_POST['consoleFilters']; }
-if(!isset($_POST['genreFilters']))   {$genreFilters   = "";      } else {$genreFilters   = $_POST['genreFilters'];   }
-if(!isset($_POST['yearFilters']))    {$yearFilters    = "";      } else {$yearFilters    = $_POST['yearFilters'];    }
-if(!isset($_POST['starFilters']))    {$starFilters    = "";      } else {$starFilters    = $_POST['starFilters'];    }
-if(!isset($_POST['priceFilters']))   {$priceFilters   = "";      } else {$priceFilters   = $_POST['priceFilters'];   }
-if(!isset($_POST['staffFilters']))   {$staffFilters   = "";      } else {$staffFilters   = $_POST['staffFilters'];   }
+if(!isset($_GET['consoleFilters'])) {$consoleFilters = "";      } else {$consoleFilters = $_GET['consoleFilters']; }
+if(!isset($_GET['genreFilters']))   {$genreFilters   = "";      } else {$genreFilters   = $_GET['genreFilters'];   }
+if(!isset($_GET['yearFilters']))    {$yearFilters    = "";      } else {$yearFilters    = $_GET['yearFilters'];    }
+if(!isset($_GET['starFilters']))    {$starFilters    = "";      } else {$starFilters    = $_GET['starFilters'];    }
+if(!isset($_GET['priceFilters']))   {$priceFilters   = "";      } else {$priceFilters   = $_GET['priceFilters'];   }
+if(!isset($_GET['staffFilters']))   {$staffFilters   = "";      } else {$staffFilters   = $_GET['staffFilters'];   }
 
-if(!isset($_POST['titleSearch']))    {$titleSearch    = "";      } else {$titleSearch    = $_POST['titleSearch'];    }
+if(!isset($_GET['titleSearch']))    {$titleSearch    = "";      } else {$titleSearch    = $_GET['titleSearch'];    }
 
 $start   = 9*$index;
 $results = 9;
@@ -26,7 +26,6 @@ gotoPage($query."LIMIT $start, $results", getLastPage($query));
 function gotoPage($query, $lastPage) {
 	
 	$html = "";	
-	//echo $query;
 	
 	if($query_run = mysql_query($query)) {
 		while($query_row = mysql_fetch_assoc($query_run)) {
@@ -35,7 +34,6 @@ function gotoPage($query, $lastPage) {
 	} else die("Agh! Looks like we can't find our games!");
 	
 	echo json_encode(array($html, $lastPage));
-	//echo $html;
 }
 
 function getLastPage($query) {

@@ -32,8 +32,9 @@ function gotoPage(index, jump) {
 	
 	if(jump) {$('html, body').animate({scrollTop: 250}, 'slow');}
 	$.ajax({
-		type: 'POST',
+		type: 'GET',
 		url: '../showcontent.php',
+		dataType: 'JSON',
 		data: {
 			index: index,
 			table: currentTable,
@@ -46,8 +47,7 @@ function gotoPage(index, jump) {
 			staffFilters: getContentStaffFilters(),
 			titleSearch: queryDB_getSearch()
 		},
-		success: function(response) {
-			data = JSON.parse(response);			
+		success: function(data) {		
 			var htmlString = data[0] != "" ? data[0] : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';
 			
 			currentPage = index;
@@ -58,7 +58,7 @@ function gotoPage(index, jump) {
 			$('.contentMore').hide();
 		},
 		error: function() {
-			alert("Err... How can I put this? Something went wrong, sorry!");
+			error_log("changePage.js -> gotoPage() ajax called error");
 		}
 	});
 }

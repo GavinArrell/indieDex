@@ -103,7 +103,7 @@
 }
 .camera_loader {
     background: #fff url(../img/camera-loader.gif) no-repeat center;
-	background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
+	background: rgba(255, 255, 255, 0.9) url(../img/camera-loader.gif) no-repeat center;
 	border: 1px solid #ffffff;
 	-webkit-border-radius: 18px;
 	-moz-border-radius: 18px;
@@ -172,7 +172,7 @@
 	z-index: 10;
 }
 .camera_prevThumbs div {
-	background: url(../images/camera_skins.png) no-repeat -160px 0;
+	background: url(..../img/camera_skins.png) no-repeat -160px 0;
 	display: block;
 	height: 40px;
 	margin-top: -20px;
@@ -423,11 +423,13 @@
 	background: url(../img/patterns/overlay10.png) repeat;
 }
 .camera_caption {
-	color: #fff;
+	color: #88CCFF;
+	font-size: 18px;
+	line-height: 20px;
 }
 .camera_caption > div {
-	background: #000;
-	background: rgba(0, 0, 0, 0.8);
+	background: #FFFFFF;
+	background: rgba(255, 255, 255, 0.8);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
 	background: #b7b7b7;
