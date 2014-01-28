@@ -2,29 +2,31 @@
 
 function registerNewUser($values) {
 	
-	getColumnCount("user_table");
+	$columns = getColumnCount("user_table");
 	if($columns != count($values)-1) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table");}
 	
-	$query = "INSERT INTO `user_table` VALUES (";
-	$query.= "','".$values[0];     //id
-	$query.= "','".$values[1];     //username  
-	$query.= "','".$values[2];     //password  
-	$query.= "','";$values[3];     //email     
-	$query.= "','".$values[4];     //status    
-	$query.= "','".$values[5];     //firstname 
-	$query.= "','";$values[6];     //surname   
-	$query.= "','";$values[7];     //profilepic
-	$query.= "','";$values[8];     //joindate  
-	$query.= "','";$values[9];     //bio       
-	$query.= "','";$values[10];    //karma     
-	$query.= "','";$values[11];    //games     
-	$query.= "','".$values[12];    //wishlist  
-	$query.= "','".$values[13];    //lastseen  
+	$query = "INSERT INTO `users_table` VALUES (";
+	$query.= "'";                  //id
+	$query.= "','".$values[0];     //username  
+	$query.= "','".$values[1];     //password  
+	$query.= "','".$values[2];     //email     
+	$query.= "','".$values[3];     //status    
+	$query.= "','".$values[4];     //firstname 
+	$query.= "','".$values[5];     //surname   
+	$query.= "','".$values[6];     //profilepic
+	$query.= "','".date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');    //joindate  
+	$query.= "','".$values[7];     //bio       
+	$query.= "','".$values[8];     //karma     
+	$query.= "','".$values[9];    //games     
+	$query.= "','".$values[10];    //wishlist  
+	$query.= "','".date_timestamp_get(new DateTime());    //lastseen  
 	
 	$query.= "')";
 	
-	if(!($query_run = mysql_query($query))) {
+	if($query_run = mysql_query($query)) {return true;}
+	else {
 		error_log("updateDB.php -> updateUser() -> failed to run insert query");
+		return false;
 	}
 }
 

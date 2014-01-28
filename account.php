@@ -87,6 +87,7 @@
 			<div style="background-color: white; opacity:0.9; width:200px; padding:5px; font-family:"MS Sans Serif", Geneva, sans-serif; ">
 			<h3>Sign Up</h3><br>
 					<?php
+						include 'php/updateDB.php';
 									
 						if(isset($_POST['username'])&& isset($_POST['password'])&& isset($_POST['password_again']) &&isset($_POST['firstname']) &&isset($_POST['surname']) &&isset($_POST['email'])){
 							$username = $_POST['username'];
@@ -105,38 +106,18 @@
 									$query_run = mysql_query($query);
 									
 									if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
-									else{
+									else {
 										$password_hash = md5($password); 
-										$query = "INSERT INTO `users_table` VALUES ('','";
-										$query.= mysql_real_escape_string($username)."','";
-										$query.= mysql_real_escape_string($password_hash)."','";
-										$query.= mysql_real_escape_string($email)."','";
-										$query.= "','"; //status
-										$query.= mysql_real_escape_string($firstname)."','";
-										$query.= mysql_real_escape_string($surname)."','";
-										$query.= "','"; //profile pic
-										$query.= "','"; //join date
-										$query.= "','"; //bio
-										$query.= "','"; //karma
-										$query.= "','"; //games
-										$query.= "','"; //wishlist
-										$query.= date_timestamp_get(new DateTime())."')"; //lastSeen
-												
-										//put comma at start so it doesn't screw up in the end
+										$timeStamp = date_timestamp_get(new DateTime());
+										$userDetails = array($username, $password_hash, $email, '', $firstname, $surname, '', '', '', '', '');
 										
-										if	($query_run = mysql_query($query)){
-											echo'Process Complete, you may Login.';
-										}else{
-											echo 'Sorry, we could not process your request. Try again later.';
-										}
+										if(registerNewUser($userDetails)) {echo'Process Complete, you may Login.';}
+										else {echo 'Sorry, we could not process your request. Try again later.';}
 								}
-					
-					
 							}
 							
-						} else {
-							echo 'ALL FIELDS REQUIRED';
 						}
+						else {echo 'ALL FIELDS REQUIRED';}
 		
 	}
 	

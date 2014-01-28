@@ -22,15 +22,13 @@ function phpCallsOnLoad_updateSession(call) {
 			call: call
 		},
 		success: function(users) {
-			var htmlString = '<h4 class="center">'+ users.length +' Online Users</h4>';
-			htmlString += '<div class="container">';
+			var htmlString = '<h4 class="center">'+ users.length +' Users Online</h4>';
 			
 			for(var i=0; i<users.length; i++) {
 				if(i > 0) {htmlString += ', ';}
 				htmlString += '<a href="">'+ users[i] +'</a>';
 			}
 			
-			htmlString += '</div>';
 			$('#onlineUsersSidebar').html(htmlString);
 			
 		},
