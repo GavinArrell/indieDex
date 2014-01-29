@@ -107,8 +107,7 @@
 									
 									if (mysql_num_rows($query_run)==1){echo 'The username '.$username.' already exists';}
 									else {
-										$password_hash = md5($password); 
-										$timeStamp = date_timestamp_get(new DateTime());
+										$password_hash = md5($password);
 										$userDetails = array($username, $password_hash, $email, '', $firstname, $surname, '', '', '', '', '');
 										
 										if(registerNewUser($userDetails)) {echo'Process Complete, you may Login.';}
