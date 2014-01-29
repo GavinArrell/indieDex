@@ -47,7 +47,7 @@ function gotoPage(index, jump) {
 			staffFilters: getContentStaffFilters(),
 			titleSearch: queryDB_getSearch()
 		},
-		success: function(data) {		
+		success: function(data) {
 			var htmlString = data[0] != "" ? data[0] : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';
 			
 			currentPage = index;
@@ -61,6 +61,7 @@ function gotoPage(index, jump) {
 			error_log("changePage.js -> gotoPage() ajax called error");
 		}
 	});
+	
 }
 
 function showLoad() {

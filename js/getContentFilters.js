@@ -8,7 +8,7 @@ var checkboxPriceValues   = ["25more", "15to25", "15less", "0"];
 var checkboxStaffValues   = ["Staff"];
 
 $(document).ready(function() {	
-	$('.checkboxFilter').click(function() {gotoPage(0, true);});	
+	$('.checkboxFilter').click(function() {gotoPage(0, false);});	
 	$('#clearFilters').click(function() {clearAllFilters();});
 	
 	gotoPage(0, false);

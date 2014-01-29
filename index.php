@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <HTML>
 	<head>
 		<title>indieDex</title>
@@ -159,13 +159,14 @@
  			</div>
  				
  			<div id="rightContainerTwo">	
- 				
- 				<?php
- 				require 'contentAdd.php';
-				addNews(); 						
- 				?>
  									
  				<div id="contentContainer">
+ 					
+ 					<?php
+	 				require 'contentAdd.php';
+					addNews(); 						
+	 				?>
+ 					
  					<div id="contentItemContainer">
  						
 					</div> <!-- CONTENT ITEM CONTAINER -->
@@ -190,12 +191,11 @@
 					
 				<div id="rightSidebarContainer">
 					<div id="rightSidebar">
-						<br>
 						
-						<input id="searchBar" type="text" value="Search Titles..." onfocus="this.value = '';" onblur="this.value = 'Search Titles...'; }" style="width: 77%; max-width: 100%">
-						<div id="queryDBButton" class="button inline-block no-margin" type="submit"><img src="img/search_icon.png" height="12px"></div>
+						<div class="container">
+							<input id="searchBar" class="fill" type="text" value="Search Titles..." onfocus="this.value = '';" onblur="this.value = 'Search Titles...'; }">
+						</div>
 						
-						<br><br>
 						<h3>Console</h3>
 						<br/>
 	 					<input id="hi" class="checkboxFilter" type="checkbox" name="Console" value="PC">PC<br>

@@ -213,17 +213,16 @@ a:active {color: #FFAA00;}
 
 .contentBoxContainer, .addContentBox {
 	float:right;
-	margin-top:5px;
-	width: 100%;
+	margin-top: 5px;
+	margin-right: 5px;
 	background-color:#FFFFFF;
 	opacity:0.95;
 	position: relative;
 	overflow-y:hidden;
+	width: 99%;
 }
-
 				     
 #contentContainer {
-	
 	float: left;
 	width:75%;
 }
@@ -236,7 +235,6 @@ a:active {color: #FFAA00;}
 				    
 #rightSidebar {
 	padding:10px;
-	margin-left: 5px;
 	background-color:#FFFFFF;
 	opacity:0.95;
 }
@@ -319,6 +317,7 @@ footer {
 	display: block;
 	margin: auto;
 	padding: 32px 16px 16px 16px;
+	clear: both;
 }
 
 #onlineUsersSidebar {
@@ -339,4 +338,8 @@ footer {
 
 .fill {
 	width: 100%;
+}
+
+.container {
+	margin: 16px;
 }

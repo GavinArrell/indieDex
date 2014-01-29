@@ -1,39 +1,39 @@
 var search = "";
+var defaultVal = true;
+var keyWait = 0;
 
 $(document).ready(function() {
 	
 	$('#searchBar').focus(function() {queryDB_emptyVal();});
 	$('#searchBar').blur(function() {queryDB_resetVal();});
 	
-	$('#searchBar').bind("enterKey", function(e) {
-		if(queryDB_checkInput()) {gotoPage(0, true);}
-	});
 	$('#searchBar').keyup(function(e) {
-		if(e.keyCode == 13) {
-			$(this).trigger("enterKey");
-		}
-	});
+		search = $('#searchBar').val();
 		
-	$('#queryDBButton').click(function() {
-		if(queryDB_checkInput()) {gotoPage(0, true);}
+		keyWait++;
+		setTimeout(function() {
+			if(keyWait == 1) {gotoPage(0, false); keyWait--;}
+			else {keyWait--;}
+		}, 375);
 	});
-	
-	
 	
 });
 function queryDB_resetVal() {
-	if($('#searchBar').val().length == 0) {
+	if($('#searchBar').val() == "") {
 		$('#searchBar').val("Search Titles...");
-		search = "";
+		defaultVal = true;
+	}
+	else {
+		defaultVal = false;
 	}
 }
 function queryDB_emptyVal() {
-	$('#searchBar').val() = "";
+	if(defaultVal) {$('#searchBar').val("");}
 }
 
 function queryDB_checkInput() {
 	
-	search = $('#searchBar').val() != "Search Titles..." ? $('#searchBar').val() : "";
+	search = !defaultVal ? $('#searchBar').val() : "";
 	return true;
 	
 }
