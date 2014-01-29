@@ -23,13 +23,13 @@ if (isDev()){
 				<div style="height:300px; overflow-y:auto;">
 				<label for="file">Read More Section</label><br><br>
    				
-				<textarea id="text" cols="56" rows="2" onKeyDown="count();" onKeyUp="count();" onFocus="count();"></textarea>
+				<textarea id="text" style=" resize:none; height:24px; width:95%; margin-bottom:16px;"></textarea>
 				<br>
 				<button type="button" onclick="add(1)">Add Title</button>
 				<button type="button" onclick="add(2)">Add Paragraph</button>
 				<button type="button" onclick="add(3)">Add Youtube Video</button>
 				<div id="textOutFinal" style="width:575px;"></div>
-				<textarea name="content" id="textOut" style="resize:none; display:none;" onKeyDown="count();" onKeyUp="count();" onFocus="count();"></textarea>
+				<textarea name="content" id="textOut" style="resize:none; display:none;"></textarea>
 				<script>
 				    var content = new Array();
 				    var x = 0;
