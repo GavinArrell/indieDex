@@ -20,80 +20,41 @@ if (isDev()){
 				
 				<label for="file">Introduction</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
-				
 				<div style="height:300px; overflow-y:auto;">
 				<label for="file">Read More Section</label><br><br>
    				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title1"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction1"></textarea><br>
-   				
-   				<label for="file">Video</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="video"></textarea><br>
-   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title2"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction2"></textarea><br>
-   				
-   				<label for="file">Picture</label>
-   				<input type="file" name="picture" id="picture"><br><br>
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title3"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction3"></textarea><br>
-   				
-   				<label for="file">Picture Two</label>
-   				<input type="file" name="pictureTwo" id="pictureTwo"><br><br>
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title4"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction4"></textarea><br>
-   				
-   				<label for="file">Picture Three</label>
-   				<input type="file" name="pictureThree" id="pictureThree"><br><br> 
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title5"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction5"></textarea><br>
-   				
-   				<label for="file">Picture Four</label>
-   				<input type="file" name="pictureFour" id="pictureFour"><br><br>
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title6"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction6"></textarea><br>
-   				   				
-   				<label for="file">Picture Five</label>
-   				<input type="file" name="pictureFive" id="pictureFive"><br><br>
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title7"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction7"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title8"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction8"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title9"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction9"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title10"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction10"></textarea><br>
+				<textarea id="text" cols="56" rows="2" onKeyDown="count();" onKeyUp="count();" onFocus="count();"></textarea>
+				<br>
+				<button type="button" onclick="add(1)">Add Title</button>
+				<button type="button" onclick="add(2)">Add Paragraph</button>
+				<button type="button" onclick="add(3)">Add Youtube Video</button>
+				<div id="textOutFinal" style="width:575px;"></div>
+				<textarea name="content" id="textOut" style="resize:none; display:none;" onKeyDown="count();" onKeyUp="count();" onFocus="count();"></textarea>
+				<script>
+				    var content = new Array();
+				    var x = 0;
+				
+				    function add(x) {
+				        i = content.length;
+				        switch (x){
+				        case 1:
+				            content[i] = "<h2>";
+				            content[i] += document.getElementById("text").value;
+				            content[i] += "</h2>";
+				            break;
+				        case 2:
+				            content[i] = "<p>";
+				            content[i] += document.getElementById("text").value;
+				            content[i] += "</p>";
+				            break;
+				        case 3:
+				            content[i] = document.getElementById("text").value;
+				            break;
+				        }    
+				        document.getElementById('textOutFinal').innerHTML = content.join('');
+				        document.getElementById('textOut').value = content.join('');
+				    }
+				</script>
    				</div>
    				
    				
