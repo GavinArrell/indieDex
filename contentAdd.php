@@ -20,15 +20,17 @@ if (isDev()){
 				
 				<label for="file">Introduction</label><br>
    				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
-				<div style="height:300px; overflow-y:auto;">
+				<br>
 				<label for="file">Read More Section</label><br><br>
    				
 				<textarea id="text" style=" resize:none; height:24px; width:95%; margin-bottom:16px;"></textarea>
 				<br>
 				<button type="button" onclick="add(1)">Add Title</button>
 				<button type="button" onclick="add(2)">Add Paragraph</button>
-				<button type="button" onclick="add(3)">Add Youtube Video</button>
+				<button type="button" onclick="add(3)">Embed Youtube Video</button>
+				<button type="button" onclick="add(4)">Embed Picutre URL displayed right of following paragraph</button>
 				<div id="textOutFinal" style="width:575px;"></div>
+				<div style="height:500px; overflow-y:auto;">
 				<textarea name="content" id="textOut" style="resize:none; display:none;"></textarea>
 				<script>
 				    var content = new Array();
@@ -38,18 +40,22 @@ if (isDev()){
 				        i = content.length;
 				        switch (x){
 				        case 1:
-				            content[i] = "<h2>";
+				            content[i] = '<h2 style="clear:both;">';
 				            content[i] += document.getElementById("text").value;
-				            content[i] += "</h2>";
+				            content[i] += '</h2>';
 				            break;
 				        case 2:
-				            content[i] = "<p>";
+				            content[i] = '<p>';
 				            content[i] += document.getElementById("text").value;
-				            content[i] += "</p>";
+				            content[i] += '</p>';
 				            break;
 				        case 3:
 				            content[i] = document.getElementById("text").value;
 				            break;
+				        case 4:
+				            content[i] = '<img style="border:solid black 2px; width:50%; float:right;" src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
 				        }    
 				        document.getElementById('textOutFinal').innerHTML = content.join('');
 				        document.getElementById('textOut').value = content.join('');
