@@ -105,13 +105,8 @@
  			
  			<div class="rightContainer">
  				
- 				<div id='profileInfoContainer'>
- 					
- 					<?php include 'php/getuserInfo.php' ?>
-					<div class="clearfix"></div>
-					
-				</div>
-				
+ 				<?php include 'php/getuserInfo.php' ?>
+ 			
 				<div id="profileInfoEdit">
 					
 					<div id="#profileManagementButtonContainer">

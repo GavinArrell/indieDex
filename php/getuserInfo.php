@@ -1,6 +1,6 @@
 <?php
-require "C:/Users/Gavin/Documents/GitHub/indieDex/core.inc.php";
-require "C:/Users/Gavin/Documents/GitHub/indieDex/connect.inc.php";
+require($_SERVER['DOCUMENT_ROOT'].'/core.inc.php');
+require($_SERVER['DOCUMENT_ROOT'].'/connect.inc.php');
 
 $userDetails = array();
 
@@ -54,6 +54,7 @@ function generateProfile($details) {
 	 * until we reach '=' the rest of the string is the
 	 * bool value!
 	 */
+	 
 	$settings     = $details[15];
 	
 	$showEmail    = getSetting("showEmail", $settings);
@@ -62,9 +63,7 @@ function generateProfile($details) {
 	$showLocation = getSetting("showLocation", $settings);
 	
 	$username     = $details[0];
-	$email        = $showEmail ? $details[1] : $details[0]." has chosen not to share this information.";
 	$status       = $details[2];
-	$name         = $showName ? $details[3]." ".$details[4] : $details[0]." has chosen not share this information.";
 	$profilepic   = $details[5];
 	$joindate     = $details[6];
 	$bio          = $details[7];
@@ -73,10 +72,16 @@ function generateProfile($details) {
 	$wishlist     = $details[10];
 	$lastseen     = $details[11];
 	$profileback  = $details[12];
+	$friends      = $details[16];
+	
+	$email        = $showEmail ? $details[1] : $details[0]." has chosen not to share this information.";
+	$name         = $showName ? $details[3]." ".$details[4] : $details[0]." has chosen not share this information.";
 	$birthday     = $showAge ? $details[13] : $details[0]." has chosen not to share this information.";
 	$location     = $showLocation ? $details[14] : $details[0]." has chosen not to share this information.";
-	//SETTINGS LOADED AT TOP [15]
-	$friends      = $details[16];
+	
+	$profilebackStyle  = "background-image: url('../". $profileback ."'); background-repeat: repeat; background-position: top;";
+	
+	echo '<div id="profileInfoContainer" style="'. $profilebackStyle .'">';
 	
 	echo '<div id="profileInfoLeft">';
 	echo 	'<img src="'. $profilepic .'" id="profileInfoPic">';
@@ -144,6 +149,8 @@ function generateProfile($details) {
 		 		<h3>About Me</h3>
 		 		<p>'. $bio .'</p>
 		 	</div>';
+			
+	echo '<div class="clearfix"></div> </div>';
 }
 
 function getSetting($request, $allSettings) {

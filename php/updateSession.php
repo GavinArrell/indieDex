@@ -1,6 +1,6 @@
 <?php
-require 'C:/Users/Gavin/Documents/GitHub/indieDex/core.inc.php';
-require 'C:/Users\Gavin/Documents/GitHub/indieDex/connect.inc.php';
+require($_SERVER['DOCUMENT_ROOT'].'/core.inc.php');
+require($_SERVER['DOCUMENT_ROOT'].'/connect.inc.php');
 
 include 'updateDB.php';
 
