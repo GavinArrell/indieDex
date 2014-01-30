@@ -10,14 +10,15 @@
 }
 
 #profileInfoPic {
-	border: double 4px #111111;
+	border: double 6px #111111;
 	width: 256px;
 	height: 256px;
 }
 
 #profileInfoRight {
-	padding-top: 16px;
+	margin-top: 16px;
 	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #profileInfoRightInner {
@@ -26,6 +27,7 @@
 
 #profileInfoDetailsName {
 	border-bottom: solid 1px #FFAA00;
+	margin-right: 16px;
 }
 
 #profileInfoDetails p {
@@ -49,7 +51,7 @@
 
 #profileInfoEdit {
 	width: 100%;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.3);
 	margin-top: 5px;
 	margin-bottom: 5px;
 	clear: both;

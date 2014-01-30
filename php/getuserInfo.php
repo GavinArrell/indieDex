@@ -39,6 +39,24 @@ if(isset($_GET['user'])) {
 
 function generateProfile($details) {
 	
+	$username     = $details[0];
+	$email        = $details[1];
+	$status       = $details[2];
+	$firstname    = $details[3];
+	$surname      = $details[4];
+	$profilepic   = $details[5];
+	$joindate     = $details[6];
+	$bio          = $details[7];
+	$points       = $details[8];
+	$games        = $details[9];
+	$wishlist     = $details[10];
+	$lastseen     = $details[11];
+	$profileback  = $details[12];
+	$birthday     = $details[13];
+	$location     = $details[14];
+	$settings     = $details[15];
+	$friends      = $details[16];
+	
 	/*
 	 * Settings has a field type of text
 	 * Because we can't store arrays on the database,
@@ -54,30 +72,19 @@ function generateProfile($details) {
 	 * until we reach '=' the rest of the string is the
 	 * bool value!
 	 */
-	 
-	$settings     = $details[15];
 	
-	$showEmail    = getSetting("showEmail", $settings);
-	$showName     = getSetting("showName", $settings);
-	$showAge      = getSetting("showAge", $settings);
+	$showEmail    = getSetting("showEmail",    $settings);
+	$showName     = getSetting("showName",     $settings);
+	$showAge      = getSetting("showAge",      $settings);
 	$showLocation = getSetting("showLocation", $settings);
 	
-	$username     = $details[0];
-	$status       = $details[2];
-	$profilepic   = $details[5];
-	$joindate     = $details[6];
-	$bio          = $details[7];
-	$points       = $details[8];
-	$games        = $details[9];
-	$wishlist     = $details[10];
-	$lastseen     = $details[11];
-	$profileback  = $details[12];
-	$friends      = $details[16];
+	$joindate     = formatJoinDate($joindate);
+	//$lastSeen     = formatLastOnline($lastSeen);
 	
-	$email        = $showEmail ? $details[1] : $details[0]." has chosen not to share this information.";
-	$name         = $showName ? $details[3]." ".$details[4] : $details[0]." has chosen not share this information.";
-	$birthday     = $showAge ? $details[13] : $details[0]." has chosen not to share this information.";
-	$location     = $showLocation ? $details[14] : $details[0]." has chosen not to share this information.";
+	$email        = $showEmail    ? $email                  : $username." has chosen not to share this information.";
+	$name         = $showName     ? $firstname." ".$surname : $username." has chosen not share this information.";
+	$birthday     = $showAge      ? $birthday               : $username." has chosen not to share this information.";
+	$location     = $showLocation ? $location               : $username." has chosen not to share this information.";
 	
 	$profilebackStyle  = "background-image: url('../". $profileback ."'); background-repeat: repeat; background-position: top;";
 	
@@ -167,6 +174,34 @@ function getSetting($request, $allSettings) {
 	}
 	
 	return true; //DEFAULT TO TRUE
+}
+
+function formatJoinDate($joinDate) {
+	
+	$date = explode('-', $joinDate);
+	
+	switch($date[1]) {
+		case "01": return("January "  .$date[2]." ".$date[0]);
+		case "02": return("February " .$date[2]." ".$date[0]);
+		case "03": return("March "    .$date[2]." ".$date[0]);
+		case "04": return("April "    .$date[2]." ".$date[0]);
+		case "05": return("May "      .$date[2]." ".$date[0]);
+		case "06": return("June "     .$date[2]." ".$date[0]);
+		case "07": return("July "     .$date[2]." ".$date[0]);
+		case "08": return("August "   .$date[2]." ".$date[0]);
+		case "09": return("September ".$date[2]." ".$date[0]);
+		case "10": return("October "  .$date[2]." ".$date[0]);
+		case "11": return("November " .$date[2]." ".$date[0]);
+		case "12": return("December " .$date[2]." ".$date[0]);
+		default: return $joinDate;
+	}
+	
+}
+
+function formatLastSeen($lastSeen) {
+	
+	
+	
 }
 
 ?>
