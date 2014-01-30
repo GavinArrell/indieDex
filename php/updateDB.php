@@ -2,8 +2,14 @@
 
 function registerNewUser($values) {
 	
+	$profilePic = "img/defaultProfilePic.jpg";
+	$joinDate   = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
+	$lastSeen   = date_timestamp_get(new DateTime());
+	$background = "img/defaultProfileBackground.jpg";
+	$settings   = "[showEmail=false][showName=false][showAge=false][showLocation=false]";
+	
 	$columns = getColumnCount("user_table");
-	if($columns != count($values)-1) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table");}
+	if($columns != count($values)+6) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table"); return;}
 	
 	$query = "INSERT INTO `users_table` VALUES (";
 	$query.= "'";                  //id
@@ -13,13 +19,17 @@ function registerNewUser($values) {
 	$query.= "','".$values[3];     //status    
 	$query.= "','".$values[4];     //firstname 
 	$query.= "','".$values[5];     //surname   
-	$query.= "','".$values[6];     //profilepic
-	$query.= "','".date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');    //joindate  
-	$query.= "','".$values[7];     //bio       
-	$query.= "','".$values[8];     //karma     
-	$query.= "','".$values[9];    //games     
-	$query.= "','".$values[10];    //wishlist  
-	$query.= "','".date_timestamp_get(new DateTime());    //lastseen  
+	$query.= "','".$profilePic;    //profilepic
+	$query.= "','".$joinDate;      //joindate  
+	$query.= "','".$values[6];     //bio       
+	$query.= "','".$values[7];     //karma     
+	$query.= "','".$values[6];     //games     
+	$query.= "','".$values[9];     //wishlist  
+	$query.= "','".$lastSeen;      //lastseen
+	$query.= "','".$background;    //profileBackground
+	$query.= "','".$values[10];    //birthday
+	$query.= "','".$values[11];    //location
+	$query.= "','".$settings;      //settings
 	
 	$query.= "')";
 	

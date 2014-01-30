@@ -36,16 +36,16 @@ function gotoPage(index, jump) {
 		url: '../showcontent.php',
 		dataType: 'JSON',
 		data: {
-			index: index,
-			table: currentTable,
-			order: getContentFilterOrder(),
-			consoleFilters: getContentConsoleFilters(),
-			genreFilters: getContentGenreFilters(),
-			yearFilters: getContentYearFilters(),
-			starFilters: getContentStarFilters(),
-			priceFilters: getContentPriceFilters(),
-			staffFilters: getContentStaffFilters(),
-			titleSearch: queryDB_getSearch()
+			'index'          : index,
+			'table'          : currentTable,
+			'order'          : getContentFilterOrder(),
+			'consoleFilters' : getContentConsoleFilters(),
+			'genreFilters'   : getContentGenreFilters(),
+			'yearFilters'    : getContentYearFilters(),
+			'starFilters'    : getContentStarFilters(),
+			'priceFilters'   : getContentPriceFilters(),
+			'staffFilters'   : getContentStaffFilters(),
+			'titleSearch'    : queryDB_getSearch()
 		},
 		success: function(data) {
 			var htmlString = data[0] != "" ? data[0] : 'Looks like we don\'t have any games like that, <a href="index.php">know of some?</a>';

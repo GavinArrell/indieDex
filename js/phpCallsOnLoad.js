@@ -19,7 +19,7 @@ function phpCallsOnLoad_updateSession(call) {
 		url: '../php/updateSession.php',
 		dataType: 'JSON',
 		data: {
-			call: call
+			'call': call
 		},
 		success: function(users) {
 			var htmlString = '<h4 class="center">'+ users.length +' Users Online</h4>';

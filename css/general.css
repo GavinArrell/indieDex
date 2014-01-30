@@ -1,3 +1,38 @@
+h1 { /* ==== PAGE NAME ==== */
+	font-family:"Monofett",cursive;
+	font-size: 42px;
+	padding: 5px;
+	color: #111111;
+}
+h2 { /* ==== HEADER ==== */
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 26px;
+	color: #111111;
+	line-height: 36px;
+	padding-bottom: 4px;
+	padding-left: 16px;
+}
+h3 { /* ==== GENERAL TITLING ==== */
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 18px;
+	color #111111;
+	padding-left: 16px;
+}
+h4 { /* ==== USER FULL NAME ==== */
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 32px;
+	line-height: 36px;
+	color #111111;
+	padding: 8px;
+	padding-left: 32px;
+	padding-bottom: 2px;
+}
+
+
+
+
+/* ===== NON PINKS ===== */
+
 .inline-block {
 	display: inline-block;
 }
@@ -10,3 +45,8 @@
 	width: 100%;
 	margin: auto;
 }
+
+.clearfix {
+	clear: both;
+}
+

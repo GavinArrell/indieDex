@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<HTML>
+<html lang="en-GB">
 	<head>
 		<title>indieDex</title>
 		<meta charset="UTF-8">
@@ -75,7 +75,7 @@
 										
  										<div id="accountDetails">
  										<br><h3>';echo $_SESSION['username']; echo'</h3>
- 										<p style="padding:24px;">Karma: ';echo $_SESSION['karma']; echo'<br>
+ 										<p style="padding:24px;">Karma: ';echo $_SESSION['indiePoints']; echo'<br>
  										';$status = $_SESSION['status'];
 										if($status==0){echo'Non-Premium account';}
 										else if($status==1){echo'Premium Account';}
@@ -99,7 +99,7 @@
 								include 'loginform.inc.php';
 							}
 						?> 
-					<a style="padding-left:16px;"href="account.php">Account Settings</a><br>
+					<a style="padding-left:16px;"href="profile.php">Account Settings</a><br>
 					</div>
 					
 					<?php

@@ -14,7 +14,7 @@ $(document).ready(function() {
 		setTimeout(function() {
 			if(keyWait == 1) {gotoPage(0, false); keyWait--;}
 			else {keyWait--;}
-		}, 375);
+		}, 300);
 	});
 	
 });

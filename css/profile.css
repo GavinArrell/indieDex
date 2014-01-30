@@ -1,107 +1,116 @@
-#accountInfoContainer {
+#profileInfoContainer {
 	background-color: white;
 	width: 100%;
-	min-height: 398px;
+	display: block;
+	padding: 16px;
 }
 
-#accountInfoLeft {
+#profileInfoLeft {
 	float: left;
-	width: 40%;
 	margin: 5px;
 }
 
-#accountInfoPic {
-	border: solid 2px black;
-	border-radius: 20px;
-	width: 384px;
-	height: 384px;
+#profileInfoPic {
+	border: double 4px #111111;
+	width: 256px;
+	height: 256px;
 }
 
-#accountInfoRight {
-	padding-top: 32px;
+#profileInfoRight {
+	padding-top: 16px;
+	overflow: hidden;
 }
 
-#accountInfoDetails {
-	display: inline-block;
+#profileInfoRightInner {
 	padding-left: 16px;
 }
 
-#accountInfoRight ul li {
+#profileInfoDetailsName {
+	border-bottom: solid 1px #FFAA00;
+}
+
+#profileInfoDetails p {
+	padding-top: 5px;
+}
+
+#profileInfoRight ul li {
 	padding-bottom: 5px;
 	font-family: sans-serif;
 	font-size: 16px;
 }
 
-#accountInfoRight h3 {
+#profileInfoRight h3 {
 	padding: 16px 0px 5px 0px;
 }
-#accountInfoBio {	
+#profileInfoBio {	
 	font-family: sans-serif;
 	font-size: 16px;
+	clear: both;
 }
 
-#accountInfoEdit {
+#profileInfoEdit {
 	width: 100%;
 	background-color: white;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	clear: both;
 }
-#accountInfoEditLeft{
+#profileInfoEditLeft {
 	float:left;
 	width:50%;
 	margin:5px;
 }
 
 /*========= ACCOUNT MANAGEMENT ==========*/
-#accountInfoEditTable, #accountNotifications, #accountMessageBoard. #accountStatus {
+#profileInfoEditTable, #profileNotifications, #profileMessageBoard. #profileStatus {
 	display: none;
 }
 
 /*========= ACCOUNT MANAGEMENT EDIT INFO ==========*/
-#accountInfoEditTable {
+#profileInfoEditTable {
 	width: 100%;
 	clear: both;
 	margin-top: 16px;
 }
 
-#accountInfoEditTable td {
+#profileInfoEditTable td {
 	padding: 16px;
 }
-#accountinfoEditTable td label {
+#profileinfoEditTable td label {
 	display: block;
 	font-size: 20px;
 	line-height: 24px;
 }
-.accountManagementSubmit {
+.profileManagementSubmit {
 	text-align: center;
 }
 
 /*========= ACCOUNT MANAGEMENT ACCOUNT STATUS ==========*/
-#accountStatus {
+#profileStatus {
 	width: 100%;
 	clear: both;
 	margin-top: 16px;
 }
 
-#accountStatusDetailsContainer {
+#profileStatusDetailsContainer {
 	width: 90%;
 	margin: auto;
 	border-bottom: solid 2px #B0CEF5;
 	padding-top: 16px;
 }
 
-#accountStatusDetailsTable {
+#profileStatusDetailsTable {
 	table-layout: fixed;
 	width: 100%;
 	margin-bottom: 5px;
 }
-#accountStatusDetailsTable tr td {
+#profileStatusDetailsTable tr td {
 	text-align: center;
 }
 
 
 /*========= ACCOUNT MANAGEMENT HEADER BUTTONS ==========*/
-#accountManagementButtonContainer {
+#profileManagementButtonContainer {
 	height: 48px;
 	
 	position: relative;
@@ -110,7 +119,7 @@
 	top: 0;
 }
 
-.accountManagementButton {
+.profileManagementButton {
 	float: left;
 	width: 25%;
 	height: 48px;
@@ -126,20 +135,20 @@
 	text-transform: uppercase;
 	color: white;
 }
-.accountManagementButton:hover {
+.profileManagementButton:hover {
 	border-color: #B0CEF5;
 	color: #B0CEF5;
 }
-.accountManagementButton:active {
+.profileManagementButton:active {
 	border-color: orange;
 	color: orange;
 }
 
-.accountManagementButtonSelected {
+.profileManagementButtonSelected {
 	border-color: orange;
 	color: orange;
 }
-.accountManagementButtonSelected:hover {
+.profileManagementButtonSelected:hover {
 	border-color: orange;
 	color: orange;
 }

@@ -64,32 +64,6 @@ html, body{
 	padding:0px;
 }
 
-h1 {
-	font-family:"Monofett",cursive;
-	font-size: 42px;
-	padding: 5px;
-	color: #111111;
-}
-h2 {
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 26px;
-	color: #111111;
-	line-height: 36px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-}
-h3 {
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 18px;
-	color #111111;
-	padding-left: 16px;
-}
-h4 {
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 18px;
-	color #111111;
-	padding: 16px;
-}
 a {
 	cursor: pointer;
 	text-decoration: none;
@@ -123,7 +97,7 @@ a:active {color: #FFAA00;}
 #rightContainerTwo{
 	float:right;
 	min-width:720px;
-	width:80%;
+	width: 75%;
 }
 
 #leftContainer{
@@ -146,6 +120,10 @@ a:active {color: #FFAA00;}
 	margin-right: 5px;
 	background-color: #FFFFFF;
 }
+
+#logo img {
+	border-bottom: solid 2px #AAAAAA;
+}
 	 
 #leftSidebar {
 	padding-top: 16px;
@@ -156,7 +134,7 @@ a:active {color: #FFAA00;}
 
 #accountImage {
 	clear: both;
-	width:98%;
+	margin: auto;
 	margin-bottom: 16px;
 }
 
