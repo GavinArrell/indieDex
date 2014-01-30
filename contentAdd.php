@@ -15,26 +15,38 @@ if (isDev()){
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:95%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
+   				<textarea style=" resize:none; height:100px; width:95%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
 				<br>
 				<label for="file">Read More Section</label><br><br>
-   				
+   				Enter Text Here
+   				<br>
 				<textarea id="text" style=" resize:none; height:24px; width:95%; margin-bottom:16px;"></textarea>
+				<br><br>
+				HTML Output. Change at your own risk.
+				<br>
+				<textarea name="content" id="textOut" style=" resize:none; height:50px; width:95%; margin-bottom:16px;"></textarea>
 				<br>
 				<button type="button" onclick="add(1)">Add Title</button>
 				<button type="button" onclick="add(2)">Add Paragraph</button>
 				<button type="button" onclick="add(3)">Embed Youtube Video</button>
-				<button type="button" onclick="add(4)">Embed Picutre URL displayed right of following paragraph</button>
+				<button type="button" onclick="add(4)">Embed Picutre URL </button>
+				<button type="button" style="float:right;" onclick="refresh()">Refresh HTML </button>
+				<div style="height:500px; overflow-y:scroll;">
 				<div id="textOutFinal" style="width:575px;"></div>
-				<div style="height:500px; overflow-y:auto;">
-				<textarea name="content" id="textOut" style="resize:none; display:none;"></textarea>
+				
 				<script>
 				    var content = new Array();
 				    var x = 0;
+				    
+				    function refresh(){
+				    	content.length=0;
+				    	content[0] = document.getElementById('textOut').value;
+				    	document.getElementById('textOutFinal').innerHTML = content.join('');
+				    }
 				
 				    function add(x) {
 				        i = content.length;
@@ -53,16 +65,22 @@ if (isDev()){
 				            content[i] = document.getElementById("text").value;
 				            break;
 				        case 4:
-				            content[i] = '<img style="border:solid black 2px; width:50%; float:right;" src="';
+				            content[i] = '<img style="border:solid black 2px; width:50%;" src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
+				        case 5:
+				            content[i] = '<img style="border:solid black 2px; width:50%; float:left;"  src="';
 				            content[i] += document.getElementById("text").value;
 				            content[i] += '"/>';
 				        }    
-				        document.getElementById('textOutFinal').innerHTML = content.join('');
 				        document.getElementById('textOut').value = content.join('');
+				        document.getElementById('textOutFinal').innerHTML = content.join('');
 				    }
 				</script>
    				</div>
-   				
+   				<br>
+   				<div style="width:75%; border-top: solid black 2px; height:1px; margin:auto;"></div>
+   				<br>
    				
    				<div style="float:left; width:20%">
    					<h3>Console</h3>
@@ -132,6 +150,7 @@ if (isDev()){
 function addReviews(){
 if (isDev()){
 	?>
+	
 		<div class="addContentBox">
 			<br>
 			<h3>ADD REVIEW CONTENT</h3><br>
@@ -144,75 +163,72 @@ if (isDev()){
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:95%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
-				
-				<div style="height:300px; overflow-y:auto;">
+   				<textarea style=" resize:none; height:100px; width:95%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
+				<br>
 				<label for="file">Read More Section</label><br><br>
-   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title1"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction1"></textarea><br>
-   				
-   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title2"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction2"></textarea><br>
-   				
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title3"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction3"></textarea><br>
-   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title4"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction4"></textarea><br>
-   				
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title5"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction5"></textarea><br>
-   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title6"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction6"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title7"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction7"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title8"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction8"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title9"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction9"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title10"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction10"></textarea><br>
+   				Enter Text Here
+   				<br>
+				<textarea id="text" style=" resize:none; height:24px; width:95%; margin-bottom:16px;"></textarea>
+				<br><br>
+				HTML Output. Change at your own risk.
+				<br>
+				<textarea name="content" id="textOut" style=" resize:none; height:50px; width:95%; margin-bottom:16px;"></textarea>
+				<br>
+				<button type="button" onclick="add(1)">Add Title</button>
+				<button type="button" onclick="add(2)">Add Paragraph</button>
+				<button type="button" onclick="add(3)">Embed Youtube Video</button>
+				<button type="button" onclick="add(4)">Embed Picutre URL </button>
+				<button type="button" style="float:right;" onclick="refresh()">Refresh HTML </button>
+				<div style="height:500px; overflow-y:scroll;">
+				<div id="textOutFinal" style="width:575px;"></div>
+				
+				<script>
+				    var content = new Array();
+				    var x = 0;
+				    
+				    function refresh(){
+				    	content.length=0;
+				    	content[0] = document.getElementById('textOut').value;
+				    	document.getElementById('textOutFinal').innerHTML = content.join('');
+				    }
+				
+				    function add(x) {
+				        i = content.length;
+				        switch (x){
+				        case 1:
+				            content[i] = '<h2 style="clear:both;">';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '</h2>';
+				            break;
+				        case 2:
+				            content[i] = '<p>';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '</p>';
+				            break;
+				        case 3:
+				            content[i] = document.getElementById("text").value;
+				            break;
+				        case 4:
+				            content[i] = '<img style="border:solid black 2px; width:50%;" src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
+				        case 5:
+				            content[i] = '<img style="border:solid black 2px; width:50%; float:left;"  src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
+				        }    
+				        document.getElementById('textOut').value = content.join('');
+				        document.getElementById('textOutFinal').innerHTML = content.join('');
+				    }
+				</script>
    				</div>
-   				
+   				<br>
+   				<div style="width:75%; border-top: solid black 2px; height:1px; margin:auto;"></div>
+   				<br>
    				
    				<div style="float:left; width:20%">
    					<h3>Console</h3>
@@ -282,87 +298,85 @@ if (isDev()){
 function addGames(){
 if (isDev()){
 	?>
+	
 		<div class="addContentBox">
 			<br>
 			<h3>ADD GAMES CONTENT</h3><br>
 			<div class="contentMore" style="padding:5px; margin:5px;">
 				
-<form action="uploadGames.php" method="post"
+				<form action="uploadGames.php" method="post"
 				enctype="multipart/form-data">
 				<label for="file">Image</label>
 				<input type="file" name="file" id="file"><br><br>
 				
 		
 				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title"></textarea><br>
+   				<textarea style=" resize:none; height:24px; width:95%; margin-bottom:16px;" type="text" name="title"></textarea><br>
 				
 				
 				<label for="file">Introduction</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
-				
-				<div style="height:300px; overflow-y:auto;">
+   				<textarea style=" resize:none; height:100px; width:95%; margin-bottom:16px;" type="text" name="introduction"></textarea><br>
+				<br>
 				<label for="file">Read More Section</label><br><br>
-   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title1"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction1"></textarea><br>
-   				
-   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title2"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction2"></textarea><br>
-   				
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title3"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction3"></textarea><br>
-   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title4"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction4"></textarea><br>
-   				
-   				 
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title5"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction5"></textarea><br>
-   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title6"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction6"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title7"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction7"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title8"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction8"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title9"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction9"></textarea><br>
-   				   				
-   				   				
-   				<label for="file">Title</label><br>
-   				<textarea style=" resize:none; height:24px; width:100%; margin-bottom:16px;" type="text" name="title10"></textarea><br>
-				<label for="file">Paragraph</label><br>
-   				<textarea style=" resize:none; height:100px; width:100%; margin-bottom:16px;" type="text" name="introduction10"></textarea><br>
+   				Enter Text Here
+   				<br>
+				<textarea id="text" style=" resize:none; height:24px; width:95%; margin-bottom:16px;"></textarea>
+				<br><br>
+				HTML Output. Change at your own risk.
+				<br>
+				<textarea name="content" id="textOut" style=" resize:none; height:50px; width:95%; margin-bottom:16px;"></textarea>
+				<br>
+				<button type="button" onclick="add(1)">Add Title</button>
+				<button type="button" onclick="add(2)">Add Paragraph</button>
+				<button type="button" onclick="add(3)">Embed Youtube Video</button>
+				<button type="button" onclick="add(4)">Embed Picutre URL </button>
+				<button type="button" style="float:right;" onclick="refresh()">Refresh HTML </button>
+				<div style="height:500px; overflow-y:scroll;">
+				<div id="textOutFinal" style="width:575px;"></div>
+				
+				<script>
+				    var content = new Array();
+				    var x = 0;
+				    
+				    function refresh(){
+				    	content.length=0;
+				    	content[0] = document.getElementById('textOut').value;
+				    	document.getElementById('textOutFinal').innerHTML = content.join('');
+				    }
+				
+				    function add(x) {
+				        i = content.length;
+				        switch (x){
+				        case 1:
+				            content[i] = '<h2 style="clear:both;">';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '</h2>';
+				            break;
+				        case 2:
+				            content[i] = '<p>';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '</p>';
+				            break;
+				        case 3:
+				            content[i] = document.getElementById("text").value;
+				            break;
+				        case 4:
+				            content[i] = '<img style="border:solid black 2px; width:50%;" src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
+				        case 5:
+				            content[i] = '<img style="border:solid black 2px; width:50%; float:left;"  src="';
+				            content[i] += document.getElementById("text").value;
+				            content[i] += '"/>';
+				        }    
+				        document.getElementById('textOut').value = content.join('');
+				        document.getElementById('textOutFinal').innerHTML = content.join('');
+				    }
+				</script>
    				</div>
-   				
+   				<br>
+   				<div style="width:75%; border-top: solid black 2px; height:1px; margin:auto;"></div>
+   				<br>
    				
    				<div style="float:left; width:20%">
    					<h3>Console</h3>
@@ -429,6 +443,7 @@ if (isDev()){
 	return;
 }else{return false;}
 }
+
 
 
 ?>
