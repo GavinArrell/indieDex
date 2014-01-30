@@ -97,7 +97,7 @@ a:active {color: #FFAA00;}
 #rightContainerTwo{
 	float:right;
 	min-width:720px;
-	width: 75%;
+	width: 80%;
 }
 
 #leftContainer{
@@ -190,7 +190,7 @@ a:active {color: #FFAA00;}
 }
 
 .contentBoxContainer, .addContentBox {
-	float:right;
+	float:left;
 	margin-top: 5px;
 	margin-right: 5px;
 	background-color:#FFFFFF;
