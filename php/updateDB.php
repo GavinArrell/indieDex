@@ -6,7 +6,7 @@ function registerNewUser($values) {
 	$joinDate   = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
 	$lastSeen   = date_timestamp_get(new DateTime());
 	$background = "img/defaultProfileBackground.jpg";
-	$settings   = "[showEmail=false][showName=false][showAge=false][showLocation=false]";
+	$settings   = "showEmail=false showName=true showAge=true showLocation=false";
 	
 	$columns = getColumnCount("user_table");
 	if($columns != count($values)+6) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table"); return;}

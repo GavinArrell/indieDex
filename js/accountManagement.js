@@ -1,36 +1,36 @@
 $(document).ready(function() {
 	
-	accountManagement_load(2);
+	profileManagement_load(0);
 	
-	$('#accountManagementButton_editInfo').click(function() {accountManagement_load(0);});
-	$('#accountManagementButton_notifs').click(function()   {accountManagement_load(1);});
-	$('#accountManagementButton_messages').click(function() {accountManagement_load(2);});
-	$('#accountManagementButton_status').click(function()   {accountManagement_load(3);});
+	$('#profileManagementButton_notifs').click(function()   {profileManagement_load(0);});
+	$('#profileManagementButton_messages').click(function() {profileManagement_load(1);});
+	$('#profileManagementButton_status').click(function()   {profileManagement_load(2);});
+	$('#profileManagementButton_editInfo').click(function() {profileManagement_load(3);});
 	
 });
 
-function accountManagement_load(button) {
-	$('#accountStatus').hide();
-	$('#accountNotifications').hide();
-	$('#accountMessageBoard').hide();
-	$('#accountInfoEditTable').hide();
+function profileManagement_load(button) {
+	$('#profileNotifications').hide();
+	$('#profileMessageBoard').hide();
+	$('#profileStatus').hide();
+	$('#profileInfoEditTable').hide();
 	
 	switch(button) {
-		case 0 : $('#accountInfoEditTable').show(); break;
-		case 1 : $('#accountNotifications').show(); break;
-		case 2 : $('#accountMessageBoard').show();  break;
-		case 3 : $('#accountStatus').show();        break;
+		case 0 : $('#profileNotifications').show(); break;
+		case 1 : $('#profileMessageBoard').show();  break;
+		case 2 : $('#profileStatus').show();        break;
+		case 3 : $('#profileInfoEditTable').show(); break;
 	}
 	
-	accountManagement_highlightButton(button);
+	profileManagement_highlightButton(button);
 }
 
-function accountManagement_highlightButton(button) {
+function profileManagement_highlightButton(button) {
 	
-	$('.accountManagementButton').removeClass('accountManagementButtonSelected');
+	$('.profileManagementButton').removeClass('profileManagementButtonSelected');
 		
-	if(button == 0) {$('#accountManagementButton_editInfo').addClass('accountManagementButtonSelected');}
-	if(button == 1) {$('#accountManagementButton_notifs').addClass('accountManagementButtonSelected');}
-	if(button == 2) {$('#accountManagementButton_messages').addClass('accountManagementButtonSelected');}
-	if(button == 3) {$('#accountManagementButton_status').addClass('accountManagementButtonSelected');}
+	if(button == 0) {$('#profileManagementButton_notifs').addClass('profileManagementButtonSelected');}
+	if(button == 1) {$('#profileManagementButton_messages').addClass('profileManagementButtonSelected');}
+	if(button == 2) {$('#profileManagementButton_status').addClass('profileManagementButtonSelected');}
+	if(button == 3) {$('#profileManagementButton_editInfo').addClass('profileManagementButtonSelected');}
 }

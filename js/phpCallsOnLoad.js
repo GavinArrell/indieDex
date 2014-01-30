@@ -26,7 +26,7 @@ function phpCallsOnLoad_updateSession(call) {
 			
 			for(var i=0; i<users.length; i++) {
 				if(i > 0) {htmlString += ', ';}
-				htmlString += '<a href="">'+ users[i] +'</a>';
+				htmlString += '<a href="profile.php?user='+users[i]+'">'+ users[i] +'</a>';
 			}
 			
 			$('#onlineUsersSidebar').html(htmlString);

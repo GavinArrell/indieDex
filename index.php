@@ -75,7 +75,7 @@
 										
  										<div id="accountDetails">
  										<br><h3>';echo $_SESSION['username']; echo'</h3>
- 										<p style="padding:24px;">Karma: ';echo $_SESSION['indiePoints']; echo'<br>
+ 										<p style="padding:24px;">Indie Points: ';echo $_SESSION['indiePoints']; echo'<br>
  										';$status = $_SESSION['status'];
 										if($status==0){echo'Non-Premium account';}
 										else if($status==1){echo'Premium Account';}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2014 at 11:17 PM
+-- Generation Time: Jan 30, 2014 at 09:03 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `contentnews_table` (
   `price` decimal(5,2) NOT NULL,
   `staff` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `contentnews_table`
@@ -87,7 +87,8 @@ INSERT INTO `contentnews_table` (`id`, `title`, `content`, `top`, `new`, `hot`, 
 (18, 'Quantum Conundrum', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/859008quantum.png"/></div><div class="contentBoxText"><h2>Quantum Conundrum</h2><p>A game with a unique artstyle, go through the levels and bend the laws of physics to complete puzzles.</p></div><div class="contentMore"><p>Quantum Conundrum is a puzzle-platformer video game developed by Airtight Games and published by Square Enix. It was directed by Kim Swift, who formerly worked at Valve as a lead designer on the critically acclaimed Portal. The game was released downloadably on Microsoft Windows on June 21, 2012, July 10, 2012 on PlayStation 3 and July 11, 2012 on Xbox 360.</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-26 00:30:58', 0, 0, ';pc;;ps3;;xbox360;', ';action;;puzzle;;sport;', '2012', 3, '10.00', 0),
 (19, 'Retro City Rampage', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/33294retro.png"/></div><div class="contentBoxText"><h2>Retro City Rampage</h2><p>A game created to feel like an 80s arcade game. Players will find this game super addictive and quietly hilarious!</p></div><div class="contentMore"><p>Retro City Rampage is a downloadable action-adventure video game for WiiWare, Xbox Live Arcade, PlayStation Network and Microsoft Windows developed by Vblank Entertainment. It is a parody of retro games and 80s and 90s pop culture as well as the popular Grand Theft Auto series and the games that followed it. It was released on October 9, 2012 for PlayStation 3, PlayStation Vita, Microsoft Windows, and on January 2, 2013 for Xbox Live Arcade, and on February 28, 2013 for WiiWare. Retro City Rampage was the last original game released for the WiiWare service globally until Deer Drive Legends was ported to the service the following November. The game is due to be released for the Nintendo 3DS via its Nintendo eShop during the first quarter of 2014.</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-26 00:33:00', 0, 0, ';pc;;ps3;;xboxone;;xbox360;;wii;', '', '2013', 3, '10.00', 0),
 (20, 'Chivalry', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/507049chivalry.png"/></div><div class="contentBoxText"><h2>Chivalry</h2><p>Imagine Call of Duty in the 1700s! This game is full of action, blood and a variety of gamemodes so you\\''ll never get bored!</p></div><div class="contentMore"><p>Chivalry: Medieval Warfare is a multiplayer action video game developed by Torn Banner Studios as their first commercial title. The game is set in a fictional world resembling the Middle Ages and offers similar gameplay combat to the developer''s previously released Half-Life 2 mod, Age of Chivalry. On September 20, 2012 a trailer was released which set the release date to October 16, 2012. The developers had confirmed that the game would be PC exclusive, though they stated the possibility of console versions if the interest were great enough. An expansion pack called Chivalry: Deadliest Warrior was announced on August 23, 2013. It''s a tie-in for the television series Deadliest Warrior.</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-26 00:34:26', 0, 0, ';pc;;mac;;linux;', ';action;;adventure;;sport;', '2013', 4, '15.00', 0),
-(22, 'Kitteh', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/849426kitten with bowtie.jpg"/></div><div class="contentBoxText"><h2>Kitteh</h2><p>Kitteh</p></div><div class="contentMore"><h3>KITTEH</h3><p>KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-26 12:49:06', 0, 0, '', '', '', 0, '0.00', 0);
+(22, 'Kitteh', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/849426kitten with bowtie.jpg"/></div><div class="contentBoxText"><h2>Kitteh</h2><p>Kitteh</p></div><div class="contentMore"><h3>KITTEH</h3><p>KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI KITTEH WIT A BOWTI</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-26 12:49:06', 0, 0, '', '', '', 0, '0.00', 0),
+(23, 'Random Content', '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="img/uploads/718231city.jpg"/></div><div class="contentBoxText"><h2>Random Content</h2><p>Intro</p></div><div class="contentMore"><h2 style="clear:both;">Title</h2><p>Random Paragraph</p><img style="border:solid black 2px; width:50%; float:right;" src="http://i.imgur.com/UkwaDks.gif"/><p>LOL its a duck</p><h2 style="clear:both;">Another title</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div><p class="readMore">Read More</p></div>', 0, '2014-01-30 00:57:06', 0, 0, ';mac;;linux;;xboxone;;wiiu;;ios;;android;', ';shooter;', 'beta', 5, '0.00', 0);
 
 -- --------------------------------------------------------
 
@@ -129,23 +130,29 @@ CREATE TABLE IF NOT EXISTS `users_table` (
   `profile picture` text NOT NULL,
   `join date` date NOT NULL,
   `bio` varchar(256) NOT NULL,
-  `karma` int(11) NOT NULL DEFAULT '0',
+  `indiePoints` int(11) NOT NULL DEFAULT '0',
   `games` text NOT NULL,
   `wishlist` text NOT NULL,
   `lastSeen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `profileBackground` text NOT NULL,
+  `birthday` date NOT NULL,
+  `location` text NOT NULL,
+  `settings` text NOT NULL,
+  `friends` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `users_table`
 --
 
-INSERT INTO `users_table` (`id`, `username`, `password`, `email`, `status`, `first name`, `surname`, `profile picture`, `join date`, `bio`, `karma`, `games`, `wishlist`, `lastSeen`) VALUES
-(1, 'gavin', '32250170a0dca92d53ec9624f336ca24', 'gav@.com', 3, 'Gavin', 'Arrell', 'img/uploads/496795loading.gif', '2014-01-23', 'Hello', 9001, '', '', '0000-00-00 00:00:00'),
-(2, 'Liam', '1a1dc91c907325c69271ddf0c944bc72', 'liamkferris@hotmail.com', 3, 'Liam', 'Ferris', 'img/uploads/385192lets-adventure-through-drugs_o_624111.gif', '2014-01-23', 'This is my Bio.', 9002, '', '', '0000-00-00 00:00:00'),
-(3, 'Bob', '202cb962ac59075b964b07152d234b70', 'moonpig@.com', 1, 'Bob', 'the Builder', 'img/uploads/28967doge.jpeg', '0000-00-00', 'Hey I''m Bob. I''m a builder. I also love indie games and really well made websites.', 0, '', '', '0000-00-00 00:00:00'),
-(4, 'bellybutun', '90319ea56263c86d6dbade1b0f34fab6', 'greenman848@hotmail.co.uk', 3, 'Ryan', 'Barnes', 'img/uploads/772644chargif.gif', '0000-00-00', '', 0, '', '', '0000-00-00 00:00:00'),
-(5, 'andrew', '6de98bf62c3c2fe371082ee083a3787e', 'andyroo985@gmail.com', 3, 'Anjew', 'Anderson', 'img/uploads/337646kitten with bowtie.jpg', '0000-00-00', 'I am a recovering Jew. The severity of my religion left me disfigured in a number of ways; I can no longer talk, only mew, i no longer have hair, only fur, and i seem to have a bowtie stuck to me at all times. For just Â£1 a month you can stop Anjewidis. H', 0, '', '', '0000-00-00 00:00:00');
+INSERT INTO `users_table` (`id`, `username`, `password`, `email`, `status`, `first name`, `surname`, `profile picture`, `join date`, `bio`, `indiePoints`, `games`, `wishlist`, `lastSeen`, `profileBackground`, `birthday`, `location`, `settings`, `friends`) VALUES
+(2, 'Liam', '1a1dc91c907325c69271ddf0c944bc72', 'liamkferris@hotmail.com', 3, 'Liam', 'Ferris', 'img/uploads/385192lets-adventure-through-drugs_o_624111.gif', '2014-01-23', 'This is my Bio.', 9002, '', '', '2014-01-30 20:57:13', '', '0000-00-00', '', '', ''),
+(3, 'Bob', '202cb962ac59075b964b07152d234b70', 'moonpig@.com', 1, 'Bob', 'the Builder', 'img/uploads/28967doge.jpeg', '0000-00-00', 'Hey I''m Bob. I''m a builder. I also love indie games and really well made websites.', 0, '', '', '0000-00-00 00:00:00', '', '0000-00-00', '', '', ''),
+(4, 'bellybutun', '90319ea56263c86d6dbade1b0f34fab6', 'greenman848@hotmail.co.uk', 3, 'Ryan', 'Barnes', 'img/uploads/772644chargif.gif', '0000-00-00', '', 0, '', '', '2014-01-29 21:03:47', '', '0000-00-00', '', 'showEmail=false showName=true showAge=true showLocation=false', ''),
+(5, 'andrew', '6de98bf62c3c2fe371082ee083a3787e', 'andyroo985@gmail.com', 3, 'Anjew', 'Anderson', 'img/uploads/337646kitten with bowtie.jpg', '0000-00-00', 'I am a recovering Jew. The severity of my religion left me disfigured in a number of ways; I can no longer talk, only mew, i no longer have hair, only fur, and i seem to have a bowtie stuck to me at all times. For just Â£1 a month you can stop Anjewidis. H', 0, '', '', '0000-00-00 00:00:00', '', '0000-00-00', '', '', ''),
+(7, 'Gavin', '1a1dc91c907325c69271ddf0c944bc72', 'gavin.arrell@gmail.com', 3, 'Gavin', 'Arrell', 'img/Digital-Abstract-HD-Background.jpg', '0000-00-00', '', 0, '', '', '2014-01-30 20:51:47', '', '0000-00-00', '', '', ''),
+(8, 'Tristan', '5101ed23493df51bae32779cd8043ff0', 'tristancullen@ntlworld.com', 0, 'Tristan', 'Cullen', 'img/Digital-Abstract-HD-Background.jpg', '2014-01-29', '', 0, '', '', '2014-01-29 21:56:42', '', '0000-00-00', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

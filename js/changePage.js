@@ -62,6 +62,7 @@ function gotoPage(index, jump) {
 		}
 	});
 	
+	//window.history.replaceState("", "", "/page="+(index+1));
 }
 
 function showLoad() {

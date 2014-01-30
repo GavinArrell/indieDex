@@ -19,7 +19,7 @@
 					$user_id = mysql_result($query_run, 0, 'id');
 					$username = mysql_result($query_run, 0, 'username');
 					$bio = mysql_result($query_run, 0, 'bio');
-					$karma = mysql_result($query_run, 0, 'karma');
+					$indiePoints = mysql_result($query_run, 0, 'indiePoints');
 					$status = mysql_result($query_run, 0, 'status');
 					$picture = mysql_result($query_run, 0, 'profile picture');
 					$firstname = mysql_result($query_run, 0, 'first name');
@@ -29,7 +29,7 @@
 					$_SESSION['user_id']=$user_id;
 					$_SESSION['username']=$username;
 					$_SESSION['bio']=$bio;
-					$_SESSION['karma']=$karma;
+					$_SESSION['indiePoints']=$indiePoints;
 					$_SESSION['status']=$status;
 					$_SESSION['pic']=$picture;
 					$_SESSION['firstname']=$firstname;

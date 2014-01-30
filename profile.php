@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>rofileI
+<!DOCTYPE HTML>
 <html lang="en-GB">
 	<head>
 		<title>indieDex</title>
@@ -22,6 +22,7 @@
 	  	<script type='text/javascript' src="js/header.js"></script>
 	  	<script type='text/javascript' src="js/general.js"></script>
 	  	<script type='text/javascript' src="js/phpCallsOnLoad.js"></script>
+	  	<script type='text/javascript' src="js/accountManagement.js"></script>
 		
   	</head>
   	
@@ -105,56 +106,8 @@
  			<div class="rightContainer">
  				
  				<div id='profileInfoContainer'>
-			
-					<div id='profileInfoLeft'>
-						<img src="<?php echo $_SESSION['pic']; ?>" id='profileInfoPic'>
-					</div>
-					
-					<div id='profileInfoRight'>
-						<div id="profileInfoRightInner">
-							<h4 id="profileInfoDetailsName"><?php echo $_SESSION['username']?></h4>
-							
-							<table id="profileInfoDetails">
-								<tr>
-									<th>Name:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-								</tr>
-								<tr>
-									<th>Account Type:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-									Karma: <?php echo $_SESSION['indiePoints']; ?>
-								</tr>
-								<tr>
-									<th>Age:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-									Joined: <?php echo $_SESSION['joindate']; ?>
-								</tr>
-								<tr>
-									<th>Location:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-								</tr>
-								<tr>
-									<th>Indie Points:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-								</tr>
-								<tr>
-									<th>Joined:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-								</tr>
-								<tr>
-									<th>Last Online:</th>
-									<td><?php echo $_SESSION['username'];?></td>
-								</tr>
-							</table>
-						</div>
-						
-						
-						<div id="profileInfoBio">
-							<h3>My Bio</h3>
-							<p><?php echo $_SESSION['bio']; ?></p>
-						</div>
-					</div>
-					
+ 					
+ 					<?php include 'php/getuserInfo.php' ?>
 					<div class="clearfix"></div>
 					
 				</div>
@@ -162,10 +115,10 @@
 				<div id="profileInfoEdit">
 					
 					<div id="#profileManagementButtonContainer">
-						<div class="profileManagementButton" id="profileManagementButton_editInfo">edit info</div>
 						<div class="profileManagementButton" id="profileManagementButton_notifs">notifications</div>
-						<div class="profileManagementButton" id="profileManagementButton_messages">message board</div>
-						<div class="profileManagementButton" id="profileManagementButton_status">account status</div>
+						<div class="profileManagementButton" id="profileManagementButton_messages">messages</div>
+						<div class="profileManagementButton" id="profileManagementButton_status">settings</div>
+						<div class="profileManagementButton" id="profileManagementButton_editInfo">profile</div>
 					</div>
 					
 					<table id="profileInfoEditTable">
