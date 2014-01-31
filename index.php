@@ -30,7 +30,7 @@
 	  	<script type='text/javascript' src="js/queryDB.js"></script>
 	  	<script type='text/javascript' src="js/getContentFilters.js"></script>
 	  	<script type='text/javascript' src="js/general.js"></script>
-	  	<script type='text/javascript' src="js/phpCallsOnLoad.js"></script>
+	  	<script type='text/javascript' src="js/updateSession.js"></script>
 		
 			
 		<script>

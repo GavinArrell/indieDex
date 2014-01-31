@@ -4,7 +4,7 @@ function registerNewUser($values) {
 	
 	$profilePic = "img/defaultProfilePic.jpg";
 	$joinDate   = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
-	$lastSeen   = date_timestamp_get(new DateTime());
+	$lastSeen   = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d G:i:s');
 	$background = "img/defaultProfileBackground.jpg";
 	$settings   = "showEmail=false showName=true showAge=true showLocation=false";
 	
