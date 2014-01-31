@@ -70,12 +70,15 @@ if(isset($_POST['2013'])){$year = '2013';}
 if(isset($_POST['2014'])){$year = '2014';}
 if(isset($_POST['beta'])){$year = 'beta';}
 
+$timestamp = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'Y-m-d G:i:s');
+$author = $_SESSION['username'];
+
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore">';
 $content = $content.$contentmore;
 $content = $content.'</div><p class="readMore">Read More</p></div>';
 
-$query = "INSERT INTO contentnews_table (title, content, consoles, genres, year, stars, price, staff)
-VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";
+$query = "INSERT INTO contentnews_table (title, content, consoles, genres, year, stars, price, staff, timestamp, author)
+VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff','$timestamp','$author')";
 if	($query_run = mysql_query($query)){
 									header('Location: index.php');
 								}else{
