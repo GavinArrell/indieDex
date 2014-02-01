@@ -30,8 +30,14 @@
 	margin-right: 16px;
 }
 
-#profileInfoDetails p {
-	padding-top: 5px;
+#profileInfoDetails {
+	margin-top: 5px;
+}
+
+#profileInfoDetails th {
+	text-align: left;
+	padding: 5px;
+	margin-right: 5px;
 }
 
 #profileInfoRight ul li {

@@ -78,8 +78,10 @@ function generateProfile($details) {
 	$showAge      = getSetting("showAge",      $settings);
 	$showLocation = getSetting("showLocation", $settings);
 	
+	$status       = getuserInfo_convertStatus($status);
+	$age          = calculateAge($birthday);
 	$joindate     = formatJoinDate($joindate);
-	//$lastSeen     = formatLastOnline($lastSeen);
+	$lastseen     = formatLastSeen($lastseen);
 	
 	$email        = $showEmail    ? $email                  : $username." has chosen not to share this information.";
 	$name         = $showName     ? $firstname." ".$surname : $username." has chosen not share this information.";
@@ -111,6 +113,12 @@ function generateProfile($details) {
 		 				<th>Account Type:</th>
 		 				<td>'. $status .'</td>
 		 			</tr>';
+		 			
+	//INDIE POINTS
+	echo 			'<tr>
+		 				<th>Indie Points:</th>
+		 				<td>'. $points .'</td>
+		 			</tr>';
 	
 	//EMAIL
 	echo 			'<tr>
@@ -121,19 +129,13 @@ function generateProfile($details) {
 	//AGE - BIRTHDAY
 	echo 			'<tr>
 		 				<th>Age:</th>
-		 				<td>'. $birthday .'</td>
+		 				<td>'. $age .'</td>
 		 			</tr>';
 	
 	//LOCATION
 	echo 			'<tr>
 		 				<th>Location:</th>
 		 				<td>'. $location .'</td>
-		 			</tr>';
-	
-	//INDIE POINTS
-	echo 			'<tr>
-		 				<th>Indie Points:</th>
-		 				<td>'. $points .'</td>
 		 			</tr>';
 	
 	//JOIN DATE
@@ -198,9 +200,62 @@ function formatJoinDate($joinDate) {
 	
 }
 
-function formatLastSeen($lastSeen) {
+function formatLastSeen($lastseen) {
 	
+	$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d G:i:s');
 	
+	$lastSeen = strtotime($lastseen);
+	$date     = strtotime($date);
+	
+	$minsPassed = floor( ($date - $lastSeen)/(60) );
+	if($minsPassed < 60) {
+		if($minsPassed < 10) {return "Currently Online";}
+		else {return $minsPassed." minutes ago";}
+	}
+	else {
+		
+		$hoursPassed = floor( ($date - $lastSeen)/(60*60) );
+		if($hoursPassed == 1) {return $hoursPassed." hour ago";}
+		if($hoursPassed < 24) {return $hoursPassed." hours ago";}
+		else {
+			$daysPassed = floor( ($date - $lastSeen)/(60*60*24) );
+			if($daysPassed == 1) {return $daysPassed." day ago";}
+			else {return $daysPassed." days ago";}
+		}
+	}
+	
+	return $lastseen; //DEFAULT
+}
+
+function getUserInfo_convertStatus($status) {
+	
+	switch($status) {
+		case 0: return "Non-Premium";
+		case 1: return "Premium";
+		case 2: return "Moderator";
+		case 3: return "inDev";
+		default: return "Non-Premium";
+	}
+	
+}
+
+function calculateAge($birthday) {
+	
+	$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
+	
+	$birthVals = explode('-', $birthday);
+	$dateVals     = explode('-', $date);
+	
+	$baseAge = $dateVals[0] - $birthVals[0];
+	
+	if($dateVals[1] > $birthVals[1]) {return $baseAge;}
+	if($dateVals[1] < $birthVals[1]) {return $baseAge-1;}
+	if($dateVals[1] == $birthVales[1]) {
+		if($dateVals[2] >= $birthVals) {return $baseAge;}
+		if($dateVals[2] <  $birthVals) {return $baseAge-1;}
+	}
+	
+	return $birthday;
 	
 }
 

@@ -21,7 +21,7 @@
 	  	
 	  	<script type='text/javascript' src="js/header.js"></script>
 	  	<script type='text/javascript' src="js/general.js"></script>
-	  	<script type='text/javascript' src="js/phpCallsOnLoad.js"></script>
+	  	<script type='text/javascript' src="js/updateSession.js"></script>
 	  	<script type='text/javascript' src="js/accountManagement.js"></script>
 		
   	</head>
