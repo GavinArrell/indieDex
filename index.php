@@ -99,9 +99,13 @@
 								include 'loginform.inc.php';
 							}
 						?> 
-					<a style="padding-left:16px;"href="profile.php">Account Settings</a><br>
+					<a style="padding-left:16px;"href="
+					<?php
+					echo "profile.php?user=".$_SESSION['username'];
+					?>
+					">Account Settings</a><br>
 					</div>
-					
+					<br>
 					<?php
 					include 'dVdA.php';
 					if(!isDev()){
