@@ -33,6 +33,22 @@ h4 { /* ==== USER FULL NAME ==== */
 
 /* ===== NON PINKS ===== */
 
+.center {
+	margin: auto;
+	text-align: center;
+}
+.right {
+	float: right;
+	text-align: right;
+}
+.left {
+	float: left;
+	text-align: left;
+}
+.clear {
+	clear: both;
+}
+
 .inline-block {
 	display: inline-block;
 }
@@ -41,12 +57,12 @@ h4 { /* ==== USER FULL NAME ==== */
 	margin: 0;
 }
 
+.small-margin {
+	margin: 2px;
+}
+
 .fillWidth {
 	width: 100%;
 	margin: auto;
-}
-
-.clearfix {
-	clear: both;
 }
 

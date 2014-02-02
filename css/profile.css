@@ -4,9 +4,14 @@
 	padding: 16px;
 }
 
+#profileInfoContainerInner {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
 #profileInfoLeft {
 	float: left;
-	margin: 5px;
+	width: 265px;
+	height: 265px;
 }
 
 #profileInfoPic {
@@ -18,11 +23,11 @@
 #profileInfoRight {
 	margin-top: 16px;
 	overflow: hidden;
-	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #profileInfoRightInner {
 	padding-left: 16px;
+	border-top: solid 2px #111111;
 }
 
 #profileInfoDetailsName {

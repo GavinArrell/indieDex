@@ -1,0 +1,15 @@
+input[type="submit"] {
+	background: #FFFFFF;
+	border: solid;
+	border-color: #88CCFF;
+	border-width: 2px;
+	margin: 12px;
+	padding: 5px 5px 5px 5px;
+	min-width: 12px;
+	text-align: center;
+	cursor: pointer;
+	opacity: 1;
+}
+
+input[type="submit"]:hover  {border-color: #0099FF;}
+input[type="submit"]:active {border-color: #FFAA00; background: #FFFFFF;}

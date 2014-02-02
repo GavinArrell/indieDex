@@ -1,0 +1,89 @@
+/*
+ * FOR STAT ICONS GOTO statIcons.css !!
+ */
+
+#accountSidebar {
+	padding: 16px;
+	margin-top: 5px;
+	margin-right: 5px;
+	background-color:#FFFFFF;
+}
+
+#accountSidebar h2 {
+	padding: 0;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+#accountSidebar h4 {
+	padding: 0;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+#accountSidebar input {
+	margin-bottom: 8px;
+	width: 100%;
+}
+
+#accountSidebar input[type="text"], #accountSidebar input[type="password"] {
+	border: 0;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	text-align: center;
+	
+	background: rgba(130, 204, 255, 0.3);
+	max-width: 192px;
+}
+
+#accountSidebar input[type="text"]:hover      {background: rgba(0, 153, 255, 0.3);}
+#accountSidebar input[type="password"]:hover  {background: rgba(0, 153, 255, 0.3);}
+
+#accountSidebar input[type="submit"] {
+	margin: 12px 0 2px 0;
+	padding: 4px;
+}
+
+#accountSidebarInner {
+	max-width: 192px;
+	margin: auto;
+}
+
+#accountImage {
+	clear: both;
+	margin: auto;
+	margin-bottom: 16px;
+}
+
+#accountImage img {
+	clear:both;
+	display:block;
+	margin:auto;
+	border: solid #111111 2px;
+	width: 128px;
+	height: 128px;
+	border-radius: 10px;
+}
+
+#accountDetails {
+	margin-bottom: 16px;
+}
+#accountDetails h2 {
+	padding: 0;
+	margin-bottom: 4px;
+}
+#accountDetails p {
+	margin: 4px;
+	color: #111111;
+}
+
+#accountDetailsInner {
+	width: 132px;
+	margin: auto;
+}
+
+#accountButtons {
+	margin: auto;
+	margin-top: 16px;
+	max-width: 192px
+}

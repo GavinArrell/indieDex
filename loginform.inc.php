@@ -1,4 +1,6 @@
 <?php
+require 'connect.inc.php';
+require 'core.inc.php';
 
 	 if(isset($_POST['username']) && isset($_POST['password'])) {
 	 	$username = $_POST['username'];
@@ -42,19 +44,3 @@
 		}
 	 }
 ?>
-<Style>
-
-.form{
-	padding:5px;
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-}	
-	
-</Style>
-<br>
-<div class="form">
-<form action="<?php echo $current_file; ?>" method="POST">
-	 Username: <input type="text" name="username" size="10"><br><br>
-	 Password: <input type="password" name="password" size="11"><br>
-	<input type="submit" value="Login"><br>
-</form>
-</div>

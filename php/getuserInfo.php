@@ -90,76 +90,80 @@ function generateProfile($details) {
 	
 	$profilebackStyle  = "background-image: url('../". $profileback ."'); background-repeat: repeat; background-position: top;";
 	
-	echo '<div id="profileInfoContainer" style="'. $profilebackStyle .'">';
-	
-	echo '<div id="profileInfoLeft">';
-	echo 	'<img src="'. $profilepic .'" id="profileInfoPic">';
-	echo '</div>';
-	
-	echo '<div id="profileInfoRight">';
-	echo 	'<div id="profileInfoRightInner">';
-	echo 		'<h4 id="profileInfoDetailsName">'. $username .'</h4>';
-	
-	echo 		'<table id="profileInfoDetails">';
-	
-	//FULL NAME
-	echo			'<tr>
-		 				<th>Name:</th>
-		 				<td>'. $name .'</td>
-		 			</tr>';
-	
-	//ACCOUNT STATUS
-	echo 			'<tr>
-		 				<th>Account Type:</th>
-		 				<td>'. $status .'</td>
-		 			</tr>';
-		 			
-	//INDIE POINTS
-	echo 			'<tr>
-		 				<th>Indie Points:</th>
-		 				<td>'. $points .'</td>
-		 			</tr>';
-	
-	//EMAIL
-	echo 			'<tr>
-		 				<th>E-mail:</th>
-		 				<td>'. $email .'</td>
-		 			</tr>';
-	
-	//AGE - BIRTHDAY
-	echo 			'<tr>
-		 				<th>Age:</th>
-		 				<td>'. $age .'</td>
-		 			</tr>';
-	
-	//LOCATION
-	echo 			'<tr>
-		 				<th>Location:</th>
-		 				<td>'. $location .'</td>
-		 			</tr>';
-	
-	//JOIN DATE
-	echo 			'<tr>
-		 				<th>Joined:</th>
-		 				<td>'. $joindate .'</td>
-		 			</tr>';
-	
-	//LAST ONLINE
-	echo 			'<tr>
-		 				<th>Last Online:</th>
-		 				<td>'. $lastseen .'</td>
-		 			</tr>';
-	
-	echo 		'</table>';
-	echo 	'</div>';
-
-	//ABOUT ME
-	echo 	'<div id="profileInfoBio">
-		 		<h3>About Me</h3>
-		 		<p>'. $bio .'</p>
-		 	</div>';
+		echo '<div id="profileInfoContainer" style="'. $profilebackStyle .'">';
+			echo '<div id="profileInfoContainerInner">';
 			
-	echo '<div class="clearfix"></div> </div>';
+				echo '<div id="profileInfoLeft">';
+					echo '<img src="'. $profilepic .'" id="profileInfoPic">';
+				echo '</div>';
+				
+				echo '<div id="profileInfoRight">';
+					echo '<div id="profileInfoRightInner">';
+						echo '<h4 id="profileInfoDetailsName">'. $username .'</h4>';
+				
+						echo '<table id="profileInfoDetails">';
+				
+							//FULL NAME
+							echo '<tr>
+								 	<th>Name:</th>
+								 	<td>'. $name .'</td>
+								 </tr>';
+				
+							//ACCOUNT STATUS
+							echo '<tr>
+								 	<th>Account Type:</th>
+								 	<td>'. $status .'</td>
+								 </tr>';
+					 			
+							//INDIE POINTS
+							echo '<tr>
+								 	<th>Indie Points:</th>
+								 	<td>'. $points .'</td>
+								 </tr>';
+				
+							//EMAIL
+							echo '<tr>
+								 	<th>E-mail:</th>
+								 	<td>'. $email .'</td>
+								 </tr>';
+				
+							//AGE - BIRTHDAY
+							echo '<tr>
+								 	<th>Age:</th>
+								 	<td>'. $age .'</td>
+								 </tr>';
+				
+							//LOCATION
+							echo '<tr>
+								 	<th>Location:</th>
+								 	<td>'. $location .'</td>
+								 </tr>';
+				
+							//JOIN DATE
+							echo '<tr>
+								 	<th>Joined:</th>
+								 	<td>'. $joindate .'</td>
+								 </tr>';
+				
+							//LAST ONLINE
+							echo '<tr>
+								 	<th>Last Online:</th>
+								 	<td>'. $lastseen .'</td>
+								 </tr>';
+				
+						echo '</table>';
+					echo '</div>';
+				echo '</div>';
+			
+				//ABOUT ME
+				echo '<div id="profileInfoBio">
+					 	<h3>About Me</h3>
+					 	<p>'. $bio .'</p>
+					 </div>';
+					
+			echo '</div>';
+			echo '<div class="clear"></div>';
+		echo '</div>';
 }
 
 function getSetting($request, $allSettings) {
@@ -233,8 +237,8 @@ function getUserInfo_convertStatus($status) {
 		case 0: return "Non-Premium";
 		case 1: return "Premium";
 		case 2: return "Moderator";
-		case 3: return "inDev";
-		default: return "Non-Premium";
+		case 3: return "Developer";
+		default: return $status;
 	}
 	
 }

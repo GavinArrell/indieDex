@@ -1,4 +1,4 @@
-.button {
+.button, input[type="submit"] {
 	background: #FFFFFF;
 	border: solid;
 	border-color: #88CCFF;
@@ -10,8 +10,15 @@
 	cursor: pointer;
 	opacity: 1;
 }
-.button:hover {border-color: #0099FF;}
+.button:hover  {border-color: #0099FF;}
 .button:active {border-color: #FFAA00; background: #FFFFFF;}
+
+input[type="submit"]:hover  {border-color: #0099FF;}
+input[type="submit"]:active {border-color: #FFAA00; background: #FFFFFF;}
+
+a .button       {color: #111111;}
+a .button:hover  {color: #111111;}
+a .button:active {color: #111111;}
 
 .pageButtonSelected {
 	background: #111111;
