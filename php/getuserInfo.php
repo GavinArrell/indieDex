@@ -4,7 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/connect.inc.php');
 
 $userDetails = array();
 
-if(isset($_GET['user'])) {
+if(isset($_GET['user']) && !empty($_GET['user'])) {
 	$username = $_GET['user'];
 	$query = "SELECT * FROM `users_table` WHERE username='$username'";
 	
@@ -35,6 +35,9 @@ if(isset($_GET['user'])) {
 			generateProfile($userDetails);
 		}
 	}
+}
+else {
+	header('Location: index.php');
 }
 
 function generateProfile($details) {
@@ -90,8 +93,9 @@ function generateProfile($details) {
 	
 	$profilebackStyle  = "background-image: url('../". $profileback ."'); background-repeat: repeat; background-position: top;";
 	
-		echo '<div id="profileInfoContainer" style="'. $profilebackStyle .'">';
-			echo '<div id="profileInfoContainerInner">';
+	echo '<div class="rightContainer" style="'. $profilebackStyle .'">';
+		echo '<div id="profileContainer">';
+			echo '<div id="profileInfoContainer">';
 			
 				echo '<div id="profileInfoLeft">';
 					echo '<img src="'. $profilepic .'" id="profileInfoPic">';
@@ -161,9 +165,100 @@ function generateProfile($details) {
 					 	<p>'. $bio .'</p>
 					 </div>';
 					
-			echo '</div>';
+			echo '</div>'; // PROFILE INFO CONTAINER END
+			
 			echo '<div class="clear"></div>';
-		echo '</div>';
+			
+			echo '<div id="profileInfoEdit">';
+				
+				echo '<div id="#profileManagementButtonContainer">';
+				
+					echo '<div class="profileManagementButton" id="profileManagementButton_notifs">notifications</div>';
+					echo '<div class="profileManagementButton" id="profileManagementButton_messages">messages</div>';
+					echo '<div class="profileManagementButton" id="profileManagementButton_status">settings</div>';
+					echo '<div class="profileManagementButton" id="profileManagementButton_editInfo">profile</div>';
+						
+				echo '</div>';
+				
+				//Indent because the following containers are subbed under the header divs above
+				
+					echo '<table id="profileInfoEditTable">';
+						echo '<tr>';
+							echo '<td>';
+								echo '<form action="uploadInfoEdit.php" method="post" enctype="multipart/form-data">';
+									echo '<label for="file">Change Your Profile Picture</label>';
+									echo '<input type="file" name="file" id="file"><br><br>';
+								
+									echo '<label for="file">Edit Your Bio</label>';
+									echo '<textarea style=" resize:none; height:100px; width:300px;" type="text" name="bio"></textarea><br>';
+							echo '</td>';
+							
+							echo '<td>';
+								
+							echo '</td>';
+						
+							echo '<td>';
+									//FORM CONTINUES
+									echo '<label for="file">Change Your Password</label>';
+									echo 'Old Password:<input style="margin-left:6px;" input type="password" name="oldpw"><br>';
+									echo 'New Password:<input type="password" name="newpw"><br>';
+									echo 'New Password:<input type="password" name="newpwtwo"><br>';
+									echo '<br><br>';
+									echo '<label for="file">Change Your E-mail</label><br>';
+									echo 'Change Email<input style="margin-left:8px;" type="text" name="email"><br>';
+							echo '</td>';
+						echo '</tr>';
+						
+						echo '<tr>';
+							echo '<td colspan="3" class="profileManagementSubmit">';
+									//FORM CONTINUES
+									echo '<input type="submit" value="Submit">';
+								echo '</form>';
+							echo '</td>';
+						echo '</tr>';
+					echo '</table>';
+				
+					echo '<div id="profileNotifications">NOTIFICATIONS</div>';
+					
+					echo '<div id="profileMessageBoard">MESSAGE BOARD</div>';
+			
+					echo '<div id="profileStatus">';
+					
+						echo '<div id="profileStatusDetailsContainer">';
+							echo '<table id="profileStatusDetailsTable">';
+								echo '<tr>';
+									echo '<td><h3>Account Status: '. $status .'</h3></td>';
+									echo '<td><h3>Premium Since: N/A</h3></td>';
+									echo '<td><h3>Next Pay Date: N/A</h3></td>';
+								echo '</tr>';
+							echo '</table>';
+						echo '</div>';
+		
+						if(isFreemium()){
+							
+						echo '<div style=" width:600px; background-color:white; opacity:0.9; padding:5px; margin:auto; margin-top:5px;">';
+							echo '<p align="center">UPGRADE TO PREMIUM</p>';
+							echo '<form action="changeMembershipStatus.php" method="post">';
+								echo '<div style=" width:50%; line-height:32px; padding-left:16px;">';
+									echo 'Premium Cost = £1/per month <br>';
+									echo 'Name on Card:<input type="text" name="text" value="" style="float:right;"><br>';
+									echo 'Card Number:<input type="text" name="text" value="" style="float:right;"><br>';
+									echo 'Expiry Date:<input type="text" name="text" value="" style="float:right;"><br>';
+									echo 'CV Number:<input type="text" name="text" value="" style="float:right;"><br>';
+									echo '<input type="hidden" name="status" value"1">';
+									echo '<input type="submit" name="submit" value="Submit">';
+								echo '</div>';
+							echo '</form>';
+						echo '</div>';
+						
+						};
+				
+					echo '</div>';
+ 			
+ 			echo '</div>'; // PROFILE INFO EDIT ENDS
+			
+		echo '</div>'; // PROFILE CONTAINER END
+	echo '</div>'; // RIGHT SIDEBAR END
 }
 
 function getSetting($request, $allSettings) {
@@ -248,15 +343,15 @@ function calculateAge($birthday) {
 	$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
 	
 	$birthVals = explode('-', $birthday);
-	$dateVals     = explode('-', $date);
+	$dateVals  = explode('-', $date);
 	
-	$baseAge = $dateVals[0] - $birthVals[0];
+	$baseAge = $dateVals[0] - $birthVals[0]; //current year - birth year = maximum age
 	
-	if($dateVals[1] > $birthVals[1]) {return $baseAge;}
-	if($dateVals[1] < $birthVals[1]) {return $baseAge-1;}
-	if($dateVals[1] == $birthVales[1]) {
-		if($dateVals[2] >= $birthVals) {return $baseAge;}
-		if($dateVals[2] <  $birthVals) {return $baseAge-1;}
+	if($dateVals[1] > $birthVals[1]) {return $baseAge;} //if birth month has passed (current > birth) then set max age
+	if($dateVals[1] < $birthVals[1]) {return $baseAge-1;} //if birth month has yet to come (current < birth) then set min age (max-1)
+	if($dateVals[1] == $birthVals[1]) { //if current month is the birth month (current == birth)
+		if($dateVals[2] >= $birthVals[2]) {return $baseAge;} //if birth 'day' has come or passed then set max age
+		if($dateVals[2] <  $birthVals[2]) {return $baseAge-1;} //if birth 'day' has yet to come then set min age
 	}
 	
 	return $birthday;

@@ -20,6 +20,8 @@
 		<!-- JAVASCRIPT -->
 		<script type='text/javascript' src="js/libs/jquery-1.6.2.js"></script>
 	  	<script type='text/javascript' src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  	
+	  	<script type='text/javascript' src="js/libs/html5shiv-printshiv.js"></script>
 	  	        
 	  	<script type='text/javascript' src='js/jquery.min.js'></script>
     	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
@@ -32,12 +34,7 @@
 	  	<script type='text/javascript' src="js/queryDB.js"></script>
 	  	<script type='text/javascript' src="js/getContentFilters.js"></script>
 	  	<script type='text/javascript' src="js/general.js"></script>
-	  	<script type='text/javascript' src="js/updateSession.js"></script>
-	  	
-	  	<!--[if lt IE 9]>
-     		<script src="html5shiv.js"></script>
-		<![endif]-->
-		
+	  	<script type='text/javascript' src="js/updateSession.js"></script>		
 			
 		<script>
   

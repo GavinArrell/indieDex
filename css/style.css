@@ -54,10 +54,9 @@ html, body{
 	background-repeat: repeat;*/
 	background: #0D0F0E;
 	background-image: url('../img/mLOQIBN - Imgur.jpg');
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-position: center;
-	background-attachment:fixed;
-	background-size: 100% contain;
+	background-size: 100%;
 	background: #111111;
 	background: url('../img/background4.png') repeat;
 	margin:0px;
