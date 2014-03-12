@@ -1,4 +1,4 @@
-var organisationMode   = 0;
+var organisationMode   = 1;
 
 var checkboxConsoleValues = ["PC", "Mac", "Linux", "PS4", "PS3", "XboxOne", "Xbox360", "WiiU", "Wii", "IOS", "Android"];
 var checkboxGenreValues   = ["Action", "Adventure", "Music", "MMO", "Puzzle", "RPG", "Shooter", "Sport", "Strategy"];

@@ -8,7 +8,7 @@ $file_name = $_FILES['file']['name'];
 
 // random 4 digit to add to our file name
 // some people use date and time in stead of random digit
-$random_digit=rand(0000,999999);
+$random_digit=date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'d-m-Y-G-i-s').'-'.rand(0000,9999).'--';
 
 //combine random digit to you file name to create new file name
 //use dot (.) to combile these two variables
@@ -82,11 +82,15 @@ if(isset($_POST['2013'])){$year = '2013';}
 if(isset($_POST['2014'])){$year = '2014';}
 if(isset($_POST['beta'])){$year = 'beta';}
 
+$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'d/m/Y');
+$time = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'G:i');
+$author = $_SESSION['username'];
+
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore">';
 $content = $content.$contentmore;
-$content = $content.'</div><p class="readMore">Read More</p></div>';
+$content = $content.'</br><p>Review by <a href="profile.php?user='.$author.'">'.$author.'</a> on '.$date.' at '. $time .'</p></div><p class="readMore">Read More</p></div>';
 
-$query = "INSERT INTO contentnews_table (title, content, consoles, genres, year, stars, price, staff)
+$query = "INSERT INTO contentreviews_table (title, content, consoles, genres, year, stars, price, staff)
 VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";
 if	($query_run = mysql_query($query)){
 									header('Location: review.php');

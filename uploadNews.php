@@ -5,7 +5,7 @@ require 'connect.inc.php';
 
 if (empty($_FILES['file']['name'])){header('Location: index.php');}else{
 $file_name = $_FILES['file']['name'];
-$random_digit=rand(0000,999999);
+$random_digit=date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'d-m-Y-G-i-s').'-'.rand(0000,9999).'--';
 $new_file_name=$random_digit.$file_name;
 $path= "img/uploads/".$new_file_name;
 if($_FILES['file'] != null)
@@ -70,12 +70,13 @@ if(isset($_POST['2013'])){$year = '2013';}
 if(isset($_POST['2014'])){$year = '2014';}
 if(isset($_POST['beta'])){$year = 'beta';}
 
-$timestamp = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'Y-m-d G:i:s');
+$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'d/m/Y');
+$time = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'G:i');
 $author = $_SESSION['username'];
 
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore">';
 $content = $content.$contentmore;
-$content = $content.'<p>Article by '.$author.' at '.$timestamp.'</p></div><p class="readMore">Read More</p></div>';
+$content = $content.'</br><p>Article by <a href="profile.php?user='.$author.'">'.$author.'</a> on '.$date.' at '. $time .'</p></div><p class="readMore">Read More</p></div>';
 
 $query = "INSERT INTO contentnews_table (title, content, consoles, genres, year, stars, price, staff)
 VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";

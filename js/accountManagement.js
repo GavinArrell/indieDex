@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	profileManagement_load(0);
+	profileManagement_load(3);
 	
 	$('#profileManagementButton_notifs').click(function()   {profileManagement_load(0);});
 	$('#profileManagementButton_messages').click(function() {profileManagement_load(1);});

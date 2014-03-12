@@ -34,7 +34,7 @@
  			<div id="leftContainer">
  				<div id="logo">
  					<img class="fill" src="img/indieDexpng.png"/>
- 					<h1 class="center">HOME</h1>
+ 					<h1 class="center">PROFILE</h1>
  				</div>
  				
  				<div id="accountSidebar">

@@ -87,7 +87,7 @@ function generateProfile($details) {
 	$lastseen     = formatLastSeen($lastseen);
 	
 	$email        = $showEmail    ? $email                  : $username." has chosen not to share this information.";
-	$name         = $showName     ? $firstname." ".$surname : $username." has chosen not share this information.";
+	$name         = $showName     ? $firstname." ".$surname : $username." has chosen not to share this information.";
 	$birthday     = $showAge      ? $birthday               : $username." has chosen not to share this information.";
 	$location     = $showLocation ? $location               : $username." has chosen not to share this information.";
 	
@@ -161,7 +161,10 @@ function generateProfile($details) {
 			
 				//ABOUT ME
 				echo '<div id="profileInfoBio">
+						</br>
 					 	<h3>About Me</h3>
+					 	
+						</br>
 					 	<p>'. $bio .'</p>
 					 </div>';
 					
@@ -173,10 +176,10 @@ function generateProfile($details) {
 				
 				echo '<div id="#profileManagementButtonContainer">';
 				
-					echo '<div class="profileManagementButton" id="profileManagementButton_notifs">notifications</div>';
+					/*echo '<div class="profileManagementButton" id="profileManagementButton_notifs">notifications</div>';
 					echo '<div class="profileManagementButton" id="profileManagementButton_messages">messages</div>';
-					echo '<div class="profileManagementButton" id="profileManagementButton_status">settings</div>';
-					echo '<div class="profileManagementButton" id="profileManagementButton_editInfo">profile</div>';
+					echo '<div class="profileManagementButton" id="profileManagementButton_status">settings</div>';*/
+					echo '<div class="profileManagementButton" id="profileManagementButton_editInfo">settings</div>';
 						
 				echo '</div>';
 				
@@ -184,28 +187,58 @@ function generateProfile($details) {
 				
 					echo '<table id="profileInfoEditTable">';
 						echo '<tr>';
-							echo '<td>';
-								echo '<form action="uploadInfoEdit.php" method="post" enctype="multipart/form-data">';
-									echo '<label for="file">Change Your Profile Picture</label>';
-									echo '<input type="file" name="file" id="file"><br><br>';
+								echo '<td>';
+									echo '<form action="uploadInfoEdit.php" method="post" enctype="multipart/form-data">';
+										echo '<b>Change Your Profile Picture</b></br>';
+										echo '<input type="file" name="file" id="file"><br><br>';
+										
+										echo '<b>Change Your Profile Background</b></br>';
+										echo '<input type="file" name="fileback" id="fileback"><br><br>';
+									
+										echo '<b>Change Your Info</b><br>';
+										echo 'Change Birthday: </br> <input style="margin-left:8px; width: 38px;" type="text" name="day" placeholder="Day"> <input style="margin-left:8px; width: 38px;" type="text" name="month" placeholder="Month"> <input style="margin-left:8px; width: 38px;" type="text" name="year" placeholder="Year"><br>';
+										echo 'Change Location: </br> <input style="margin-left:8px;" type="text" name="location"><br>';
+								echo '</td>';
 								
-									echo '<label for="file">Edit Your Bio</label>';
-									echo '<textarea style=" resize:none; height:100px; width:300px;" type="text" name="bio"></textarea><br>';
-							echo '</td>';
+								echo '<td>';
+									
+								echo '</td>';
 							
-							echo '<td>';
-								
-							echo '</td>';
+								echo '<td>';
+										//FORM CONTINUES
+										echo '<b>Change Your Password</b></br>';
+										echo 'Old Password: </br> <input style="margin-left:8px;" input type="password" name="oldpw"><br>';
+										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpw"><br>';
+										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpwtwo"><br>';
+										echo '</br>';
+										echo '<b>Change Your E-mail</b><br>';
+										echo 'New Email Address: </br> <input style="margin-left:8px;" type="text" name="email"><br>';
+								echo '</td>';
+						echo '</tr>';
 						
+						echo '<tr>';
 							echo '<td>';
-									//FORM CONTINUES
-									echo '<label for="file">Change Your Password</label>';
-									echo 'Old Password:<input style="margin-left:6px;" input type="password" name="oldpw"><br>';
-									echo 'New Password:<input type="password" name="newpw"><br>';
-									echo 'New Password:<input type="password" name="newpwtwo"><br>';
-									echo '<br><br>';
-									echo '<label for="file">Change Your E-mail</label><br>';
-									echo 'Change Email<input style="margin-left:8px;" type="text" name="email"><br>';
+									echo '<b>Change Your Settings</b></br>';
+									
+									$check = '';
+									if($showName) {$check = 'checked="checked"';} else {$check = '';}
+									echo '<input type="checkbox" name="showname" value="showname"         '. $check .'">Show Name<br>';
+									
+									if($showEmail) {$check = 'checked="checked"';} else {$check = '';}
+									echo '<input type="checkbox" name="showemail" value="showemail"       '. $check .'">Show Email<br>';
+									
+									if($showAge) {$check = 'checked="checked"';} else {$check = '';}
+									echo '<input type="checkbox" name="showage" value="showage"           '. $check .'">Show Age<br>';
+									
+									if($showLocation) {$check = 'checked="checked"';} else {$check = '';}
+									echo '<input type="checkbox" name="showlocation" value="showlocation" '. $check .'">Show Location<br>';
+							echo '</td>';
+						echo '</tr>';
+						
+						echo '<tr>';
+							echo '<td colspan="3">';
+									echo '<b>Change What\'s Written About You</b></br>';
+									echo '<textarea style=" resize:vertical; height:100px; width:100%;" type="text" name="bio">'. $bio .'</textarea><br>';
 							echo '</td>';
 						echo '</tr>';
 						
@@ -274,7 +307,7 @@ function getSetting($request, $allSettings) {
 		}
 	}
 	
-	return true; //DEFAULT TO TRUE
+	return false; //DEFAULT TO FALSE
 }
 
 function formatJoinDate($joinDate) {

@@ -1,12 +1,20 @@
 <?php
 
 function changeName(){
+	
+if (!($_FILES["file"]["type"] == "image/gif")
+&& !($_FILES["file"]["type"] == "image/jpeg")
+&& !($_FILES["file"]["type"] == "image/jpg")
+&& !($_FILES["file"]["type"] == "image/png")) {
+	return false;
+}
+	
 // Your file name you are uploading
 $file_name = $_FILES['file']['name'];
 
 // random 4 digit to add to our file name
 // some people use date and time in stead of random digit
-$random_digit=rand(0000,999999);
+$random_digit=date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')),'d-m-Y-G-i-s').'-'.rand(0000,9999).'--';
 
 //combine random digit to you file name to create new file name
 //use dot (.) to combile these two variables
