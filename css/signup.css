@@ -28,22 +28,19 @@
 
 #signupFormInner {
 	margin: 32px auto;
-	width: 656px;
+	width: 75%;
 }
 
 #signupForm {
-	width: 440px;
+	width: 100%;
 	table-layout: fixed;
+	margin-bottom: 32px;
 }
 
-#signupForm td{
-	border: solid;
+.signupFormSkipRow {
+	height: 32px;
 }
 
-#signupForm th {
-	border: solid;
-}
-
-#signupForm input[type="text"], #accountSidebar input[type="password"] {
+#signupForm input[type="text"], #signupForm input[type="password"], #accountSidebar input[type="password"] {
 	width: 100%;
 }

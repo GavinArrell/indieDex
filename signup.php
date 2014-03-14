@@ -119,15 +119,70 @@
 	 				<div id="signupFormContainer">
 	 					<div id="signupFormInner">
 		 					<table id="signupForm" class="left">
+		 						<form action="registerUser.php" method="post" enctype="multipart/form-data">
+		 							
 		 						<tr>
-		 							<th>Username:</th>
-		 							<td><input type="text"></td>
+		 							<th>*Username:</th>
+		 							<td><input type="text" name="user" placeholder="Must be between 4 and 18 chars"></td>
 		 						</tr>
+		 						
+		 						<tr>
+		 							<th>*Email Address:</th>
+		 							<td><input type="text" name="email" placeholder="Must be a valid email address"></td>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<th>*Password:</th>
+		 							<td><input type="password" name="pass" placeholder="Must be between 6 and 32 chars"></td>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<th>*Confirm Password:</th>
+		 							<td><input type="password" name="confirmpass" placeholder="Must match your password"></td>
+		 						</tr>
+		 						
+		 						
+		 						
+		 						<tr class="signupFormSkipRow"></tr>
+		 						
+		 						<tr>
+		 							<th>First Name:</th>
+		 							<td><input type="text" name="name"></td>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<th>Surname:</th>
+		 							<td><input type="text" name="surname"></td>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<th>Birthday:</th>
+		 							<td>
+		 								<table> <tr>
+				 								<td style="padding-right: 2%;"><input type="text" name="day"   placeholder="DD"> </td>
+				 								<td style="padding: 1%;">      <input type="text" name="month" placeholder="MM"> </td>
+				 								<td style="padding-left: 2%;"> <input type="text" name="year"  placeholder="YYYY"> </td>
+			 							</tr> </table>
+		 							</td>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<th>Location:</th>
+		 							<td><input type="text" name="location"></td>
+		 						</tr>
+		 						
+		 						<tr class="signupFormSkipRow"></tr>
+		 						
+		 						<tr>
+		 							<th colspan="2" style="padding: 0 25%; text-align: center;">After registering, check out your profile to add a picture and tell people about yourself!</th>
+		 						</tr>
+		 						
+		 						<tr>
+		 							<td colspan="2" style="text-align: center;"><input type="submit" value="Register"></td>
+		 						</tr>
+		 						
+		 						</form>
 		 					</table>
-	 					
-		 					<div class="left">
-		 						Blah
-		 					</div>
 		 				</div>
 	 				</div>
 	 				

@@ -8,8 +8,9 @@ function registerNewUser($values) {
 	$background = "img/defaultProfileBackground.jpg";
 	$settings   = "showEmail=false showName=true showAge=true showLocation=false";
 	
-	$columns = getColumnCount("user_table");
-	if($columns != count($values)+6) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table"); return;}
+	//$columns = getColumnCount("user_table");
+	//echo ' '.$columns.' ';
+	//if($columns != count($values)+6) {error_log("updateDB.php -> updateUser() -> number of columns inserted not equal to the number of columns in the table"); return;}
 	
 	$query = "INSERT INTO `users_table` VALUES (";
 	$query.= "'";                  //id
@@ -23,13 +24,14 @@ function registerNewUser($values) {
 	$query.= "','".$joinDate;      //joindate  
 	$query.= "','".$values[6];     //bio       
 	$query.= "','".$values[7];     //karma     
-	$query.= "','".$values[6];     //games     
+	$query.= "','".$values[8];     //games 
 	$query.= "','".$values[9];     //wishlist  
 	$query.= "','".$lastSeen;      //lastseen
 	$query.= "','".$background;    //profileBackground
 	$query.= "','".$values[10];    //birthday
 	$query.= "','".$values[11];    //location
 	$query.= "','".$settings;      //settings
+	$query.= "','".$values[12];    //friends
 	
 	$query.= "')";
 	
@@ -50,7 +52,7 @@ function updateUserField($field, $value, $knownField, $knownFieldValue) {
 
 function getColumnCount($table) {
 	
-	$queryCol = "SELECT COUNT(*) FROM indiedex_db.sys.columns WHERE object_id=OBJECT_ID('indiedex_db.dbo.users_table')";
+	$queryCol = "SELECT COUNT(*) FROM information_schema.columns WHERE table_name = '$table' AND TABLE_SCHEMA = 'indedex_db'";
 	if($columns = mysql_query($queryCol)) {return $columns;}
 	else {error_log("updateDB.php -> getColumnCount()");}
 	

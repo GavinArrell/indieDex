@@ -35,7 +35,9 @@ h5 { /* ==== SIGNUP DESCRIPTION TITLES ==== */
 	line-height: 64px;
 }
 
-
+iframe {
+	max-width: 100%;
+}
 
 
 /* ===== NON PINKS ===== */

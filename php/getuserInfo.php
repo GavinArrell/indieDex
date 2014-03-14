@@ -172,6 +172,9 @@ function generateProfile($details) {
 			
 			echo '<div class="clear"></div>';
 			
+			//CHECK USER TO STOP THEM FROM EDITING OTHER PROFILES
+			//INLINE IF TO NOT SCREW UP LAYOUT :/
+			if(isset($_SESSION['username']) && $username == $_SESSION['username']) {
 			echo '<div id="profileInfoEdit">';
 				
 				echo '<div id="#profileManagementButtonContainer">';
@@ -190,14 +193,14 @@ function generateProfile($details) {
 								echo '<td>';
 									echo '<form action="uploadInfoEdit.php" method="post" enctype="multipart/form-data">';
 										echo '<b>Change Your Profile Picture</b></br>';
-										echo '<input type="file" name="file" id="file"><br><br>';
+										echo '<input type="file" name="file" id="file" autocomplete="off"><br><br>';
 										
 										echo '<b>Change Your Profile Background</b></br>';
 										echo '<input type="file" name="fileback" id="fileback"><br><br>';
 									
 										echo '<b>Change Your Info</b><br>';
-										echo 'Change Birthday: </br> <input style="margin-left:8px; width: 38px;" type="text" name="day" placeholder="Day"> <input style="margin-left:8px; width: 38px;" type="text" name="month" placeholder="Month"> <input style="margin-left:8px; width: 38px;" type="text" name="year" placeholder="Year"><br>';
-										echo 'Change Location: </br> <input style="margin-left:8px;" type="text" name="location"><br>';
+										echo 'Change Birthday: </br> <input style="margin-left:8px; width: 38px;" type="text" name="day" placeholder="DD" autocomplete="off" > <input style="margin-left:8px; width: 38px;" type="text" name="month" placeholder="MM" autocomplete="off" > <input style="margin-left:8px; width: 38px;" type="text" name="year" placeholder="YYYY" autocomplete="off"><br>';
+										echo 'Change Location: </br> <input style="margin-left:8px;" type="text" name="location"autocomplete="off"><br>';
 								echo '</td>';
 								
 								echo '<td>';
@@ -207,12 +210,12 @@ function generateProfile($details) {
 								echo '<td>';
 										//FORM CONTINUES
 										echo '<b>Change Your Password</b></br>';
-										echo 'Old Password: </br> <input style="margin-left:8px;" input type="password" name="oldpw"><br>';
-										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpw"><br>';
-										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpwtwo"><br>';
+										echo 'Old Password: </br> <input style="margin-left:8px;" type="password" name="oldpw"autocomplete="off"><br>';
+										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpw"autocomplete="off"><br>';
+										echo 'New Password: </br> <input style="margin-left:8px;" type="password" name="newpwtwo"autocomplete="off"><br>';
 										echo '</br>';
 										echo '<b>Change Your E-mail</b><br>';
-										echo 'New Email Address: </br> <input style="margin-left:8px;" type="text" name="email"><br>';
+										echo 'New Email Address: </br> <input style="margin-left:8px;" type="text" name="email"autocomplete="off"><br>';
 								echo '</td>';
 						echo '</tr>';
 						
@@ -289,6 +292,7 @@ function generateProfile($details) {
 					echo '</div>';
  			
  			echo '</div>'; // PROFILE INFO EDIT ENDS
+ 			}
 			
 		echo '</div>'; // PROFILE CONTAINER END
 	echo '</div>'; // RIGHT SIDEBAR END
@@ -372,6 +376,8 @@ function getUserInfo_convertStatus($status) {
 }
 
 function calculateAge($birthday) {
+	
+	if($birthday == "") {return "";}
 	
 	$date = date_format(new DateTime(null, new DateTimeZone('Europe/Belfast')), 'Y-m-d');
 	

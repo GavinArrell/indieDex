@@ -73,5 +73,33 @@ require 'uploadpicture.php';
     	mysql_query($updateQuery) or die("Error: ".mysql_error());
 	}
 	
+	if(isset($_POST['showname'])&&!empty($_POST['showname'])
+	|| isset($_POST['showemail'])&&!empty($_POST['showemail'])
+	|| isset($_POST['showage'])&&!empty($_POST['showage'])
+	|| isset($_POST['showlocation'])&&!empty($_POST['showlocation'])){
+		
+		$name = "false";
+		$email = "false";
+		$age = "false";
+		$location = "false";
+		
+		if($_POST['showname'] != "")     {$name     = "true";}
+		if($_POST['showemail'] != "")    {$email    = "true";}
+		if($_POST['showage'] != "")      {$age      = "true";}
+		if($_POST['showlocation'] != "") {$location = "true";}
+		
+		$settings = 'showEmail='.$email.' showName='.$name.' showAge='.$age.' showLocation='.$location;
+		$username = $_SESSION['username'];
+		$updateQuery = "UPDATE users_table SET `settings` = '$settings' WHERE `username` = '$username'";
+    	mysql_query($updateQuery) or die("Error: ".mysql_error());
+	}
+	else {
+		
+		$settings = 'showEmail=false showName=false showAge=false showLocation=false';
+		$username = $_SESSION['username'];
+		$updateQuery = "UPDATE users_table SET `settings` = '$settings' WHERE `username` = '$username'";
+    	mysql_query($updateQuery) or die("Error: ".mysql_error());
+	}
+	
 	header('Location: profile.php?user='.$username);
 ?>
