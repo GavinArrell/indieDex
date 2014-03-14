@@ -178,8 +178,12 @@ function generateProfile($details) {
 				
 					/*echo '<div class="profileManagementButton" id="profileManagementButton_notifs">notifications</div>';
 					echo '<div class="profileManagementButton" id="profileManagementButton_messages">messages</div>';
-					echo '<div class="profileManagementButton" id="profileManagementButton_status">settings</div>';*/
+					echo '<div class="profileManagementButton" id="profileManagementButton_status">Status</div>';*/
 					echo '<div class="profileManagementButton" id="profileManagementButton_editInfo">settings</div>';
+					
+					if(isFreemium()){
+						echo '<div class="profileManagementButton" id="profileManagementButton_status">Status</div>';
+					}
 						
 				echo '</div>';
 				
@@ -257,7 +261,7 @@ function generateProfile($details) {
 			
 					echo '<div id="profileStatus">';
 					
-						echo '<div id="profileStatusDetailsContainer">';
+						/*echo '<div id="profileStatusDetailsContainer">';
 							echo '<table id="profileStatusDetailsTable">';
 								echo '<tr>';
 									echo '<td><h3>Account Status: '. $status .'</h3></td>';
@@ -265,7 +269,7 @@ function generateProfile($details) {
 									echo '<td><h3>Next Pay Date: N/A</h3></td>';
 								echo '</tr>';
 							echo '</table>';
-						echo '</div>';
+						echo '</div>';*/
 		
 						if(isFreemium()){
 							

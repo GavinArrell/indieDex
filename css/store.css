@@ -1,0 +1,80 @@
+#storeButtonContainer {
+	height: 48px;
+	padding: 16px;
+}
+
+.storeButton {
+	float: left;
+	width: 20%;
+	height: 48px;
+	cursor: pointer;
+	
+	background-color: #111111;
+	border-bottom: solid 4px #111111;
+	
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 48px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+.storeButton:hover {
+	border-color: #B0CEF5;
+	color: #B0CEF5;
+}
+.storeButton:active {
+	border-color: orange;
+	color: orange;
+}
+
+.storeButtonSelected {
+	border-color: orange;
+	color: orange;
+}
+.storeButtonSelected:hover {
+	border-color: orange;
+	color: orange;
+}
+
+/* general */
+
+#storeContainer {
+	float:right;
+	min-width:720px;
+	width: 80%;
+	background-color: #FFFFFF;
+	padding-bottom: 16px;
+}
+
+#storeItemsContainer {
+	margin: auto;
+	width: 80%;
+}
+
+.storeItem {
+	border: solid 1px #D9D9D9;
+	float: left;
+	display: inline-block;
+	width: 256px;
+	height: 320px;
+	margin: 1px;
+}
+.storeItemImageCont{
+	width: 256px;
+	text-align:center;
+	margin:auto;
+	height:256px;
+	line-height:256px;
+}
+.storeItemImage {
+	margin:auto;	
+	max-width:100%;
+	max-height: 256px;
+	vertical-align:middle;
+}
+.storeItemBar{
+	text-align:center;
+	width:100%;
+	height:64px;
+}
