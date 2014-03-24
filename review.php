@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-GB">
 	<head>
-		<title>indieDex</title>
+		<title>indieDex - Reviews</title>
 		<link rel="icon" type="image/gif" href="img/indieDexpng.png"> 
 		<meta charset="UTF-8">
 		
