@@ -57,9 +57,10 @@
 	float: left;
 	display: inline-block;
 	width: 256px;
-	height: 320px;
+	height: 332px;
 	margin: 1px;
 }
+
 .storeItemImageCont{
 	width: 256px;
 	text-align:center;
@@ -67,14 +68,22 @@
 	height:256px;
 	line-height:256px;
 }
+
 .storeItemImage {
 	margin:auto;	
 	max-width:100%;
 	max-height: 256px;
 	vertical-align:middle;
 }
-.storeItemBar{
+
+.storeItemBar {
 	text-align:center;
 	width:100%;
 	height:64px;
+	margin-top: 12px;
+}
+
+#storeBuyItemCont {
+	clear: both;
+	padding-top: 16px;
 }

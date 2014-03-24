@@ -88,7 +88,7 @@ $author = $_SESSION['username'];
 
 $content = '<div class="contentBoxContainer"><div class="contentBoxPicture"><img src="'.$path.'"/></div><div class="contentBoxText"><h2>'.$title.'</h2><p>'.$intro.'</p></div><div class="contentMore">';
 $content = $content.$contentmore;
-$content = $content.'</br><p>Review by <a href="profile.php?user='.$author.'">'.$author.'</a> on '.$date.' at '. $time .'</p></div><p class="readMore">Read More</p></div>';
+$content = $content.'</br><p class="clear">Review by <a href="profile.php?user='.$author.'">'.$author.'</a> on '.$date.' at '. $time .'</p></div><p class="readMore">Read More</p></div>';
 
 $query = "INSERT INTO contentreviews_table (title, content, consoles, genres, year, stars, price, staff)
 VALUES ('$title','$content', '$console','$genre','$year','$star','$price','$staff')";

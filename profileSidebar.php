@@ -106,7 +106,6 @@ require 'connect.inc.php';
 				
 				<div id="accountButtons">
 					<a href="profile.php?user='. $_SESSION['username'] .'"> <div class="button small-margin">Profile</div> </a>
-					<div class="button small-margin">Settings</div>
 					<a href="logout.php"> <div class="button small-margin">Logout</div> </a>
 				</div>';
 	}

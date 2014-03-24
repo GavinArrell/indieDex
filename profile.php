@@ -2,10 +2,12 @@
 <html lang="en-GB">
 	<head>
 		<title>indieDex</title>
+		<link rel="icon" type="image/gif" href="img/indieDexpng.png"> 
 		<meta charset="UTF-8">
 		
 		<!-- FONTS -->
 		<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis:400,500' rel='stylesheet' type='text/css'>
 		
 		<!-- STYLESHEETS -->
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -20,6 +22,8 @@
 		<!-- JAVASCRIPT -->
 		<script type='text/javascript' src="js/libs/jquery-1.6.2.js"></script>
 	  	<script type='text/javascript' src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  	
+	  	<script type='text/javascript' src="js/libs/html5shiv-printshiv.js"></script>
 	  	
 	  	<script type='text/javascript' src="js/header.js"></script>
 	  	<script type='text/javascript' src="js/general.js"></script>
@@ -65,51 +69,10 @@
  			<?php include 'php/getUserInfo.php' ?> <!-- RIGHT SIDEBAR FOR PROFILE -->
  				
 			<header class=".headerFixed">
-				<div class="headerChild">
-					<a href="index.php"><div class="headerButton">Home</div></a>
-					
-	 				<div class="headerGrandchild">
-	 					<ul>
-	 						<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-	 					</ul>
-	 				</div>
-				</div>
-				
-				<a href="review.php"><div class="headerChild">Reviews
-					<div class="headerGrandchild">
-						<ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="games.php"><div class="headerChild">Games
-					<div class="headerGrandchild">
-						 <ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="forum.php"><div class="headerChild">Forums
-					<div class="headerGrandchild">
-						<ul>
-							<li>Top</li>
-							<li>New</li>
-							<li>Hot</li>
-							<li>Trending</li>
-						</ul>
-					</div>
-				</div></a>
+				<a href="index.php"><div class="headerChild">Home</div></a>
+				<a href="review.php"><div class="headerChild">Reviews</div></a>
+				<a href="games.php"><div class="headerChild">Games</div></a>
+				<a href="store.php"><div class="headerChild">Store</div></a>
 			</header>
 
  		</div> <!-- CONTAINER DEEV -->

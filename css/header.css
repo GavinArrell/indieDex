@@ -9,12 +9,15 @@ header {
 	top: 0;
 }
 
+header:hover  {border-color: #88CCFF;}
+header:active {border-color: #FFAA00;}
+
 .headerChild {
 	float: left;
 	width: 25%;
 	
-	font-family:"MS Sans Serif", Geneva, sans-serif;
-	font-size: 18px;
+	font-family:"Dosis", Geneva, sans-serif;
+	font-size: 24px;
 	line-height: 48px;
 	text-align: center;
 }

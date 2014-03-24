@@ -39,8 +39,10 @@ require 'core.inc.php';
 					$_SESSION['joindate']=$joindate;
 					$_SESSION['email']=$email;
 					header('Location: index.php');
-				}
+					return;
+				} 
 			}
 		}
+		header('Location: signup.php');
 	}
 ?>

@@ -11,5 +11,5 @@ if($status >= 0 && $status <= 4) {
 	$_SESSION['status'] = $status;
 } else echo "baa";
 
-header('Location: account.php');
+header('Location: profile.php?user='.$username);
 ?>

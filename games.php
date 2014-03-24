@@ -2,10 +2,12 @@
 <html lang="en-GB">
 	<head>
 		<title>indieDex</title>
+		<link rel="icon" type="image/gif" href="img/indieDexpng.png"> 
 		<meta charset="UTF-8">
 		
 		<!-- FONTS -->
 		<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis:400,500' rel='stylesheet' type='text/css'>
 		
 		<!-- STYLESHEETS -->
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -84,40 +86,7 @@
 				
  			</div> <!-- LEFT CONTAINER -->
  			
- 			<div class="rightContainer">
- 				
- 				<div id="slideshow">
-					<div class="fluid_container">
-						<div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-							
-							<div data-thumb="img/IndieGameTheMovieRelease.jpg" data-src="img/IndieGameTheMovieRelease.jpg">
-							    <div class="camera_caption fadeFromBottom">
-							        <a href="google.com"><em>Indie Game The Movie - Available on Netflix.</em></a>
-							    </div>
-							</div>
-							
-							<div data-thumb="img/minecraftSlideShow.png" data-src="img/minecraftSlideShow.png">
-							    <div class="camera_caption fadeFromBottom">
-							        <em>Minecraft - updated to 1.7.4!.</em>
-							    </div>
-							</div>
-							
-							<div data-thumb="img/fez.png" data-src="img/fez.png">
-							    <div class="camera_caption fadeFromBottom">
-							        <em>Fez - winner of multiple indie gaming awards.</em>
-							    </div>
-							</div>
-							
-							<div data-thumb="img/kerbal.png" data-src="img/kerbal.png">
-						    	<div class="camera_caption fadeFromBottom">
-						      		<em>Kerbal Space Program - available on Steam.</em>
-								</div>
-							</div>
-							
-						</div>
-					</div>
- 				</div>
- 			</div>
+ 			<?php include 'slideshow.php'; ?>
  				
  			<div id="rightContainerTwo">	
  									
@@ -219,51 +188,10 @@
  			</div> <!-- RIGHT CONTAINER TWO -->
  				
 			<header class=".headerFixed">
-				<div class="headerChild">
-					<a href="index.php"><div class="headerButton">Home</div></a>
-					
-	 				<div class="headerGrandchild">
-	 					<ul>
-	 						<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-	 					</ul>
-	 				</div>
-				</div>
-				
-				<a href="review.php"><div class="headerChild">Reviews
-					<div class="headerGrandchild">
-						<ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="games.php"><div class="headerChild">Games
-					<div class="headerGrandchild">
-						 <ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="forum.php"><div class="headerChild">Forums
-					<div class="headerGrandchild">
-						<ul>
-							<li>Top</li>
-							<li>New</li>
-							<li>Hot</li>
-							<li>Trending</li>
-						</ul>
-					</div>
-				</div></a>
+				<a href="index.php"><div class="headerChild">Home</div></a>
+				<a href="review.php"><div class="headerChild">Reviews</div></a>
+				<a href="games.php"><div class="headerChild">Games</div></a>
+				<a href="store.php"><div class="headerChild">Store</div></a>
 			</header>
 
  		</div> <!-- CONTAINER DEEV -->

@@ -2,6 +2,7 @@
 <html lang="en-GB">
 	<head>
 		<title>indieDex</title>
+		<link rel="icon" type="image/gif" href="img/indieDexpng.png"> 
 		<meta charset="UTF-8">
 		
 		<!-- FONTS -->
@@ -21,11 +22,8 @@
 		<!-- JAVASCRIPT -->
 		<script type='text/javascript' src="js/libs/jquery-1.6.2.js"></script>
 	  	<script type='text/javascript' src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	  	        
-	  	<script type='text/javascript' src='js/jquery.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
-    	<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
-    	<script type='text/javascript' src='js/camera.js'></script>
+	  	
+	  	<script type='text/javascript' src="js/libs/html5shiv-printshiv.js"></script>
 	  	
 	  	<script type='text/javascript' src="js/header.js"></script>
 	  	<script type='text/javascript' src="js/expandContent.js"></script>
@@ -101,17 +99,21 @@
 	 					<tr>
 		 					<td>
 		 						<h5>Non-Premium</h5>
-		 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec elit at erat pharetra lobortis semper in augue. Sed nulla nisl, pellentesque quis diam pellentesque, congue lobortis eros. Pellentesque eget fermentum massa. Mauris faucibus elit tellus, vitae vestibulum nisi malesuada eu. Mauris sapien turpis, euismod id neque eget, malesuada molestie justo. Maecenas sed ligula luctus, ultrices enim in, fermentum erat. Quisque scelerisque feugiat tincidunt. Curabitur vestibulum euismod vulputate. Aenean condimentum tortor quis laoreet condimentum. Vivamus id pretium turpis, eget dignissim velit. Aliquam placerat lectus sed leo luctus euismod.</p>
+		 						<p>As a Non-Premium member you have access to the entire website, you can create a profile and use it to keep in touch with friends or show off to rivals!</p>
 		 					</td>
 		 					
 		 					<td>
 		 						<h5>Premium</h5>
-		 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec elit at erat pharetra lobortis semper in augue. Sed nulla nisl, pellentesque quis diam pellentesque, congue lobortis eros. Pellentesque eget fermentum massa. Mauris faucibus elit tellus, vitae vestibulum nisi malesuada eu. Mauris sapien turpis, euismod id neque eget, malesuada molestie justo. Maecenas sed ligula luctus, ultrices enim in, fermentum erat. Quisque scelerisque feugiat tincidunt. Curabitur vestibulum euismod vulputate. Aenean condimentum tortor quis laoreet condimentum. Vivamus id pretium turpis, eget dignissim velit. Aliquam placerat lectus sed leo luctus euismod.</p>
+		 						<p>For just £3 every month you can upgrade yourself to a Premium member!</p>
+		 						<br>
+		 						<p>As a Premium member you will no longer see adverts on the site, you get 10% discount at the store checkout, automatic entry into our monthly give-away, and sometimes get BETA invites to new and exciting games as well as insight on what some indie developers are doing!</p>
 		 					</td>
 		 					
 		 					<td>
 		 						<h5>Get The App</h5>
-		 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec elit at erat pharetra lobortis semper in augue. Sed nulla nisl, pellentesque quis diam pellentesque, congue lobortis eros. Pellentesque eget fermentum massa. Mauris faucibus elit tellus, vitae vestibulum nisi malesuada eu. Mauris sapien turpis, euismod id neque eget, malesuada molestie justo. Maecenas sed ligula luctus, ultrices enim in, fermentum erat. Quisque scelerisque feugiat tincidunt. Curabitur vestibulum euismod vulputate. Aenean condimentum tortor quis laoreet condimentum. Vivamus id pretium turpis, eget dignissim velit. Aliquam placerat lectus sed leo luctus euismod.</p>
+		 						<p>GameFinder is a brand new android app, which is the perfect partner to the indieDex website! Answer a few questions and it will find an indie game for you!</p>
+		 						<br>
+		 						<p>Available for only 69p, GameFinder will choose a game for you from over 100 games! If you're not sure you will like it, check out a review <a href="review.php">here</a>!</p>
 		 					</td>
 	 					</tr>
 	 				</table>
@@ -192,51 +194,10 @@
  			</div>
  				
 			<header class=".headerFixed">
-				<div class="headerChild">
-					<a href="index.php"><div class="headerButton">Home</div></a>
-					
-	 				<div class="headerGrandchild">
-	 					<ul>
-	 						<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-	 					</ul>
-	 				</div>
-				</div>
-				
-				<a href="review.php"><div class="headerChild">Reviews
-					<div class="headerGrandchild">
-						<ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="games.php"><div class="headerChild">Games
-					<div class="headerGrandchild">
-						 <ul>
-							<a class="filterTop"  > <li>Top</li> </a>
-	 						<a class="filterNew"  > <li>New</li> </a>
-	 						<a class="filterHot"  > <li>Hot</li> </a>
-	 						<a class="filterTrend"> <li>Trending</li> </a>
-						</ul>
-					</div>
-				</div></a>
-				
-				<a href="forum.php"><div class="headerChild">Forums
-					<div class="headerGrandchild">
-						<ul>
-							<li>Top</li>
-							<li>New</li>
-							<li>Hot</li>
-							<li>Trending</li>
-						</ul>
-					</div>
-				</div></a>
+				<a href="index.php"><div class="headerChild">Home</div></a>
+				<a href="review.php"><div class="headerChild">Reviews</div></a>
+				<a href="games.php"><div class="headerChild">Games</div></a>
+				<a href="store.php"><div class="headerChild">Store</div></a>
 			</header>
 
  		</div> <!-- CONTAINER DEEV -->
